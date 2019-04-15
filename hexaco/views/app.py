@@ -9,10 +9,13 @@
 
 import wx
 import gettext
-from views.hexacofile import Hexacofile
+from hexaco.views.hexacofile import Hexacofile
+import pathlib
+import os
 
 
 class MyApp(wx.App):
+
     def OnInit(self):
         self.frame = Hexacofile(None)
         self.SetTopWindow(self.frame)
@@ -21,8 +24,11 @@ class MyApp(wx.App):
 
 # end of class MyApp
 
-if __name__ == "__main__":
-    gettext.install("app") # replace with the appropriate catalog name
 
+if __name__ == "__main__":
+
+    pathwd = pathlib.Path.cwd() / ".."
+    os.chdir(pathwd)  
+    gettext.install("app")  # replace with the appropriate catalog name
     app = MyApp(0)
     app.MainLoop()

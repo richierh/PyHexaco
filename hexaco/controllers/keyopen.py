@@ -5,6 +5,7 @@ Created on Mar 21, 2019
 '''
 import platform
 
+
 def cekplatform():
     myplatform = platform.system()
     print (myplatform)

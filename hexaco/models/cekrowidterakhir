@@ -1,2 +1,0 @@
-SELECT idpeserta from datapeserta order by idpeserta DESC limit 1
-/*cara memperoleh data id terakhir*/

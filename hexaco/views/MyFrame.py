@@ -12,6 +12,7 @@ import wx
 
 
 class MyFrame(wx.Frame):
+
     def __init__(self, *args, **kwds):
         # begin wxGlade: MyFrame.__init__
         kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
