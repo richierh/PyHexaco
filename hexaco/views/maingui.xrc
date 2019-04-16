@@ -2,7 +2,7 @@
 <resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
 	<object class="wxFrame" name="FrameDepan">
 		<style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
-		<size>500,900</size>
+		<size>804,900</size>
 		<title></title>
 		<centered>1</centered>
 		<aui_managed>0</aui_managed>
@@ -10,16 +10,27 @@
 			<orient>wxVERTICAL</orient>
 			<object class="sizeritem">
 				<option>1</option>
-				<flag>wxEXPAND|wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
-				<border>5</border>
-				<object class="unknown" name="m_simplebook1" />
-			</object>
-			<object class="sizeritem">
-				<option>1</option>
 				<flag>wxEXPAND</flag>
 				<border>5</border>
 				<object class="wxBoxSizer">
 					<orient>wxVERTICAL</orient>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxEXPAND | wxALL</flag>
+				<border>5</border>
+				<object class="wxPanel" name="m_panel12">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>1</option>
+							<flag>wxEXPAND|wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
+							<border>5</border>
+							<object class="unknown" name="m_simplebook1" />
+						</object>
+					</object>
 				</object>
 			</object>
 			<object class="sizeritem">
@@ -51,6 +62,7 @@
 							<flag>wxALIGN_BOTTOM|wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_RIGHT</flag>
 							<border>5</border>
 							<object class="wxButton" name="m_button2">
+								<enabled>0</enabled>
 								<label>Sebelumnya</label>
 								<default>0</default>
 								<markup>0</markup>
@@ -62,7 +74,7 @@
 							<flag>wxALL|wxALIGN_BOTTOM|wxALIGN_RIGHT</flag>
 							<border>5</border>
 							<object class="wxButton" name="m_button3">
-								<label>Selanjutnyta</label>
+								<label>Selanjutnya</label>
 								<default>0</default>
 								<markup>0</markup>
 								<bitmap />
@@ -72,5 +84,9 @@
 				</object>
 			</object>
 		</object>
+	</object>
+	<object class="wxPanel" name="MyPanel1">
+		<style>wxTAB_TRAVERSAL</style>
+		<size>500,300</size>
 	</object>
 </resource>

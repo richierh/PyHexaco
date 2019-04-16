@@ -14,23 +14,41 @@ class Hexacofile(maingui.FrameDepan):
 		pathimage = pathlib.Path.cwd() / "resources/images/binadata.png"
 		self.image = wx.Image(str(pathimage))
 		self.m_bitmap1.SetBitmap(wx.Bitmap(self.image))
+
+		pathimage = pathlib.Path.cwd() / "resources/images/binakarir.png"
+		self.image = wx.Image(str(pathimage))
+		self.m_bitmap2.SetBitmap(wx.Bitmap(self.image))
 		
 		self.Maximize(maximize=True)
 		self.m_simplebook1.SetSelection(0)
 
 	def m_button1OnButtonClick(self, event):
 		self.m_simplebook1.SetSelection(0)
+		self.m_button2.Disable()		
+		self.m_button3.Enable()
 		
 		print ("tes")
 		
 	def m_button2OnButtonClick(self, event):
 		self.getSel = self.m_simplebook1.GetSelection()
 		self.m_simplebook1.SetSelection(self.getSel - 1)
+		if self.getSel-2 == 2:
+			self.m_button3.Disable()
+		elif self.getSel-1 == 0:
+			self.m_button2.Disable()		
+			self.m_button3.Enable()		
+		else :
+			self.m_button3.Enable()
 		print ("tes 2")
 		
 	def m_button3OnButtonClick(self, event):
 		self.getSel = self.m_simplebook1.GetSelection()
 		self.m_simplebook1.SetSelection(self.getSel + 1)
+		if self.getSel+2 == 2:
+			self.m_button2.Enable()		
+			self.m_button3.Disable()
+		else :
+			self.m_button3.Enable()
 		print ("tes 3")
 		
 	def m_textCtrl3OnText(self, event):
