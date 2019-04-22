@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "~/Projects/"
+		}
+	],
+	"settings": {
+		"python.venvPath": " ~/.pyenv, ~/Envs, ~/.virtualenvs, ~/miniconda3/envs/"
+	},
+	"python.autoComplete.extraPaths": ["~/Projects/pyhexaco/hexaco/views"]
+}

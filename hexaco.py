@@ -27,4 +27,8 @@ cekplatform()
 gettext.install("myApp")
 run = MyApp(0)
 run.MainLoop()
-# print(pathwd)
+print(pathwd)
+
+
+
+
