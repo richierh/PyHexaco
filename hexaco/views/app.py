@@ -7,11 +7,13 @@
 # This is an automatically generated file.
 # Manual changes will be overwritten without warning!
 
-import wx
 import gettext
-from hexaco.views.hexacofile import Hexacofile
-import pathlib
 import os
+import pathlib
+
+import wx
+
+from hexaco.views.hexacofile import Hexacofile
 
 
 class MyApp(wx.App):

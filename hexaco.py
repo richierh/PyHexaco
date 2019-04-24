@@ -1,17 +1,24 @@
+#!usr/bin/env python
+
 '''
 Created on Mar 21, 2019
 
 @author: cireng
 '''
+
+import gettext
 import os
 import pathlib
-import gettext
 import sys
-# print (os.getcwd())
 
-pathwd = pathlib.Path.cwd()/"hexaco"
-pathcont = pathlib.Path.cwd()/"hexaco/controllers"
-pathview = pathlib.Path.cwd()/"hexaco/views"
+from hexaco.controllers import cekplatform 
+from hexaco.views import MyApp
+
+
+# print (os.getcwd())
+pathwd = pathlib.Path.cwd() / "hexaco"
+pathcont = pathlib.Path.cwd() / "hexaco/controllers"
+pathview = pathlib.Path.cwd() / "hexaco/views"
 print (pathcont)
 
 sys.path.append(str(pathcont))
@@ -20,15 +27,11 @@ print (sys.path)
 os.chdir(str(pathwd))
 # print (os.getcwd())
 
-from hexaco.controllers import cekplatform 
-from hexaco.views import MyApp
+
 # print (dir())
 cekplatform()
 gettext.install("myApp")
 run = MyApp(0)
 run.MainLoop()
 print(pathwd)
-
-
-
 
