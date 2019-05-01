@@ -3,7 +3,8 @@
 '''
 Created on Mar 21, 2019
 
-@author: cireng
+from oscheck import *
+import@author: cireng
 '''
 
 import gettext
@@ -11,25 +12,26 @@ import os
 import pathlib
 import sys
 
-from hexaco.controllers import cekplatform 
-from hexaco.views import MyApp
 
+#from coreapps.controllers.keyopen import cekplatform 
+from coreapps.views.app import MyApp
 
 # print (os.getcwd())
-pathwd = pathlib.Path.cwd() / "hexaco"
-pathcont = pathlib.Path.cwd() / "hexaco/controllers"
-pathview = pathlib.Path.cwd() / "hexaco/views"
-print (pathcont)
+pathwd = pathlib.Path.cwd() / "coreapps"
+#pathcont = pathlib.Path.cwd() / "coreapps/controllers"
+#pathview = pathlib.Path.cwd() / "coreapps/views"
+#print (pathcont)
 
-sys.path.append(str(pathcont))
-sys.path.append(str(pathview))
+#sys.path.append(str(pathcont))
+#sys.path.append(str(pathview))
+sys.path.append(str(pathwd))
+
 print (sys.path)
 os.chdir(str(pathwd))
 # print (os.getcwd())
 
-
 # print (dir())
-cekplatform()
+#cekplatform()
 gettext.install("myApp")
 run = MyApp(0)
 run.MainLoop()
