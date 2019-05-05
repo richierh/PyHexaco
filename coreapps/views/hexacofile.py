@@ -5,7 +5,7 @@ import pathlib
 import wx
 
 import coreapps.views.maingui as maingui
-from coreapps.views.grafikmatplotlib import PanelObjek
+from coreapps.views.grafikmatplotlib import GrafikDimensi
 
 # Implementing MyFrame1
 class Hexacofile(maingui.FrameDepan):
@@ -14,9 +14,10 @@ class Hexacofile(maingui.FrameDepan):
 		super(Hexacofile, self).__init__(parent)
 		self.m_button1.Disable()
 
-		self.grafik_Matplotlib = PanelObjek(self)
+		self.grafik_Matplotlib = GrafikDimensi(self)
+		self.grafik_Matplotlib.draw()
 		self.GrafikMatplotlib.SetSizer(self.grafik_Matplotlib.sizer90)
-		
+
 		
 	
 		self.GrafikMatplotlib.Update()
@@ -146,3 +147,38 @@ class Hexacofile(maingui.FrameDepan):
 		
 	def m_button7OnButtonClick(self, event):
 		print ("hhjk")
+		
+		
+	def m_menuItem1OnMenuSelection(self,event):
+		self.Close()
+		print ("Aplikasi ditutup")
+		
+	def m_button_cOnButtonClick(self, event):
+		print ("tes over here 'c'")
+		pass
+	
+	def m_button_aOnButtonClick(self, event):
+		print ("tes over here 'a'")
+		pass
+	
+	def m_button_emOnButtonClick(self, event):
+		print ("tes over here 'em'")
+		pass
+	
+	def m_button_hOnButtonClick(self, event):
+		print ("tes over here 'h'")
+		pass
+	
+	def m_button_exOnButtonClick(self, event):
+		print ("tes over here ' ex '")
+		pass
+	
+	def m_button_oOnButtonClick(self, event):
+		print ("print over here 'o'")
+		
+		from coreapps.views.grafikmatplotlib import GrafikO
+		self.tampil_grafik_o = GrafikO(self)
+		
+		
+		pass
+	

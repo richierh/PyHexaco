@@ -21,8 +21,6 @@ class MyApp(wx.App):
         self.frame.Show()
         return True
 
-# end of class MyApp
-
 
 if __name__ == "__main__":
 
