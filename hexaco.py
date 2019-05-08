@@ -13,6 +13,7 @@ import pathlib
 import sys
 
 
+
 #from coreapps.controllers.keyopen import cekplatform 
 from coreapps.views.app import MyApp
 
@@ -35,4 +36,3 @@ os.chdir(str(pathwd))
 gettext.install("myApp")
 run = MyApp(0)
 run.MainLoop()
-

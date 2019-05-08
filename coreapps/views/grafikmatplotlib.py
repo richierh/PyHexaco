@@ -10,74 +10,93 @@ from matplotlib.figure import Figure
 from coreapps.views.maingui import FrameDepan
 
 
-class GrafikMatplotlib():
-
-    def __init__(self):
-        matplotlib.rcParams['toolbar'] = 'None'
-        # Fixing random state for reproducibility
-        np.random.seed(19680801)
-        
-        plt.rcdefaults()
-        self.fig, self.ax = plt.subplots()
-        
-        # Example data
-        colors = list('rgbmk')
-        self.people = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
-        self.y_pos = np.arange(len(self.people))
-        self.performance = 3 + 10 * np.random.rand(len(self.people))
-        error = np.random.rand(len(self.people))
-        
-        self.ax.barh(self.y_pos, self.performance, xerr=error, align='center',
-                color=colors, ecolor='black')
-        self.ax.set_yticks(self.y_pos)
-        self.ax.set_yticklabels(self.people)
-        self.ax.invert_yaxis()  # labels read top-to-bottom
-        self.ax.set_xlabel('Performance')
-        self.ax.set_title('How fast do you want to go today?')
-        
-        plt.show()
-
-
 class GrafikDimensi(FrameDepan):
     
     def __init__(self,parent):
         self.parent = parent
         self.np = np
+        
+        self.colors_6_dimensi = ["r","g","b","m","k","y","grey"]
+        self.colors_honesty_humility = []
+        self.colors_emotionality = []
+        self.colors_extraversion = []
+        self.colors_agreeableness = []
+        self.colors_conscientiousness = []
+        self.colors_openness_to_experience = []
+        self.colors_interestitial = []
 #        method inherit
         self.figure = Figure()
-        self.axes = self.figure.add_subplot(111)
+        self.axes_6_dimensi = self.figure.add_subplot(121)
+       
+        self.axes_honesty_humility = self.figure.add_subplot(6,2,2)
+        self.axes_2 = self.figure.add_subplot(6,2,4)
+        self.axes_3 = self.figure.add_subplot(6,2,6)
+        self.axes_4 = self.figure.add_subplot(6,2,8)
+        self.axes_5 = self.figure.add_subplot(6,2,10)
+        self.axes_6 = self.figure.add_subplot(6,2,12)
         
-#        grafik di petakan oleh add_subplot
-#        digit 111 menyatakan posisi 
-#        1 = row , 1 = column , 1 = grafik
+        self.axes_honesty_humility.get_xaxis().set_visible(False)
+        self.axes_2.get_xaxis().set_visible(False)
+        self.axes_3.get_xaxis().set_visible(False)
+        self.axes_4.get_xaxis().set_visible(False)
+        self.axes_5.get_xaxis().set_visible(False)
+
         self.canvas = FigureCanvas(self.parent.GrafikMatplotlib,
                                    -1,
                                    self.figure)
-        
+
         self.sizer90 = wx.BoxSizer(wx.VERTICAL)
         self.sizer90.Add(self.canvas,1,wx.ALL|wx.EXPAND)
 #         memasukkan grafik ke dalam panel yang ada di hexacofile
 #         print (self)
 
     def draw(self):
+       
+        self.data_y = ["Honesty\nHumility",
+                       "Emotionality\nDomain",
+                       "Extraversion\nDomain",
+                       "Agreeableness\nDomain",
+                       "Conscientiousness\nDomain",
+                       "Openness to\nExperience\n Domain",
+                       "Interstitial\nScale"]
+
+        if self.parent.versi_soal == 24 :
+            del self.data_y[6]
+            print (self.data_y)
+            print ("tes")
         
-        self.data_y = ["O","C","A","Ex","EM","H"]
+
         self.y_pos = self.np.arange(len(self.data_y))
-        print (len(self.data_y))
         self.value = 3 + 10 * self.np.random.rand(len(self.data_y))
 #         self.error = self.np.random.rand(len(self.data_y))
-        self.colors = ["r","g","b","m","k","y"]
-        
-        
-        self.axes.barh(self.y_pos,
+        self.axes_6_dimensi.barh(self.y_pos,
                        self.value,
-#                        xerr=self.error, 
+                       height=0.5,
                        align='center',
-                       color=self.colors)
-#                        ecolor='black')
-        self.axes.set_yticks(self.y_pos)
-        self.axes.set_yticklabels((self.data_y))
-        self.axes.invert_yaxis()
+                       color=self.colors_6_dimensi)
+        self.axes_6_dimensi.set_yticks(self.y_pos)
+        self.axes_6_dimensi.set_yticklabels(self.data_y,fontname="Tw Cen MT",fontsize=14)
+        self.axes_6_dimensi.invert_yaxis()
+        
+        self.data_y1 = ["Sincerity",
+                        "Fairness",
+                        "Greed Avoidance",
+                        "Modesty"]
+        
+        self.y_pos1 = self.np.arange(len(self.data_y1))
+        self.value1 = [5,2,3,4]
+        self.axes_honesty_humility.barh(self.y_pos1,
+                         self.value1,
+                         align='center',
+                         color="r")
+        
+        self.axes_honesty_humility.set_yticks(self.y_pos1)
+        self.axes_honesty_humility.set_yticklabels(self.data_y1,fontsize=8,fontname="Tw Cen MT")
+        
+        
+
+
+        
         pass
     
     

@@ -11,6 +11,8 @@ import sqlite3
 import pathlib
 
 def connect_db(path):
+    print ("Connecting to {}".format(path))
+    print("...Processing....")
     conne = sqlite3.connect(str(path))
     return conne
 
