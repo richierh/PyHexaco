@@ -2045,145 +2045,182 @@ class FrameDepan ( wx.Frame ):
 		self.m_panel10 = wx.Panel( self.m_panel4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		self.m_panel10.Hide()
 
-		bSizer8.Add( self.m_panel10, 0, wx.ALL|wx.EXPAND, 5 )
+		bSizer8.Add( self.m_panel10, 1, wx.ALL|wx.EXPAND, 5 )
 
 		self.m_scrolledWindow3 = wx.ScrolledWindow( self.m_panel4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL )
 		self.m_scrolledWindow3.SetScrollRate( 5, 5 )
+		self.m_scrolledWindow3.Hide()
+
+		bSizer8.Add( self.m_scrolledWindow3, 0, wx.ALL, 5 )
+
+		self.m_panel15 = wx.Panel( self.m_panel4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer91 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_button14 = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button14 = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button14.Hide()
 
 		bSizer91.Add( self.m_button14, 0, wx.ALL, 5 )
 
 		bSizer20 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.GrafikMatplotlib = wx.Panel( self.m_scrolledWindow3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer20.Add( self.GrafikMatplotlib, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
-
-		bSizer211 = wx.BoxSizer( wx.VERTICAL )
-
-		fgSizer25 = wx.FlexGridSizer( 6, 2, 0, 0 )
-		fgSizer25.AddGrowableCol( 1 )
-		fgSizer25.SetFlexibleDirection( wx.BOTH )
-		fgSizer25.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
-
-		self.m_staticText2081 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"O", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText2081.Wrap( -1 )
-
-		self.m_staticText2081.Hide()
-
-		fgSizer25.Add( self.m_staticText2081, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_RIGHT, 5 )
-
-		self.GrafikMatplotlib1 = wx.Panel( self.m_scrolledWindow3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.GrafikMatplotlib1.Hide()
-
-		fgSizer25.Add( self.GrafikMatplotlib1, 0, wx.ALL|wx.EXPAND, 5 )
+		self.GrafikMatplotlib = wx.Panel( self.m_panel15, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,200 ), wx.TAB_TRAVERSAL )
+		bSizer20.Add( self.GrafikMatplotlib, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 
-		bSizer211.Add( fgSizer25, 1, wx.EXPAND, 5 )
+		bSizer91.Add( bSizer20, 3, wx.EXPAND, 5 )
 
+		fgSizer26 = wx.FlexGridSizer( 3, 6, 0, 0 )
+		fgSizer26.SetFlexibleDirection( wx.BOTH )
+		fgSizer26.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-		bSizer20.Add( bSizer211, 1, wx.EXPAND, 5 )
-
-
-		bSizer91.Add( bSizer20, 0, wx.EXPAND, 5 )
-
-		gSizer1 = wx.GridSizer( 2, 0, 0, 0 )
-
-		self.m_staticText40 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"Altruism", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText40.Wrap( -1 )
-
-		gSizer1.Add( self.m_staticText40, 0, wx.ALL, 5 )
-
-		self.m_textCtrl35 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer1.Add( self.m_textCtrl35, 0, wx.ALL, 5 )
-
-
-		bSizer91.Add( gSizer1, 0, 0, 5 )
-
-		gSizer2 = wx.GridSizer( 3, 6, 0, 0 )
-
-		self.m_staticText41 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"O", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText41 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"O", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText41.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText41, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText41, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.m_staticText42 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"C", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText42 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"C", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText42.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText42, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText42, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_staticText43 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"A", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText43 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"A", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText43.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText43, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText43, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_staticText44 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"Ex", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText44 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Ex", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText44.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText44, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText44, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_staticText45 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"Em", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText45 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Em", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText45.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText45, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText45, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_staticText46 = wx.StaticText( self.m_scrolledWindow3, wx.ID_ANY, u"H", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText46 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"H", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText46.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText46, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_staticText46, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_textCtrl36 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl36, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.m_textCtrl36 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl36.Hide()
 
-		self.m_textCtrl37 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl37, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_textCtrl36, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_textCtrl38 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl38, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.m_textCtrl37 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl37.Hide()
 
-		self.m_textCtrl39 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl39, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_textCtrl37, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_textCtrl40 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl40, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.m_textCtrl38 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl38.Hide()
 
-		self.m_textCtrl41 = wx.TextCtrl( self.m_scrolledWindow3, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		gSizer2.Add( self.m_textCtrl41, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( self.m_textCtrl38, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_button_o = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"Grafik O", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_o, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.m_textCtrl39 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl39.Hide()
 
-		self.m_button_c = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"Grafik C", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_c, 0, wx.ALL, 5 )
+		fgSizer26.Add( self.m_textCtrl39, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_button_a = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_a, 0, wx.ALL, 5 )
+		self.m_textCtrl40 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl40.Hide()
 
-		self.m_button_ex = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_ex, 0, wx.ALL, 5 )
+		fgSizer26.Add( self.m_textCtrl40, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_button_em = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_em, 0, wx.ALL, 5 )
+		self.m_textCtrl41 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"None", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		self.m_textCtrl41.Hide()
 
-		self.m_button_h = wx.Button( self.m_scrolledWindow3, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_button_h, 0, wx.ALL, 5 )
+		fgSizer26.Add( self.m_textCtrl41, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_button_o = wx.Button( self.m_panel15, wx.ID_ANY, u"Grafik O", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_o, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_button_c = wx.Button( self.m_panel15, wx.ID_ANY, u"Grafik C", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_c, 0, wx.ALL, 5 )
+
+		self.m_button_a = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_a, 0, wx.ALL, 5 )
+
+		self.m_button_ex = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_ex, 0, wx.ALL, 5 )
+
+		self.m_button_em = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_em, 0, wx.ALL, 5 )
+
+		self.m_button_h = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer26.Add( self.m_button_h, 0, wx.ALL, 5 )
 
 
-		bSizer91.Add( gSizer2, 0, 0, 5 )
+		bSizer91.Add( fgSizer26, 0, 0, 5 )
+
+		fgSizer27 = wx.FlexGridSizer( 2, 0, 0, 0 )
+		fgSizer27.SetFlexibleDirection( wx.BOTH )
+		fgSizer27.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+		self.m_staticText40 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Altruism", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText40.Wrap( -1 )
+
+		fgSizer27.Add( self.m_staticText40, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.m_button141 = wx.Button( self.m_panel15, wx.ID_ANY, u"MyButton", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer27.Add( self.m_button141, 0, wx.ALL, 5 )
 
 
-		self.m_scrolledWindow3.SetSizer( bSizer91 )
-		self.m_scrolledWindow3.Layout()
-		bSizer91.Fit( self.m_scrolledWindow3 )
-		bSizer8.Add( self.m_scrolledWindow3, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer91.Add( fgSizer27, 0, 0, 5 )
+
+
+		self.m_panel15.SetSizer( bSizer91 )
+		self.m_panel15.Layout()
+		bSizer91.Fit( self.m_panel15 )
+		bSizer8.Add( self.m_panel15, 1, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
 		self.m_panel4.SetSizer( bSizer8 )
 		self.m_panel4.Layout()
 		bSizer8.Fit( self.m_panel4 )
 		self.m_simplebook1.AddPage( self.m_panel4, u"a page", True )
+		self.m_panel18 = wx.Panel( self.m_simplebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer25 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_notebook2 = wx.Notebook( self.m_panel18, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_panel19 = wx.Panel( self.m_notebook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer26 = wx.BoxSizer( wx.VERTICAL )
+
+		m_listbox_kamus_hexacoChoices = [ u"Fearness", u"Openess" ]
+		self.m_listbox_kamus_hexaco = wx.ListBox( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_listbox_kamus_hexacoChoices, wx.LB_ALWAYS_SB|wx.LB_SINGLE|wx.LB_SORT )
+		bSizer26.Add( self.m_listbox_kamus_hexaco, 0, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_textCtrl_kamus_hexaco = wx.TextCtrl( self.m_panel19, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer26.Add( self.m_textCtrl_kamus_hexaco, 1, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		self.m_panel19.SetSizer( bSizer26 )
+		self.m_panel19.Layout()
+		bSizer26.Fit( self.m_panel19 )
+		self.m_notebook2.AddPage( self.m_panel19, u"Kamus Hexaco", True )
+		self.m_panel20 = wx.Panel( self.m_notebook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer27 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel21 = wx.Panel( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer27.Add( self.m_panel21, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel22 = wx.Panel( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer27.Add( self.m_panel22, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.m_panel20.SetSizer( bSizer27 )
+		self.m_panel20.Layout()
+		bSizer27.Fit( self.m_panel20 )
+		self.m_notebook2.AddPage( self.m_panel20, u"Database", False )
+
+		bSizer25.Add( self.m_notebook2, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.m_panel18.SetSizer( bSizer25 )
+		self.m_panel18.Layout()
+		bSizer25.Fit( self.m_panel18 )
+		self.m_simplebook1.AddPage( self.m_panel18, u"a page", False )
 
 		bSizer141.Add( self.m_simplebook1, 1, wx.EXPAND|wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
@@ -2226,6 +2263,12 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_menubar1.Append( self.m_menu1, u"File" )
 
+		self.m_menu2 = wx.Menu()
+		self.m_menuItem2 = wx.MenuItem( self.m_menu2, wx.ID_ANY, u"Kontak", wx.EmptyString, wx.ITEM_NORMAL )
+		self.m_menu2.Append( self.m_menuItem2 )
+
+		self.m_menubar1.Append( self.m_menu2, u"Tentang" )
+
 		self.SetMenuBar( self.m_menubar1 )
 
 
@@ -2245,10 +2288,12 @@ class FrameDepan ( wx.Frame ):
 		self.m_button_ex.Bind( wx.EVT_BUTTON, self.m_button_exOnButtonClick )
 		self.m_button_em.Bind( wx.EVT_BUTTON, self.m_button_emOnButtonClick )
 		self.m_button_h.Bind( wx.EVT_BUTTON, self.m_button_hOnButtonClick )
+		self.m_listbox_kamus_hexaco.Bind( wx.EVT_LISTBOX, self.m_listbox_kamus_hexacoOnListBox )
 		self.m_button1.Bind( wx.EVT_BUTTON, self.m_button1OnButtonClick )
 		self.m_button2.Bind( wx.EVT_BUTTON, self.m_button2OnButtonClick )
 		self.m_button3.Bind( wx.EVT_BUTTON, self.m_button3OnButtonClick )
 		self.Bind( wx.EVT_MENU, self.m_menuItem1OnMenuSelection, id = self.m_menuItem1.GetId() )
+		self.Bind( wx.EVT_MENU, self.m_menuItem2OnMenuSelection, id = self.m_menuItem2.GetId() )
 
 	def __del__( self ):
 		pass
@@ -2294,6 +2339,9 @@ class FrameDepan ( wx.Frame ):
 	def m_button_hOnButtonClick( self, event ):
 		event.Skip()
 
+	def m_listbox_kamus_hexacoOnListBox( self, event ):
+		event.Skip()
+
 	def m_button1OnButtonClick( self, event ):
 		event.Skip()
 
@@ -2306,6 +2354,9 @@ class FrameDepan ( wx.Frame ):
 	def m_menuItem1OnMenuSelection( self, event ):
 		event.Skip()
 
+	def m_menuItem2OnMenuSelection( self, event ):
+		event.Skip()
+
 
 ###########################################################################
 ## Class MyPanel1
@@ -2316,6 +2367,46 @@ class MyPanel1 ( wx.Panel ):
 	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
+
+	def __del__( self ):
+		pass
+
+
+###########################################################################
+## Class FrameGrafikTerpisah
+###########################################################################
+
+class FrameGrafikTerpisah ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Binakarir - Grafik", pos = wx.DefaultPosition, size = wx.Size( 800,600 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer23 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel15 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer22 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel16 = wx.Panel( self.m_panel15, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer22.Add( self.m_panel16, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_textCtrl197 = wx.TextCtrl( self.m_panel15, wx.ID_ANY, u"asdfasdf", wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
+		self.m_textCtrl197.SetMinSize( wx.Size( 200,200 ) )
+
+		bSizer22.Add( self.m_textCtrl197, 0, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		self.m_panel15.SetSizer( bSizer22 )
+		self.m_panel15.Layout()
+		bSizer22.Fit( self.m_panel15 )
+		bSizer23.Add( self.m_panel15, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer23 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
 
 	def __del__( self ):
 		pass

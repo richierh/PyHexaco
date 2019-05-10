@@ -9,6 +9,8 @@ import coreapps.views.maingui as maingui
 from coreapps.views.grafikmatplotlib import GrafikDimensi
 
 from coreapps.models.controller import connect_db
+from coreapps.views.menubar_tentang import TentangAplikasi
+from coreapps.views.maingui import FrameGrafikTerpisah
 
 # Implementing MyFrame1
 class Hexacofile(maingui.FrameDepan):
@@ -79,43 +81,47 @@ class Hexacofile(maingui.FrameDepan):
 		self.getSel = self.m_simplebook1.GetSelection()
 		print (self.getSel)
 		
-		if self.getSel == 3 :
-			self.m_simplebook1.SetSelection(1)
-			self.m_button3.Disable()
-			print ("Halaman Versi {}".format(self.m_simplebook1.GetSelection()))
-		
-		else :
-			self.m_simplebook1.SetSelection(self.getSel - 1)
-
-			if self.getSel - 2 == 2:
-				self.m_button3.Disable()
-				
-			elif self.getSel - 1 == 0:
-				self.m_button2.Disable()		
-				self.m_button3.Enable()	
-				
-			else :
-				self.m_button3.Enable()
-				pass
-			print ("tes 2")
-			
-		if self.getSel == 1 :
-			self.m_button1.Disable()
-
-		
-	def m_button3OnButtonClick(self, event):
+		self.m_simplebook1.SetSelection(self.getSel - 1)
 		self.getSel = self.m_simplebook1.GetSelection()
-		self.m_simplebook1.SetSelection(self.getSel + 1)
-		self.m_button1.Enable()
-
-		if self.getSel + 2 == 2:
-			self.m_button2.Enable()		
+		print (self.getSel)
+		
+		if self.getSel == 1:
 			self.m_button3.Disable()
+			
+		elif self.getSel  == 0:
+			self.m_button1.Disable()
+			self.m_button2.Disable()		
+			self.m_button3.Enable()	
+			
 		else :
 			self.m_button3.Enable()
-		print ("tes 3")
+			pass
+		print ("tes 2")
+		
+		
+	def m_button3OnButtonClick(self, event):
 
-		print(self.text_entry.get_input_versi100())
+		try:
+			self.getSel = self.m_simplebook1.GetSelection()
+			print (self.getSel)
+			self.m_simplebook1.SetSelection(self.getSel + 1)
+			self.getSel = self.m_simplebook1.GetSelection()
+			print (self.getSel)
+	
+			self.m_button1.Enable()
+	
+			if self.getSel == 1:
+				self.m_button2.Enable()		
+				self.m_button3.Disable()
+			else :
+				self.m_button3.Enable()
+			print ("tes 3")
+
+		except :
+			self.m_button3.Disable()# 		print(self.text_entry.get_input_versi24())
+# 		print(self.text_entry.get_input_versi60())
+# 		print(self.text_entry.get_input_versi100())
+
 
 	def m_textCtrl3OnText(self, event):
 		self.nama = self.m_textCtrl3.GetValue()
@@ -200,9 +206,18 @@ class Hexacofile(maingui.FrameDepan):
 	def m_button_oOnButtonClick(self, event):
 		print ("print over here 'o'")
 		
-		from coreapps.views.grafikmatplotlib import GrafikO
-		self.tampil_grafik_o = GrafikO(self)
+# 		from coreapps.views.grafikmatplotlib import GrafikO
+# 		self.tampil_grafik_o = GrafikO(self)
 		
-		
+		self.buka_grafik = FrameGrafikTerpisah(self)
+		self.buka_grafik.Show()
 		pass
+	
+	def m_menuItem2OnMenuSelection(self, event):
+		self.buka = TentangAplikasi(self)
+		self.buka.Show()
+		
+	
+
+		
 	

@@ -36,3 +36,4 @@ os.chdir(str(pathwd))
 gettext.install("myApp")
 run = MyApp(0)
 run.MainLoop()
+

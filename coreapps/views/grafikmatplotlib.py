@@ -16,7 +16,7 @@ class GrafikDimensi(FrameDepan):
         self.parent = parent
         self.np = np
         
-        self.colors_6_dimensi = ["r","g","b","m","k","y","grey"]
+        self.colors_6_dimensi = ["r","g","b","m","purple","y","grey"]
         self.colors_honesty_humility = []
         self.colors_emotionality = []
         self.colors_extraversion = []
@@ -25,9 +25,12 @@ class GrafikDimensi(FrameDepan):
         self.colors_openness_to_experience = []
         self.colors_interestitial = []
 #        method inherit
-        self.figure = Figure()
+        self.figure = Figure()#figsize=(0,4))
+#         self.figure.subplots_adjust(1,1,0,1)
+        
+        
+        
         self.axes_6_dimensi = self.figure.add_subplot(121)
-       
         self.axes_honesty_humility = self.figure.add_subplot(6,2,2)
         self.axes_2 = self.figure.add_subplot(6,2,4)
         self.axes_3 = self.figure.add_subplot(6,2,6)
@@ -44,6 +47,7 @@ class GrafikDimensi(FrameDepan):
         self.canvas = FigureCanvas(self.parent.GrafikMatplotlib,
                                    -1,
                                    self.figure)
+        
 
         self.sizer90 = wx.BoxSizer(wx.VERTICAL)
         self.sizer90.Add(self.canvas,1,wx.ALL|wx.EXPAND)
@@ -63,20 +67,48 @@ class GrafikDimensi(FrameDepan):
         if self.parent.versi_soal == 24 :
             del self.data_y[6]
             print (self.data_y)
-            print ("tes")
+#             print ("tes")
         
 
         self.y_pos = self.np.arange(len(self.data_y))
-        self.value = 3 + 10 * self.np.random.rand(len(self.data_y))
+        self.value = [3.14,5,4.56,1.45,3.67,2.67]
+#         self.value = 3 + 10 * self.np.random.rand(len(self.data_y))
 #         self.error = self.np.random.rand(len(self.data_y))
         self.axes_6_dimensi.barh(self.y_pos,
                        self.value,
-                       height=0.5,
+                       height=0.7,
                        align='center',
                        color=self.colors_6_dimensi)
+        
+        self.axes_6_dimensi.set_xlim(left=0,right=5)
+        self.axes_6_dimensi.set_ylim(bottom=-1, top=6)
+        self.axes_6_dimensi.annotate('Nilai Rata-Rata', 
+                                     xy=(1,-1),
+                                     xytext=(1,-1.65),
+                                     arrowprops = dict(facecolor='black',
+                                                       shrink=2,
+                                                       headwidth=5,
+                                                       width=1))
+
         self.axes_6_dimensi.set_yticks(self.y_pos)
-        self.axes_6_dimensi.set_yticklabels(self.data_y,fontname="Tw Cen MT",fontsize=14)
+        self.axes_6_dimensi.set_yticklabels(self.data_y,
+                                            fontname="Tw Cen MT",
+                                            fontsize=14)
         self.axes_6_dimensi.invert_yaxis()
+        
+        for iterate,value_y_dimension in enumerate(self.value):
+            if value_y_dimension == 0 :
+                K = 0
+            else :
+                K = 0.5
+                
+            self.axes_6_dimensi.text(value_y_dimension-K,
+                                     iterate+0.1,
+                                     str(round(value_y_dimension,2)),
+                                     color='black')
+#                                      fontweight='bold')
+        
+        
         
         self.data_y1 = ["Sincerity",
                         "Fairness",
@@ -90,12 +122,9 @@ class GrafikDimensi(FrameDepan):
                          align='center',
                          color="r")
         
+        self.axes_honesty_humility.set_xlim(left=0,right=5)
         self.axes_honesty_humility.set_yticks(self.y_pos1)
         self.axes_honesty_humility.set_yticklabels(self.data_y1,fontsize=8,fontname="Tw Cen MT")
-        
-        
-
-
         
         pass
     

@@ -21,7 +21,7 @@ class TestPanel(wx.Panel):
             if chr(keycode).isalnum():
                 # Valid alphanumeric character
                 event.Skip()
-                
+               
                 
 class ControlEntry(wx.Frame):
     
@@ -91,13 +91,16 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl33,
                            self.parent.m_textCtrl34] 
                            
-        self.data_versi24=[]
-        
+        self.data_versi24={}
+        self.number = 1
         for self.data in self.text_versi24:
             self.data_in = self.data.GetValue()
-            self.data_versi24.append(self.data_in)
+            self.data_versi24[str(self.number)] = self.data_in
+            self.number+=1           
 
-        return self.data_versi24
+        
+        
+        return self.data_versi24.items()
 
     def get_input_versi60(self):
         self.text_versi60=[self.parent.m_textCtrl42,
@@ -155,10 +158,12 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl100,
                            self.parent.m_textCtrl101]
         
-        self.data_versi60 = []
+        self.data_versi60 = {}
+        self.number = 1
         for self.data in self.text_versi60:
             self.data_in=self.data.GetValue()
-            self.data_versi60.append(self.data_in)
+            self.data_versi60[str(self.number)] = self.data_in
+            self.number+=1
             
         return self.data_versi60
         
@@ -273,10 +278,12 @@ class ControlEntry(wx.Frame):
                             self.parent.m_textCtrl199,
                             self.parent.m_textCtrl200]
         
-        self.data_versi100 =[]
+        self.data_versi100 = {}
+        self.number = 1
         for self.data in self.text_versi100:
             self.data_in=self.data.GetValue()
-            self.data_versi100.append(self.data_in)
+            self.data_versi100[str(self.number)]=self.data_in
+            self.number+=1
               
         return self.data_versi100
             
