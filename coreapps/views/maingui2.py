@@ -29,7 +29,7 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_simplebook1 = wx.Simplebook( self.m_panel12, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		self.m_panel1 = wx.Panel( self.m_simplebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel1.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
+		self.m_panel1.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer5 = wx.BoxSizer( wx.VERTICAL )
 
@@ -37,7 +37,7 @@ class FrameDepan ( wx.Frame ):
 		bSizer5.Add( ( 0, 0), 1, wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.m_panel121 = wx.Panel( self.m_panel1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel121.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
+		self.m_panel121.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer191 = wx.BoxSizer( wx.VERTICAL )
 
@@ -65,9 +65,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText1, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl1 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
-		self.m_textCtrl1.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl1, 0, wx.ALL, 5 )
 
 		self.m_staticText2 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Tanggal Tes", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -76,8 +73,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText2, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_datePicker1 = wx.adv.DatePickerCtrl( self.m_panel121, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.Size( -1,-1 ), wx.adv.DP_DEFAULT )
-		self.m_datePicker1.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_datePicker1, 0, wx.ALL, 5 )
 
 		self.m_staticText3 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Nama Kandidat", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -86,8 +81,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText3, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl3 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 300,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl3.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl3, 0, wx.ALL, 5 )
 
 		self.m_staticText4 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Jenis Kelamin", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -97,9 +90,7 @@ class FrameDepan ( wx.Frame ):
 
 		m_choice1Choices = [ u"Laki - Laki", u"Perempuan" ]
 		self.m_choice1 = wx.Choice( self.m_panel121, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_choice1Choices, 0 )
-		self.m_choice1.SetSelection( 1 )
-		self.m_choice1.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
+		self.m_choice1.SetSelection( 0 )
 		fgSizer11.Add( self.m_choice1, 0, wx.ALL, 5 )
 
 		self.m_staticText5 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Tanggal Lahir", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -108,8 +99,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText5, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_datePicker2 = wx.adv.DatePickerCtrl( self.m_panel121, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.DefaultSize, wx.adv.DP_DEFAULT )
-		self.m_datePicker2.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_datePicker2, 0, wx.ALL, 5 )
 
 		self.m_staticText6 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Pendidikan Terakhir", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -120,8 +109,6 @@ class FrameDepan ( wx.Frame ):
 		m_choice2Choices = [ u"SD", u"SMP", u"SMA", u"Diploma", u"S1", u"S2", u"S3" ]
 		self.m_choice2 = wx.Choice( self.m_panel121, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_choice2Choices, 0 )
 		self.m_choice2.SetSelection( 6 )
-		self.m_choice2.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_choice2, 0, wx.ALL, 5 )
 
 		self.m_staticText7 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Jurusan Pendidikan", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -130,8 +117,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText7, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl7 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl7.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl7, 0, wx.ALL, 5 )
 
 		self.m_staticText8 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Kota", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -140,8 +125,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText8, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl8 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl8.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl8, 0, wx.ALL, 5 )
 
 		self.m_staticText9 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Perusahaan/Instansi", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -150,8 +133,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText9, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl9 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl9.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl9, 0, wx.ALL, 5 )
 
 		self.m_staticText10 = wx.StaticText( self.m_panel121, wx.ID_ANY, u"Posisi / Jabatan", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -160,8 +141,6 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText10, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl10 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl10.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		fgSizer11.Add( self.m_textCtrl10, 0, wx.ALL, 5 )
 
 
@@ -209,8 +188,6 @@ class FrameDepan ( wx.Frame ):
 		bSizer7 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_panel6 = wx.Panel( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel6.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
 		bSizer142 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_staticText13 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"VERSI HEXACO", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -248,19 +225,16 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_button4 = wx.Button( self.m_panel6, wx.ID_ANY, u"24 Soal", wx.DefaultPosition, wx.Size( 300,100 ), 0 )
 		self.m_button4.SetFont( wx.Font( 24, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-		self.m_button4.SetBackgroundColour( wx.Colour( 46, 72, 87 ) )
 
 		fgSizer1.Add( self.m_button4, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_BOTTOM, 5 )
 
 		self.m_button5 = wx.Button( self.m_panel6, wx.ID_ANY, u"60 Soal", wx.DefaultPosition, wx.Size( 300,100 ), 0 )
 		self.m_button5.SetFont( wx.Font( 24, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-		self.m_button5.SetBackgroundColour( wx.Colour( 255, 78, 26 ) )
 
 		fgSizer1.Add( self.m_button5, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_button6 = wx.Button( self.m_panel6, wx.ID_ANY, u"100 Soal", wx.DefaultPosition, wx.Size( 300,100 ), 0 )
 		self.m_button6.SetFont( wx.Font( 24, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-		self.m_button6.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
 
 		fgSizer1.Add( self.m_button6, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
@@ -284,15 +258,12 @@ class FrameDepan ( wx.Frame ):
 		bSizer6 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.m_panel7 = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel7.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
 		self.m_panel7.Hide()
 
 		bSizer172 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_scrolledWindow2 = wx.ScrolledWindow( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL )
 		self.m_scrolledWindow2.SetScrollRate( 5, 5 )
-		self.m_scrolledWindow2.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
 		bSizer10 = wx.BoxSizer( wx.VERTICAL )
 
 
@@ -555,15 +526,12 @@ class FrameDepan ( wx.Frame ):
 		bSizer6.Add( self.m_panel7, 1, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_panel8 = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel8.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
 		self.m_panel8.Hide()
 
 		bSizer21 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_scrolledWindow31 = wx.ScrolledWindow( self.m_panel8, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL )
 		self.m_scrolledWindow31.SetScrollRate( 5, 5 )
-		self.m_scrolledWindow31.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
 		bSizer16 = wx.BoxSizer( wx.VERTICAL )
 
 
@@ -1138,8 +1106,6 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_scrolledWindow4 = wx.ScrolledWindow( self.m_panel9, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL )
 		self.m_scrolledWindow4.SetScrollRate( 5, 5 )
-		self.m_scrolledWindow4.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
 		bSizer17 = wx.BoxSizer( wx.VERTICAL )
 
 
@@ -2089,8 +2055,6 @@ class FrameDepan ( wx.Frame ):
 		bSizer29 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_panel15 = wx.Panel( self.m_scrolledWindow3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel15.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
 		bSizer91 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_button_simpan_data = wx.Button( self.m_panel15, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -2207,8 +2171,6 @@ class FrameDepan ( wx.Frame ):
 
 		m_listbox_kamus_hexacoChoices = [ u"Sincerity", u"Fearness", u"Greed Avoidance", u"Modesty", u"Honesty - Humility", u"Fearness", u"Fairness", u"Dependence", u"Sentimentality", u"Emotionality", u"Social Self Esteem", u"Social Boldness", u"Sociability", u"Liveliness", u"Extraversion", u"Forgiveness", u"Gentleness", u"Flexibility", u"Patience", u"Agreeableness", u"Organization", u"Diligence", u"Perfectionism", u"Prudence", u"Conscientiouseness", u"Aesthetic Appreciation", u"Inquitiveness\\", u"Creativity", u"Unconventionality", u"Openess To Experience", u"(Interstitial Facet Scale) Altruism", u"Interestial Scale", u"(Interstitial Facet Scale) Altruism", u"Openess To Experience", u"Openess To Experience", u"Inquitiveness", u"Social Boldnes", u"Fearfulness", u"Anxiety" ]
 		self.m_listbox_kamus_hexaco = wx.ListBox( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_listbox_kamus_hexacoChoices, wx.LB_ALWAYS_SB|wx.LB_SORT )
-		self.m_listbox_kamus_hexaco.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
 		bSizer26.Add( self.m_listbox_kamus_hexaco, 0, wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.m_textCtrl_kamus_hexaco = wx.TextCtrl( self.m_panel19, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
@@ -2460,90 +2422,6 @@ class FrameDepan ( wx.Frame ):
 
 	def m_menuItem2OnMenuSelection( self, event ):
 		event.Skip()
-
-
-###########################################################################
-## Class TentangAplikasi
-###########################################################################
-
-class TentangAplikasi ( wx.Frame ):
-
-	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Binakarir", pos = wx.DefaultPosition, size = wx.Size( 600,350 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.STAY_ON_TOP|wx.TAB_TRAVERSAL )
-
-		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
-
-		bSizer31 = wx.BoxSizer( wx.VERTICAL )
-
-		self.m_panel26 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel26.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-
-		bSizer34 = wx.BoxSizer( wx.VERTICAL )
-
-		self.m_panel24 = wx.Panel( self.m_panel26, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer33 = wx.BoxSizer( wx.VERTICAL )
-
-		self.m_bitmap2 = wx.StaticBitmap( self.m_panel24, wx.ID_ANY, wx.Bitmap( u"../resources/images/binakarir.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer33.Add( self.m_bitmap2, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
-
-
-		self.m_panel24.SetSizer( bSizer33 )
-		self.m_panel24.Layout()
-		bSizer33.Fit( self.m_panel24 )
-		bSizer34.Add( self.m_panel24, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
-
-		self.m_panel25 = wx.Panel( self.m_panel26, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel25.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
-
-		bSizer32 = wx.BoxSizer( wx.VERTICAL )
-
-
-		bSizer32.Add( ( 0, 0), 1, wx.EXPAND, 5 )
-
-		self.m_staticText208 = wx.StaticText( self.m_panel25, wx.ID_ANY, u"Bandung - Indonesia", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText208.Wrap( -1 )
-
-		self.m_staticText208.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-
-		bSizer32.Add( self.m_staticText208, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
-		self.m_staticText209 = wx.StaticText( self.m_panel25, wx.ID_ANY, u"Email : careindonesiasolusi@gmail.com", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText209.Wrap( -1 )
-
-		self.m_staticText209.SetFont( wx.Font( 18, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-
-		bSizer32.Add( self.m_staticText209, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
-		self.m_staticText210 = wx.StaticText( self.m_panel25, wx.ID_ANY, u"Telp. 022 87241354", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText210.Wrap( -1 )
-
-		self.m_staticText210.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
-
-		bSizer32.Add( self.m_staticText210, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
-
-		bSizer32.Add( ( 0, 0), 1, wx.EXPAND, 5 )
-
-
-		self.m_panel25.SetSizer( bSizer32 )
-		self.m_panel25.Layout()
-		bSizer32.Fit( self.m_panel25 )
-		bSizer34.Add( self.m_panel25, 1, wx.EXPAND |wx.ALL, 5 )
-
-
-		self.m_panel26.SetSizer( bSizer34 )
-		self.m_panel26.Layout()
-		bSizer34.Fit( self.m_panel26 )
-		bSizer31.Add( self.m_panel26, 1, wx.EXPAND |wx.ALL, 5 )
-
-
-		self.SetSizer( bSizer31 )
-		self.Layout()
-
-		self.Centre( wx.BOTH )
-
-	def __del__( self ):
-		pass
 
 
 ###########################################################################
