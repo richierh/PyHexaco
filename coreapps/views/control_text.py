@@ -9,6 +9,7 @@ import wx
 
 
 class TestPanel(wx.Panel):
+
     def __init__(self, parent):
         wx.Panel.__init__(self, parent, -1)
         self.entry = wx.TextCtrl(self, -1)
@@ -25,13 +26,13 @@ class TestPanel(wx.Panel):
                 
 class ControlEntry(wx.Frame):
     
-    def __init__(self,parent):
-        super(ControlEntry,self).__init__(parent)
+    def __init__(self, parent):
+        super(ControlEntry, self).__init__(parent)
         self.parent = parent
 
     def get_input_biodata(self):
 #         ambil data biodata
-        self.text_biodata=[self.parent.m_textCtrl1,
+        self.text_biodata = [self.parent.m_textCtrl1,
                            self.parent.m_datePicker1,
                            self.parent.m_textCtrl3,
                            self.parent.m_choice1,
@@ -42,28 +43,28 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl9,
                            self.parent.m_textCtrl10]
         
-        self.data_biodata=[]
+        self.data_biodata = []
         for self.data in self.text_biodata:
-            if self.text_biodata.index(self.data)==3 \
-                or self.text_biodata.index(self.data)==5:
+            if self.text_biodata.index(self.data) == 3 \
+                or self.text_biodata.index(self.data) == 5:
                 
                 self.data_in = self.data.GetString(self.data.GetSelection())
                 self.data_biodata.append(self.data_in)
 
-            elif self.text_biodata.index(self.data)==1 \
-                or self.text_biodata.index(self.data)==4:
+            elif self.text_biodata.index(self.data) == 1 \
+                or self.text_biodata.index(self.data) == 4:
                 
-                self.data_in=self.data.GetValue().Format("%Y/%m/%d")
+                self.data_in = self.data.GetValue().Format("%Y/%m/%d")
                 self.data_biodata.append(self.data_in)
            
             else :
-                self.data_in=self.data.GetValue()
+                self.data_in = self.data.GetValue()
                 self.data_biodata.append(self.data_in)
                 
         return self.data_biodata
     
     def get_input_versi24(self):
-        self.text_versi24=[self.parent.m_textCtrl11,
+        self.text_versi24 = [self.parent.m_textCtrl11,
                            self.parent.m_textCtrl12,
                            self.parent.m_textCtrl13,
                            self.parent.m_textCtrl14,
@@ -91,19 +92,17 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl33,
                            self.parent.m_textCtrl34] 
                            
-        self.data_versi24={}
+        self.data_versi24 = {}
         self.number = 1
         for self.data in self.text_versi24:
             self.data_in = self.data.GetValue()
             self.data_versi24[str(self.number)] = self.data_in
-            self.number+=1           
-
-        
+            self.number += 1           
         
         return self.data_versi24.items()
 
     def get_input_versi60(self):
-        self.text_versi60=[self.parent.m_textCtrl42,
+        self.text_versi60 = [self.parent.m_textCtrl42,
                            self.parent.m_textCtrl43,
                            self.parent.m_textCtrl44,
                            self.parent.m_textCtrl45,
@@ -134,8 +133,19 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl68,
                            self.parent.m_textCtrl69,
                            self.parent.m_textCtrl70,
-                           self.parent.m_textCtrl71, 
+                           self.parent.m_textCtrl71,
         
+                           self.parent.m_textCtrl72,
+                           self.parent.m_textCtrl73,
+                           self.parent.m_textCtrl74,
+                           self.parent.m_textCtrl75,
+                           self.parent.m_textCtrl76,
+                           self.parent.m_textCtrl77,
+                           self.parent.m_textCtrl78,
+                           self.parent.m_textCtrl79,
+                           self.parent.m_textCtrl80,
+                           self.parent.m_textCtrl81,
+                          
                            self.parent.m_textCtrl82,
                            self.parent.m_textCtrl83,
                            self.parent.m_textCtrl84,
@@ -145,7 +155,7 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl88,
                            self.parent.m_textCtrl89,
                            self.parent.m_textCtrl90,
-                           self.parent.m_textCtrl91, 
+                           self.parent.m_textCtrl91,
         
                            self.parent.m_textCtrl92,
                            self.parent.m_textCtrl93,
@@ -161,14 +171,14 @@ class ControlEntry(wx.Frame):
         self.data_versi60 = {}
         self.number = 1
         for self.data in self.text_versi60:
-            self.data_in=self.data.GetValue()
+            self.data_in = self.data.GetValue()
             self.data_versi60[str(self.number)] = self.data_in
-            self.number+=1
+            self.number += 1
             
         return self.data_versi60
         
     def get_input_versi100(self):
-        self.text_versi100=[self.parent.m_textCtrl981,
+        self.text_versi100 = [self.parent.m_textCtrl981,
                             self.parent.m_textCtrl991,
                             self.parent.m_textCtrl1001,
                             self.parent.m_textCtrl1011,
@@ -281,14 +291,14 @@ class ControlEntry(wx.Frame):
         self.data_versi100 = {}
         self.number = 1
         for self.data in self.text_versi100:
-            self.data_in=self.data.GetValue()
-            self.data_versi100[str(self.number)]=self.data_in
-            self.number+=1
+            self.data_in = self.data.GetValue()
+            self.data_versi100[str(self.number)] = self.data_in
+            self.number += 1
               
         return self.data_versi100
             
 
-if __name__=="__main__":
+if __name__ == "__main__":
     root = wx.App()
     run_app = ControlEntry(None)
     run_app.Show()

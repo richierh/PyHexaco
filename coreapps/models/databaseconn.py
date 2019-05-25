@@ -13,7 +13,6 @@ def connectdb(path):
     return conne
 
 
-
 if __name__ == '__main__':
     path = "hexacodb"
 #     cekidpesertaakhir()

@@ -7,11 +7,10 @@
 # This is an automatically generated file.
 # Manual changes will be overwritten without warning!
 
-
-
 import wx
 
-from coreapps.views.hexacofile import Hexacofile
+from coreapps.controllers.hexacofile import Hexacofile
+
 
 class MyApp(wx.App):
 

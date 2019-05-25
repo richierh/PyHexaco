@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project pyhexaco -->
+<!-- Saved: 2019-05-10, 16:55:13 -->
+<!-- Copyright (C) 2019 ,  -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>8dd9bd7ba33195b7749d3875adb5822b68e7f2e9</Hash>
+  <ProgLanguage mixed="1">Python3</ProgLanguage>
+  <ProjectType>Other</ProjectType>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>Activ.py</Source>
+    <Source>__init__.py</Source>
+    <Source>__main__.py</Source>
+    <Source>coreapps/__init__.py</Source>
+    <Source>coreapps/controllers/__init__.py</Source>
+    <Source>coreapps/controllers/hexaco_calculation.py</Source>
+    <Source>coreapps/controllers/keyopen.py</Source>
+    <Source>coreapps/models/__init__.py</Source>
+    <Source>coreapps/models/controller.py</Source>
+    <Source>coreapps/models/databaseconn.py</Source>
+    <Source>coreapps/models/schemacrawlerdesign.py</Source>
+    <Source>coreapps/resources/__init__.py</Source>
+    <Source>coreapps/views/__init__.py</Source>
+    <Source>coreapps/views/app.py</Source>
+    <Source>coreapps/views/control_text.py</Source>
+    <Source>coreapps/views/grafikmatplotlib.py</Source>
+    <Source>coreapps/views/hexacoFrameGrafik.py</Source>
+    <Source>coreapps/views/hexacofile.py</Source>
+    <Source>coreapps/views/maingui.py</Source>
+    <Source>coreapps/views/menubar_tentang.py</Source>
+    <Source>hexaco.py</Source>
+    <Source>run.py</Source>
+    <Source>tes/__init__.py</Source>
+    <Source>tes/aplikasi/__init__.py</Source>
+    <Source>tes/aplikasi/views/app.py</Source>
+    <Source>tes/aplikasi/views/tes.py</Source>
+    <Source>tes/background_style.py</Source>
+    <Source>tes/dist/run/aplikasi/__init__.py</Source>
+    <Source>tes/dist/run/aplikasi/views/app.py</Source>
+    <Source>tes/dist/run/aplikasi/views/tes.py</Source>
+    <Source>tes/draw_custom.py</Source>
+    <Source>tes/draw_line.py</Source>
+    <Source>tes/draw_tes.py</Source>
+    <Source>tes/number_only.py</Source>
+    <Source>tes/run.py</Source>
+    <Source>tes/testing.py</Source>
+  </Sources>
+  <Others>
+    <Other>README.md</Other>
+    <Other>build/hexaco/warn-hexaco.txt</Other>
+    <Other>dist/hexaco/lib2to3/Grammar.txt</Other>
+    <Other>dist/hexaco/lib2to3/PatternGrammar.txt</Other>
+    <Other>dist/hexaco/lib2to3/tests/data/README</Other>
+    <Other>dist/hexaco/mpl-data/fonts/pdfcorefonts/readme.txt</Other>
+    <Other>dist/hexaco/mpl-data/sample_data/README.txt</Other>
+    <Other>dist/hexaco/tk/images/README</Other>
+    <Other>pyhexaco.e4p</Other>
+    <Other>tes/build/run/warn-run.txt</Other>
+  </Others>
+  <MainScript>hexaco.py</MainScript>
+  <Vcs>
+    <VcsType>Git</VcsType>
+    <VcsOptions>
+      <dict>
+        <key>
+          <string>add</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>checkout</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>commit</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>diff</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>export</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>global</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>history</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>log</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>remove</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>status</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>tag</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>update</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+      </dict>
+    </VcsOptions>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.e4p" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.js" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.md" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.proto" type="PROTOCOLS"/>
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.rb" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.rst" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.txt" type="OTHERS"/>
+    <FiletypeAssociation pattern="GNUmakefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="Makefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="README" type="OTHERS"/>
+    <FiletypeAssociation pattern="README.*" type="OTHERS"/>
+    <FiletypeAssociation pattern="makefile" type="OTHERS"/>
+  </FiletypeAssociations>
+</Project>

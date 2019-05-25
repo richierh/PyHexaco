@@ -8,7 +8,6 @@
 # Manual changes will be overwritten without warning!
 import wx
 
-
 from aplikasi.views.tes import Frame
 
 

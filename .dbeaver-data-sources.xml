@@ -2,6 +2,36 @@
 <data-sources>
 	<data-source id="sqlite_jdbc-169c3ca253d-559e4186ec836213" provider="generic" driver="sqlite_jdbc" name="SQLite - hexacodb" save-password="true" read-only="false">
 		<connection server="" database="/home/cireng/Projects/pyhexaco/coreapps/models/hexacodb" url="jdbc:sqlite:/home/cireng/Projects/pyhexaco/coreapps/models/hexacodb" type="dev"/>
+		<virtual-meta-data>
+			<container name="model">
+				<entity name="Rincian Data Peserta">
+					<constraint name="PRIMARY" type="VIRTUAL KEY">
+						<attribute name="idpeserta"/>
+						<attribute name="idtipesoal"/>
+						<attribute name="No Tes"/>
+						<attribute name="Tanggal Tes"/>
+						<attribute name="Nama Kandidat"/>
+						<attribute name="Jenis Kelamin"/>
+						<attribute name="Tanggal Lahir"/>
+						<attribute name="Pendidikan Terakhir"/>
+						<attribute name="Jurusan Pendidikan"/>
+						<attribute name="Kota"/>
+						<attribute name="Perusahaan / Instansi"/>
+						<attribute name="Posisi / Jabatan"/>
+					</constraint>
+				</entity>
+				<entity name="Input_Data_Jawaban_Peserta">
+					<constraint name="PRIMARY" type="VIRTUAL KEY">
+						<attribute name="idinputpeserta"/>
+						<attribute name="NoSoal"/>
+						<attribute name="JawabanPeserta"/>
+						<attribute name="idTipeSoal"/>
+						<attribute name="idpeserta"/>
+						<attribute name="idDimensi"/>
+					</constraint>
+				</entity>
+			</container>
+		</virtual-meta-data>
 	</data-source>
 	<filters/>
 </data-sources>

@@ -14,11 +14,11 @@ last edited: May 2018
 
 import wx
 
+
 class Example(wx.Frame):
 
     def __init__(self, *args, **kw):
         super(Example, self).__init__(*args, **kw)
-
            
         self.InitUI()
 
@@ -33,6 +33,7 @@ class Example(wx.Frame):
 
         dc = wx.ClientDC(self)
         dc.DrawLine(50, 60, 190, 60)
+
 
 def main():
 

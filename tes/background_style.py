@@ -1,5 +1,6 @@
 import wx
- 
+
+
 ########################################################################
 class MainPanel(wx.Panel):
     """"""
@@ -18,9 +19,9 @@ class MainPanel(wx.Panel):
             label = "Button %s" % num
             btn = wx.Button(self, label=label)
             sizer.Add(btn, 0, wx.ALL, 5)
-        hSizer.Add((1,1), 1, wx.EXPAND)
+        hSizer.Add((1, 1), 1, wx.EXPAND)
         hSizer.Add(sizer, 1, wx.TOP, 100)
-        hSizer.Add((1,1), 1, wx.ALL, 75)
+        hSizer.Add((1, 1), 1, wx.ALL, 75)
         self.SetSizer(hSizer)
         self.Bind(wx.EVT_ERASE_BACKGROUND, self.OnEraseBackground)
  
@@ -48,7 +49,7 @@ class MainFrame(wx.Frame):
     #----------------------------------------------------------------------
     def __init__(self):
         """Constructor"""
-        wx.Frame.__init__(self, None, size=(600,450))
+        wx.Frame.__init__(self, None, size=(600, 450))
         panel = MainPanel(self)   
         self.Maximize()     
         self.Center()
@@ -56,6 +57,8 @@ class MainFrame(wx.Frame):
         self.Update()
         
         self.Layout()
+
+
 ########################################################################
 class Main(wx.App):
     """"""
@@ -66,6 +69,7 @@ class Main(wx.App):
         wx.App.__init__(self, redirect, filename)
         dlg = MainFrame()
         dlg.Show()
+
  
 #----------------------------------------------------------------------
 if __name__ == "__main__":
