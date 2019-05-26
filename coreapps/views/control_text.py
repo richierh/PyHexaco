@@ -175,7 +175,7 @@ class ControlEntry(wx.Frame):
             self.data_versi60[str(self.number)] = self.data_in
             self.number += 1
             
-        return self.data_versi60
+        return self.data_versi60.items()
         
     def get_input_versi100(self):
         self.text_versi100 = [self.parent.m_textCtrl981,
@@ -295,7 +295,7 @@ class ControlEntry(wx.Frame):
             self.data_versi100[str(self.number)] = self.data_in
             self.number += 1
               
-        return self.data_versi100
+        return self.data_versi100.items()
             
 
 if __name__ == "__main__":

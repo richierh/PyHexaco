@@ -7,7 +7,7 @@ from coreapps.models.query import connect_db
 from coreapps.views.control_text import ControlEntry
 from coreapps.views.grafikmatplotlib import GrafikDimensi, GrafikEm, GrafikEx,\
         GrafikIA
-from coreapps.views.maingui import FrameGrafikTerpisah,LihatNilaiPeserta
+from coreapps.views.maingui import FrameGrafikTerpisah,LihatNilaiPeserta,DialogSimpan
 from coreapps.views.maingui import FrameDepan
 from coreapps.views.menubar_tentang import TentangAplikasi
 from coreapps.views.DataPeserta import DataPesertaHexaco
@@ -17,6 +17,7 @@ from coreapps.views.huruf_besar import HurufBesar
 from coreapps.controllers.ev_halaman import KamusControl
 from coreapps.views import grafikmatplotlib
 from coreapps.views.grafikmatplotlib import *
+from coreapps.views.dialog_simpan import TurunanDialogSimpan
 
 
 
@@ -245,34 +246,40 @@ class Hexacofile(FrameDepan):
                 print (self.posisi_jabatan)
                 
                 values_id_peserta = [self.tipe, 
-                                                        self.no_tes,
-                                                        self.tanggal_tes,
-                                                        self.nama_kandidat,
-                                                        self.jenis_kelamin,
-                                                        self.tanggal_lahir,
-                                                        self.pendidikan_terakhir,
-                                                        self.jurusan_pendidikan,
-                                                        self.kota,
-                                                        self.perusahaan_instansi,
-                                                        self.posisi_jabatan]
+                                    self.no_tes,
+                                    self.tanggal_tes,
+                                    self.nama_kandidat,
+                                    self.jenis_kelamin,
+                                    self.tanggal_lahir,
+                                    self.pendidikan_terakhir,
+                                    self.jurusan_pendidikan,
+                                    self.kota,
+                                    self.perusahaan_instansi,
+                                    self.posisi_jabatan]
 
-                self.input_data_peserta = insert_data_peserta(values_id_peserta)
+#                 Instruksi untuk memasukkan ke dalam database (rincian data peserta)
+#                 Id Peserta harus di generasi terlebih dahulu oleh instruksi di bawah ini
+#                 self.input_data_peserta = insert_data_peserta(values_id_peserta)
 
                 values = []
+                print (self.control_entry.get_input)
+                print (len(self.control_entry.get_input))
                 for key in self.control_entry.get_input:
                         values.append((key[0],key[1],self.tipe,1))
                         print (key[0])
+                        
         
                 print (values)
-                self.input_jawaban_peserta = insert_input_peserta(values)
+#                 Instruksi untuk memasukkan ke dalam database
+#                 self.input_jawaban_peserta = insert_input_peserta(values)
                 
 #               wx.Message Box return OK
-                dlg = wx.MessageBox( 'Data berhasil disimpan', 'Binakarir', wx.OK|wx.STOCK_NOFLAGS )
-                if dlg == wx.OK:
-                        print ("you click ok")
-
+                
+                self.dialog_simpan = TurunanDialogSimpan(self)
+                self.dialog_simpan.Show()
                 pass
-        
+            
+    
         def m_button_buka_windows_filterOnButtonClick(self, event):
                 self.buka_jendela_filter = BukaFilter(self)
                 self.buka_jendela_filter.Show()

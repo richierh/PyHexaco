@@ -71,8 +71,8 @@ class DatabaseEventControl():
             print (data)
         
         print ("akhi")
-        self.parent.windows_lihat_nilai = TurunanLihatData(self.parent)
-        self.parent.windows_lihat_nilai.Show()
+        self.windows_lihat_nilai = TurunanLihatData(self.parent)
+        self.windows_lihat_nilai.Show()
 
         pass
     

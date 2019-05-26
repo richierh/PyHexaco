@@ -43,14 +43,25 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
        
 
         self.m_panel23.SetSizer(sizer44)
-#         self.m_panel24.Update()
-# 
-#         self.m_panel24.Refresh()
-#  
-#         self.m_panel21.Update()
-#         self.m_panel21.Refresh()
-#         self.m_panel21.Fit()
-#         self.m_panel21.Layout()
+        
+        
+        print("hei")
+#         Event Handler
+        self.m_button19.Bind( wx.EVT_BUTTON, self.m_button_tutup_lihat_data )
+        self.m_button18.Bind( wx.EVT_BUTTON, self.m_button_update_lihat_data )
+
+        
+    def m_button_tutup_lihat_data(self, event):
+        print ("tutup aplikasi lihat data")
+        self.Close()
+        pass
+    
+    def m_button_update_lihat_data(self, event):
+        for index in range(0,2):
+            self.get_item = self.m_listCtrl2.GetItemText(index,col=1)
+            print (self.get_item)
+        
+        pass
 
 if __name__=="__main__":
     root =wx.App()

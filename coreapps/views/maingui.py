@@ -65,7 +65,7 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText1, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl1 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_textCtrl1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.m_textCtrl1.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
 
 		fgSizer11.Add( self.m_textCtrl1, 0, wx.ALL, 5 )
@@ -2653,7 +2653,76 @@ class LihatNilaiPeserta ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.m_button19.Bind( wx.EVT_BUTTON, self.m_button_tutup_lihat_data )
+		self.m_button18.Bind( wx.EVT_BUTTON, self.m_button_update_lihat_data )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def m_button_tutup_lihat_data( self, event ):
+		event.Skip()
+
+	def m_button_update_lihat_data( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class DialogSimpan
+###########################################################################
+
+class DialogSimpan ( wx.Dialog ):
+
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Binakarir", pos = wx.DefaultPosition, size = wx.Size( 245,137 ), style = wx.DEFAULT_DIALOG_STYLE )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer35 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel27 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer36 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText211 = wx.StaticText( self.m_panel27, wx.ID_ANY, u"Data berhasil disimpan'", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText211.Wrap( -1 )
+
+		bSizer36.Add( self.m_staticText211, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		self.m_panel27.SetSizer( bSizer36 )
+		self.m_panel27.Layout()
+		bSizer36.Fit( self.m_panel27 )
+		bSizer35.Add( self.m_panel27, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel28 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer37 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_button20 = wx.Button( self.m_panel28, wx.ID_ANY, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer37.Add( self.m_button20, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		self.m_panel28.SetSizer( bSizer37 )
+		self.m_panel28.Layout()
+		bSizer37.Fit( self.m_panel28 )
+		bSizer35.Add( self.m_panel28, 0, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer35 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.m_button20.Bind( wx.EVT_BUTTON, self.m_button_dialog_simpan_berhasil )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def m_button_dialog_simpan_berhasil( self, event ):
+		event.Skip()
 
 
