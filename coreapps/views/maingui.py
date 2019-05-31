@@ -83,7 +83,7 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText1, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl1 = wx.TextCtrl( self.m_panel121, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0|wx.TAB_TRAVERSAL )
-		self.m_textCtrl1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_textCtrl1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.m_textCtrl1.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		fgSizer11.Add( self.m_textCtrl1, 0, wx.ALL, 5 )
@@ -97,7 +97,7 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_staticText2, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_datePicker1 = wx.adv.DatePickerCtrl( self.m_panel121, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.Size( -1,-1 ), wx.adv.DP_DEFAULT )
-		self.m_datePicker1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_datePicker1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.m_datePicker1.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		fgSizer11.Add( self.m_datePicker1, 0, wx.ALL, 5 )
