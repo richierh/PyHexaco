@@ -66,7 +66,7 @@ def hitung_versi_24(data_versi):
     Greed_Avoidance = ["18", "42R"]
     Modesty = ["24R", "48R"]
 
-    Fearfulness = ["5", "29", "53R"]
+    Fearfullness = ["5", "29", "53R"]
     Anxiety = ["11", "35R"]
     Dependence = ["17", "41R"] 
     Sentimentality = ["23", "47", "59R"]
@@ -96,7 +96,7 @@ def hitung_versi_24(data_versi):
 
 #     
     list_sub_dimensi = [[Sincerity,Fairness,Greed_Avoidance,Modesty],
-                        [Fearfulness,Anxiety,Dependence,Sentimentality],
+                        [Fearfullness,Anxiety,Dependence,Sentimentality],
                         [Social_Self_Esteem,Social_Boldness,Sociability,Liveliness],
                         [Forgiveness,Gentleness,Flexibility,Patience],
                         [Organization,Diligence,Perfectionism,Prudence],
@@ -104,12 +104,12 @@ def hitung_versi_24(data_versi):
                         [Attristium]] 
        
     sub_dimensi = [["Sincerity", "Fairness", "Greed Avoidance", "Modesty"],
-                   ["Fearfulness", "Anxiety", "Dependence","Sentimentality"],
+                   ["Fearfullness", "Anxiety", "Dependence","Sentimentality"],
                    ["Social Self Esteem","Social Boldness","Sociability","Liveliness"],
-                   ["Forgivingness","Gentleness","Flexibility","Patience"],
+                   ["Forgiveness","Gentleness","Flexibility","Patience"],
                    ["Organization","Diligence","Perfectionism","Prudence"],
                    ["Aesthetic Appreciation","Inquisitiveness","Creativity","Unconventionality"],
-                   ["Altruism"]
+                   ["Interstitial"]
                    ]
     
     data_hasil = {}
@@ -142,13 +142,13 @@ def hitung_versi_24(data_versi):
     sum_honesty_humility =  (data_hasil["Sincerity"]+data_hasil["Fairness"]\
                             +data_hasil["Greed Avoidance"]+data_hasil["Modesty"])/4
     
-    sum_emotionality = (data_hasil["Fearfulness"] + data_hasil["Anxiety"]\
+    sum_emotionality = (data_hasil["Fearfullness"] + data_hasil["Anxiety"]\
                         +data_hasil["Dependence"] + data_hasil["Sentimentality"])/4
     
     sum_extraversion = (data_hasil["Social Self Esteem"] + data_hasil["Social Boldness"]\
                         +data_hasil["Sociability"] + data_hasil["Liveliness"])/4
                         
-    sum_agreeableness = (data_hasil["Forgivingness"] + data_hasil["Gentleness"]\
+    sum_agreeableness = (data_hasil["Forgiveness"] + data_hasil["Gentleness"]\
                                 +data_hasil["Flexibility"]+data_hasil["Patience"])/4
     
     sum_conscientiousness = (data_hasil["Organization"] + data_hasil["Diligence"]\
@@ -157,7 +157,7 @@ def hitung_versi_24(data_versi):
     sum_openness_to_experience = (data_hasil["Aesthetic Appreciation"]+data_hasil["Inquisitiveness"]\
                                 +data_hasil["Creativity"]+data_hasil["Unconventionality"])/4
                                 
-    sum_interstitial = data_hasil["Altruism"]
+    sum_interstitial = data_hasil["Interstitial"]
     
     sum_6_dimensi_kepribadian = {
         "Honesty & Humility" : sum_honesty_humility,
@@ -189,7 +189,7 @@ def hitung_versi_60(data_versi):
     Greed_Avoidance = ["18", "42R"]
     Modesty = ["24R", "48R"]
 
-    Fearfulness = ["5", "29", "53R"]
+    Fearfullness = ["5", "29", "53R"]
     Anxiety = ["11", "35R"]
     Dependence = ["17", "41R"] 
     Sentimentality = ["23", "47", "59R"]
@@ -218,7 +218,7 @@ def hitung_versi_60(data_versi):
 #         
 
     list_sub_dimensi = [[Sincerity,Fairness,Greed_Avoidance,Modesty],
-                        [Fearfulness,Anxiety,Dependence,Sentimentality],
+                        [Fearfullness,Anxiety,Dependence,Sentimentality],
                         [Social_Self_Esteem,Social_Boldness,Sociability,Liveliness],
                         [Forgiveness,Gentleness,Flexibility,Patience],
                         [Organization,Diligence,Perfectionism,Prudence],
@@ -226,12 +226,12 @@ def hitung_versi_60(data_versi):
                         [Attristium]] 
        
     sub_dimensi = [["Sincerity", "Fairness", "Greed Avoidance", "Modesty"],
-                   ["Fearfulness", "Anxiety", "Dependence","Sentimentality"],
+                   ["Fearfullness", "Anxiety", "Dependence","Sentimentality"],
                    ["Social Self Esteem","Social Boldness","Sociability","Liveliness"],
-                   ["Forgivingness","Gentleness","Flexibility","Patience"],
+                   ["Forgiveness","Gentleness","Flexibility","Patience"],
                    ["Organization","Diligence","Perfectionism","Prudence"],
                    ["Aesthetic Appreciation","Inquisitiveness","Creativity","Unconventionality"],
-                   ["Altruism"]
+                   ["Interstitial"]
                    ]
     
     data_hasil = {}
@@ -262,13 +262,13 @@ def hitung_versi_60(data_versi):
     sum_honesty_humility =  (data_hasil["Sincerity"]+data_hasil["Fairness"]\
                             +data_hasil["Greed Avoidance"]+data_hasil["Modesty"])/4
     
-    sum_emotionality = (data_hasil["Fearfulness"] + data_hasil["Anxiety"]\
+    sum_emotionality = (data_hasil["Fearfullness"] + data_hasil["Anxiety"]\
                         +data_hasil["Dependence"] + data_hasil["Sentimentality"])/4
     
     sum_extraversion = (data_hasil["Social Self Esteem"] + data_hasil["Social Boldness"]\
                         +data_hasil["Sociability"] + data_hasil["Liveliness"])/4
                         
-    sum_agreeableness = (data_hasil["Forgivingness"] + data_hasil["Gentleness"]\
+    sum_agreeableness = (data_hasil["Forgiveness"] + data_hasil["Gentleness"]\
                                 +data_hasil["Flexibility"]+data_hasil["Patience"])/4
     
     sum_conscientiousness = (data_hasil["Organization"] + data_hasil["Diligence"]\
@@ -277,7 +277,7 @@ def hitung_versi_60(data_versi):
     sum_openness_to_experience = (data_hasil["Aesthetic Appreciation"]+data_hasil["Inquisitiveness"]\
                                 +data_hasil["Creativity"]+data_hasil["Unconventionality"])/4
                                 
-    sum_interstitial = data_hasil["Altruism"]
+    sum_interstitial = data_hasil["Interstitial"]
     sum_6_dimensi_kepribadian = {
         "Honesty & Humility" : sum_honesty_humility,
         "Emotionality" : sum_emotionality,
@@ -307,7 +307,7 @@ def hitung_versi_100(data_versi):
     Greed_Avoidance = ["18", "42R"]
     Modesty = ["24R", "48R"]
 
-    Fearfulness = ["5", "29", "53R"]
+    Fearfullness = ["5", "29", "53R"]
     Anxiety = ["11", "35R"]
     Dependence = ["17", "41R"] 
     Sentimentality = ["23", "47", "59R"]
@@ -337,7 +337,7 @@ def hitung_versi_100(data_versi):
 
 #     
     list_sub_dimensi = [[Sincerity,Fairness,Greed_Avoidance,Modesty],
-                        [Fearfulness,Anxiety,Dependence,Sentimentality],
+                        [Fearfullness,Anxiety,Dependence,Sentimentality],
                         [Social_Self_Esteem,Social_Boldness,Sociability,Liveliness],
                         [Forgiveness,Gentleness,Flexibility,Patience],
                         [Organization,Diligence,Perfectionism,Prudence],
@@ -345,12 +345,12 @@ def hitung_versi_100(data_versi):
                         [Attristium]] 
        
     sub_dimensi = [["Sincerity", "Fairness", "Greed Avoidance", "Modesty"],
-                   ["Fearfulness", "Anxiety", "Dependence","Sentimentality"],
+                   ["Fearfullness", "Anxiety", "Dependence","Sentimentality"],
                    ["Social Self Esteem","Social Boldness","Sociability","Liveliness"],
-                   ["Forgivingness","Gentleness","Flexibility","Patience"],
+                   ["Forgiveness","Gentleness","Flexibility","Patience"],
                    ["Organization","Diligence","Perfectionism","Prudence"],
                    ["Aesthetic Appreciation","Inquisitiveness","Creativity","Unconventionality"],
-                   ["Altruism"]
+                   ["Interstitial"]
                    ]
     
     data_hasil = {}
@@ -381,13 +381,13 @@ def hitung_versi_100(data_versi):
     sum_honesty_humility =  (data_hasil["Sincerity"]+data_hasil["Fairness"]\
                             +data_hasil["Greed Avoidance"]+data_hasil["Modesty"])/4
     
-    sum_emotionality = (data_hasil["Fearfulness"] + data_hasil["Anxiety"]\
+    sum_emotionality = (data_hasil["Fearfullness"] + data_hasil["Anxiety"]\
                         +data_hasil["Dependence"] + data_hasil["Sentimentality"])/4
     
     sum_extraversion = (data_hasil["Social Self Esteem"] + data_hasil["Social Boldness"]\
                         +data_hasil["Sociability"] + data_hasil["Liveliness"])/4
                         
-    sum_agreeableness = (data_hasil["Forgivingness"] + data_hasil["Gentleness"]\
+    sum_agreeableness = (data_hasil["Forgiveness"] + data_hasil["Gentleness"]\
                                 +data_hasil["Flexibility"]+data_hasil["Patience"])/4
     
     sum_conscientiousness = (data_hasil["Organization"] + data_hasil["Diligence"]\
@@ -396,7 +396,7 @@ def hitung_versi_100(data_versi):
     sum_openness_to_experience = (data_hasil["Aesthetic Appreciation"]+data_hasil["Inquisitiveness"]\
                                 +data_hasil["Creativity"]+data_hasil["Unconventionality"])/4
                                 
-    sum_interstitial = data_hasil["Altruism"]
+    sum_interstitial = data_hasil["Interstitial"]
     
     sum_6_dimensi_kepribadian = {
         "Honesty & Humility" : sum_honesty_humility,

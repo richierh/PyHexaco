@@ -27552,7 +27552,7 @@
                                                                                         <property name="gripper">0</property>
                                                                                         <property name="hidden">1</property>
                                                                                         <property name="id">wxID_ANY</property>
-                                                                                        <property name="label">(Interstitial Facet Scale) Altruism</property>
+                                                                                        <property name="label">(Interstitial Facet Scale) Interstitial</property>
                                                                                         <property name="markup">0</property>
                                                                                         <property name="max_size"></property>
                                                                                         <property name="maximize_button">0</property>
@@ -28117,7 +28117,7 @@
                                                                                         <property name="gripper">0</property>
                                                                                         <property name="hidden">0</property>
                                                                                         <property name="id">wxID_ANY</property>
-                                                                                        <property name="label">Interstitial Facet Scale&#x0A;Altruism</property>
+                                                                                        <property name="label">Interstitial Facet Scale&#x0A;Interstitial</property>
                                                                                         <property name="margins"></property>
                                                                                         <property name="markup">0</property>
                                                                                         <property name="max_size"></property>
@@ -28492,7 +28492,7 @@
                                                                             <property name="caption"></property>
                                                                             <property name="caption_visible">1</property>
                                                                             <property name="center_pane">0</property>
-                                                                            <property name="choices">&quot;Sincerity&quot; &quot;Fearness&quot; &quot;Greed Avoidance&quot; &quot;Modesty&quot; &quot;Honesty - Humility&quot; &quot;Fearness&quot; &quot;Fairness&quot; &quot;Dependence&quot; &quot;Sentimentality&quot; &quot;Emotionality&quot; &quot;Social Self Esteem&quot; &quot;Social Boldness&quot; &quot;Sociability&quot; &quot;Liveliness&quot; &quot;Extraversion&quot; &quot;Forgiveness&quot; &quot;Gentleness&quot; &quot;Flexibility&quot; &quot;Patience&quot; &quot;Agreeableness&quot; &quot;Organization&quot; &quot;Diligence&quot; &quot;Perfectionism&quot; &quot;Prudence&quot; &quot;Conscientiouseness&quot; &quot;Aesthetic Appreciation&quot; &quot;Inquitiveness\\&quot; &quot;Creativity&quot; &quot;Unconventionality&quot; &quot;Openess To Experience&quot; &quot;(Interstitial Facet Scale) Altruism&quot; &quot;Interestial Scale&quot; &quot;(Interstitial Facet Scale) Altruism&quot; &quot;Openess To Experience&quot; &quot;Openess To Experience&quot; &quot;Inquitiveness&quot; &quot;Social Boldnes&quot; &quot;Fearfulness&quot; &quot;Anxiety&quot;</property>
+                                                                            <property name="choices">&quot;Sincerity&quot; &quot;Fearness&quot; &quot;Greed Avoidance&quot; &quot;Modesty&quot; &quot;Honesty - Humility&quot; &quot;Fearness&quot; &quot;Fairness&quot; &quot;Dependence&quot; &quot;Sentimentality&quot; &quot;Emotionality&quot; &quot;Social Self Esteem&quot; &quot;Social Boldness&quot; &quot;Sociability&quot; &quot;Liveliness&quot; &quot;Extraversion&quot; &quot;Forgiveness&quot; &quot;Gentleness&quot; &quot;Flexibility&quot; &quot;Patience&quot; &quot;Agreeableness&quot; &quot;Organization&quot; &quot;Diligence&quot; &quot;Perfectionism&quot; &quot;Prudence&quot; &quot;Conscientiouseness&quot; &quot;Aesthetic Appreciation&quot; &quot;Inquitiveness\\&quot; &quot;Creativity&quot; &quot;Unconventionality&quot; &quot;Openess To Experience&quot; &quot;(Interstitial Facet Scale) Interstitial&quot; &quot;Interestial Scale&quot; &quot;(Interstitial Facet Scale) Interstitial&quot; &quot;Openess To Experience&quot; &quot;Openess To Experience&quot; &quot;Inquitiveness&quot; &quot;Social Boldnes&quot; &quot;Fearfulness&quot; &quot;Anxiety&quot;</property>
                                                                             <property name="close_button">1</property>
                                                                             <property name="context_help"></property>
                                                                             <property name="context_menu">1</property>

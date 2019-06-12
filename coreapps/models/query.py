@@ -215,12 +215,41 @@ def update_jawaban(values,id_pes):
     print (values[1])
     print (values[2])
 
-    sql_cmd ="""
+    sql_cmd = """
     UPDATE Input_Data_Jawaban_Peserta 
     SET JawabanPeserta = ?
     WHERE NoSoal = ? AND IdPeserta=?;
     """
     cursorexe.execute(sql_cmd,(values[2],values[1],id_pes))
+    conne.commit()
+    conne.close
+
+
+def update_rincian_data_peserta(values,id_pes):
+#     Menampilkan data dari Input Peserta
+    conne = connect_db()
+    cursorexe = conne.cursor()
+#     values = ["select","select by"]
+    print(values[0])
+    print(values[1])
+    print(values[2])
+
+    sql_cmd = """
+    UPDATE [Rincian Data Peserta]
+    SET [No Tes] = ? ,
+        [Tanggal Tes] = ?,
+        [Nama Kandidat] = ?,
+        [Jenis Kelamin] = ?,
+        [Tanggal Lahir] = ?,
+        [Pendidikan Terakhir] = ?,
+        [Jurusan Pendidikan] = ?,
+        Kota = ?,
+        [Perusahaan / Instansi] = ?,
+        [Posisi / Jabatan] = ?
+    WHERE idpeserta = ?    
+    """
+    cursorexe.execute(sql_cmd, (*values, 
+                        id_pes))
     conne.commit()
     conne.close
 
@@ -234,7 +263,7 @@ if __name__ == "__main__":
 #     values = [(1,1,1,2,1),(1,1,1,1,1)]
 #     insert_input_peserta(values)
     query_tabel_data_peserta("OFI SUNASTRI")
-    print (query_tabel_data_peserta("OFI SUNASTRI"))
+    print(query_tabel_data_peserta("OFI SUNASTRI"))
     
     
     

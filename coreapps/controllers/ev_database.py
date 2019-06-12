@@ -2,7 +2,7 @@
 
 import wx
 # from coreapps.models.query import query_tabel_data_peserta
-from coreapps.models.query import query_input_peserta
+from coreapps.models.query import query_input_peserta,query_tabel_data_peserta
 
 
 
@@ -64,7 +64,7 @@ class DatabaseEventControl():
 #         print (self.get_item_id_name)
 #         print (self.get_item_no_tes)
         
-        
+         
 #         self.values =[self.get_item_id_name.upper(),"","","","idpeserta"]
 #         self.parent.query_tabel = query_tabel_data_peserta(self.values)
 #         print (self.parent.query_tabel)
@@ -72,11 +72,17 @@ class DatabaseEventControl():
 #             print (data)
         
         print ("akhi")
-        
+#         self.parent.rinc_data = 
         self.rinci_list = ["idpeserta",self.parent.get_item_id_name.upper()]
         self.parent.rincian_input_data_peserta = query_input_peserta(self.rinci_list)
+        self.parent.rincian_data_peserta = query_tabel_data_peserta([self.parent.get_item_id_name.upper(),"","","","idpeserta"])
+        
         print (self.parent.rincian_input_data_peserta)
+        print (self.parent.rincian_data_peserta[0][2])
+         
         self.windows_lihat_nilai = TurunanLihatData(self.parent)
+        self.windows_lihat_nilai.Maximize()
+ 
         self.windows_lihat_nilai.Show()
 
         pass

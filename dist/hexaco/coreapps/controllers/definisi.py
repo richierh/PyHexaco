@@ -53,7 +53,7 @@ def rerata2(jenis_kelamin,Nilai_Dimensi):
             
 if __name__=="__main__":
 #     jenis_kelamin = "Laki - Laki"
-    Nilai_Dimensi = {'Sincerity': 4.0, 'Fairness': 2.0, 'Greed Avoidance': 2.5, 'Modesty': 3.5, 'Fearfulness': 4.67, 'Anxiety': 3.0, 'Dependence': 2.0, 'Sentimentality': 2.0, 'Social Self Esteem': 3.33, 'Social Boldness': 4.0, 'Sociability': 2.0, 'Liveliness': 1.0, 'Forgivingness': 3.0, 'Gentleness': 3.67, 'Flexibility': 2.33, 'Patience': 2.5, 'Organization': 1.5, 'Diligence': 1.0, 'Perfectionism': 2.67, 'Prudence': 4.67, 'Aesthetic Appreciation': 3.5, 'Inquisitiveness': 3.0, 'Creativity': 3.0, 'Unconventionality': 1.67, 'Altruism': 0.0}
+    Nilai_Dimensi = {'Sincerity': 4.0, 'Fairness': 2.0, 'Greed Avoidance': 2.5, 'Modesty': 3.5, 'Fearfullness': 4.67, 'Anxiety': 3.0, 'Dependence': 2.0, 'Sentimentality': 2.0, 'Social Self Esteem': 3.33, 'Social Boldness': 4.0, 'Sociability': 2.0, 'Liveliness': 1.0, 'Forgiveness': 3.0, 'Gentleness': 3.67, 'Flexibility': 2.33, 'Patience': 2.5, 'Organization': 1.5, 'Diligence': 1.0, 'Perfectionism': 2.67, 'Prudence': 4.67, 'Aesthetic Appreciation': 3.5, 'Inquisitiveness': 3.0, 'Creativity': 3.0, 'Unconventionality': 1.67, 'Interstitial': 0.0}
     Nilai_Dimensi2 = {'Honesty & Humility': 3.0, 'Emotionality': 2.9175, 'Extraversion': 2.5825, 'Agreeableness': 2.875, 'Conscientiousness': 2.46, 'Openness to Experience': 2.7925, 'Interstitial': 0.0}
     for key,value in Nilai_Dimensi2.items():
         Nilai_Dimensi[key]=value
@@ -132,7 +132,7 @@ if __name__=="__main__":
 #                             {"Prilaku Tinggi":""},
 #                             {"Prilaku Rendah":""}]}
 #     
-#     Fearfulness = {"Laki - Laki":[{"Nilai Median":2.52},
+#     Fearfullness = {"Laki - Laki":[{"Nilai Median":2.52},
 #                         {"Nilai Tinggi" :""},
 #                         {"Nilai Rendah" :""},
 #                         {"Prilaku Tinggi":""},
@@ -454,10 +454,10 @@ if __name__=="__main__":
 # #             data["Honesty & Humility"] = Honesty_Humility["Laki - Laki"][2]
 # #             
 #             
-#         if Nilai_Dimensi["Fearfulness"] > Fearfulness["Laki - Laki"][0]["Nilai Median"]:
-#             data["Fearfulness"] = Fearfulness["Laki - Laki"][1]
+#         if Nilai_Dimensi["Fearfullness"] > Fearfullness["Laki - Laki"][0]["Nilai Median"]:
+#             data["Fearfullness"] = Fearfullness["Laki - Laki"][1]
 #         else :
-#             data["Fearfulness"] = Fearfulness["Laki - Laki"][2]
+#             data["Fearfullness"] = Fearfullness["Laki - Laki"][2]
 #             
 #             
 #         if Nilai_Dimensi["Anxiety"] > Anxiety["Laki - Laki"][0]["Nilai Median"]:
@@ -506,10 +506,10 @@ if __name__=="__main__":
 #         else :
 #             data["Extraversion"] = Extraversion["Laki - Laki"][2]
 #     
-#         if Nilai_Dimensi["Forgivingness"] > Forgiveness["Laki - Laki"][0]["Nilai Median"]:
-#             data["Forgivingness"] = Forgiveness["Laki - Laki"][1]
+#         if Nilai_Dimensi["Forgiveness"] > Forgiveness["Laki - Laki"][0]["Nilai Median"]:
+#             data["Forgiveness"] = Forgiveness["Laki - Laki"][1]
 #         else :
-#             data["Forgivingness"] = Forgiveness["Laki - Laki"][2]
+#             data["Forgiveness"] = Forgiveness["Laki - Laki"][2]
 #     
 #         if Nilai_Dimensi["Gentleness"] > Gentleness["Laki - Laki"][0]["Nilai Median"]:
 #             data["Gentleness"] = Gentleness["Laki - Laki"][1]
@@ -547,9 +547,9 @@ if __name__=="__main__":
 #             data["Perfectionism"] = Perfectionism["Laki - Laki"][2]
 #     
 #         if Nilai_Dimensi["Prudence"] > prudence["Laki - Laki"][0]["Nilai Median"]:
-#             data["Forgivingness"] = prudence["Laki - Laki"][1]
+#             data["Forgiveness"] = prudence["Laki - Laki"][1]
 #         else :
-#             data["Forgivingness"] = prudence["Laki - Laki"][2]
+#             data["Forgiveness"] = prudence["Laki - Laki"][2]
 # 
 # 
 #         if Nilai_Dimensi["Conscientiousness"] > Conscientiouseness["Laki - Laki"][0]["Nilai Median"]:
@@ -614,10 +614,10 @@ if __name__=="__main__":
 # #             data["Honesty & Humility"] = Honesty_Humility["Perempuan"][2]
 # #             
 #             
-#         if Nilai_Dimensi["Fearfulness"] > Fearfulness["Perempuan"][0]["Nilai Median"]:
-#             data["Fearfulness"] = Fearfulness["Perempuan"][1]
+#         if Nilai_Dimensi["Fearfullness"] > Fearfullness["Perempuan"][0]["Nilai Median"]:
+#             data["Fearfullness"] = Fearfullness["Perempuan"][1]
 #         else :
-#             data["Fearfulness"] = Fearfulness["Perempuan"][2]
+#             data["Fearfullness"] = Fearfullness["Perempuan"][2]
 #             
 #             
 #         if Nilai_Dimensi["Anxiety"] > Anxiety["Perempuan"][0]["Nilai Median"]:
@@ -666,10 +666,10 @@ if __name__=="__main__":
 #         else :
 #             data["Extraversion"] = Extraversion["Perempuan"][2]
 #     
-#         if Nilai_Dimensi["Forgivingness"] > Forgiveness["Perempuan"][0]["Nilai Median"]:
-#             data["Forgivingness"] = Forgiveness["Perempuan"][1]
+#         if Nilai_Dimensi["Forgiveness"] > Forgiveness["Perempuan"][0]["Nilai Median"]:
+#             data["Forgiveness"] = Forgiveness["Perempuan"][1]
 #         else :
-#             data["Forgivingness"] = Forgiveness["Perempuan"][2]
+#             data["Forgiveness"] = Forgiveness["Perempuan"][2]
 #     
 #         if Nilai_Dimensi["Gentleness"] > Gentleness["Perempuan"][0]["Nilai Median"]:
 #             data["Gentleness"] = Gentleness["Perempuan"][1]
@@ -707,9 +707,9 @@ if __name__=="__main__":
 #             data["Perfectionism"] = Perfectionism["Perempuan"][2]
 #     
 #         if Nilai_Dimensi["Prudence"] > prudence["Perempuan"][0]["Nilai Median"]:
-#             data["Forgivingness"] = prudence["Perempuan"][1]
+#             data["Forgiveness"] = prudence["Perempuan"][1]
 #         else :
-#             data["Forgivingness"] = prudence["Perempuan"][2]
+#             data["Forgiveness"] = prudence["Perempuan"][2]
 # 
 # 
 #         if Nilai_Dimensi["Conscientiousness"] > Conscientiouseness["Perempuan"][0]["Nilai Median"]:

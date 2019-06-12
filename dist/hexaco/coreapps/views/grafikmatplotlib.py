@@ -168,14 +168,14 @@ class GrafikDimensi(FrameDepan):
         self.axes_honesty_humility.xaxis.set_label_position("top")
 
 #        Gambar grafik yang sisi kanan paling atas kedua 
-        self.data_y2 = ["Fearfulness",
+        self.data_y2 = ["Fearfullness",
                         "Anxiety",
                         "Dependence",
                         "Sentimentality"]
         
         self.y_pos2 = self.np.arange(len(self.data_y2))
 #         self.value1 = [5, 2, 3, 4]
-        self.value2 = [nilai_sub_dimensi["Fearfulness"],
+        self.value2 = [nilai_sub_dimensi["Fearfullness"],
                        nilai_sub_dimensi["Anxiety"],
                        nilai_sub_dimensi["Dependence"],
                        nilai_sub_dimensi["Sentimentality"]]
@@ -227,7 +227,7 @@ class GrafikDimensi(FrameDepan):
         
         self.y_pos4 = self.np.arange(len(self.data_y4))
 #         self.value4 = [5, 2, 3, 4]
-        self.value4 = [nilai_sub_dimensi["Forgivingness"],
+        self.value4 = [nilai_sub_dimensi["Forgiveness"],
                        nilai_sub_dimensi["Gentleness"],
                        nilai_sub_dimensi["Flexibility"],
                        nilai_sub_dimensi["Patience"]
@@ -563,7 +563,7 @@ class GrafikA(FrameGrafikTerpisah):
                         "Patience"]
         self.y_pos = self.np.arange(len(self.value))
 #         self.performance = 3 + 10 * self.np.random.rand(len(self.value))
-        self.performance = [nilai_sub_dimensi["Forgivingness"],
+        self.performance = [nilai_sub_dimensi["Forgiveness"],
                        nilai_sub_dimensi["Gentleness"],
                        nilai_sub_dimensi["Flexibility"],
                        nilai_sub_dimensi["Patience"]]
@@ -674,7 +674,7 @@ class GrafikEx(FrameGrafikTerpisah):
 #         self.value = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
         self.y_pos = self.np.arange(len(self.value))
 #         self.performance = 3 + 10 * self.np.random.rand(len(self.value))
-        self.performance = [nilai_sub_dimensi["Forgivingness"],
+        self.performance = [nilai_sub_dimensi["Forgiveness"],
                        nilai_sub_dimensi["Gentleness"],
                        nilai_sub_dimensi["Flexibility"],
                        nilai_sub_dimensi["Patience"]]

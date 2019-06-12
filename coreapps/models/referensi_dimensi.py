@@ -142,7 +142,7 @@ if __name__=="__main__":
 'Dependence': 2.60,
 'Sentimentality': 2.76,
 'Emotionality': 2.2,
-'Social Self-Esteem': 3.11,
+'Social Self Esteem': 3.11,
 'Social Boldness': 3.2,
 'Sociability': 2.33,
 'Liveliness': 3.45,
@@ -162,7 +162,7 @@ if __name__=="__main__":
 'Creativity': 3.12,
 'Unconventionality': 3.26,
 'Openess To Experience': 3.23,
-'(Interstitial Facet Scale) Altruism': 3.26,
+'(Interstitial Facet Scale) Interstitial': 3.26,
 'Interestial Scale': 2.5}
     print (dimensi_values)
         

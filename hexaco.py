@@ -13,6 +13,8 @@ import pathlib
 import sys
 
 from coreapps.views.app import MyApp
+from pathlib import Path
+import platform
 
 # from coreapps.controllers.keyopen import cekplatform 
 # print (os.getcwd())
@@ -32,10 +34,6 @@ os.chdir(str(pathwd))
 # print (dir())
 # cekplatform()
 
-
-#!usr/bin/env python
-from pathlib import Path
-import platform
 
 
 

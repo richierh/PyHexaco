@@ -3,11 +3,13 @@
 
 import wx
 from coreapps.controllers.hitung_data import HitungData
+
 '''
 Created on May 12, 2019
 
 @author: cireng
 '''
+
 class HalamanEventControl():
     
     def __init__(self,parent):
@@ -49,31 +51,23 @@ class HalamanEventControl():
 
 #         try:
             self.getSel = self.parent.m_simplebook1.GetSelection()
-            print (self.getSel)
+#             print (self.getSel)
             self.parent.m_simplebook1.SetSelection(self.getSel + 1)
             self.getSel = self.parent.m_simplebook1.GetSelection()
-            print (self.getSel)
-    
+#             print (self.getSel)
             self.parent.m_button1.Enable()
-    
             if self.getSel == 1:
                 self.parent.m_button2.Enable()        
                 self.parent.m_button3.Disable()
-            
             elif self.getSel == 3 :
-                self.data_induk=AmbilData(self.parent)
+                self.data_induk = AmbilData(self.parent)
 #                 self.data_induk.data_induk()
-#                 print ("halaman hitung")
-# #                 Proses hitung dimulai ketika halaman 3 , atau pada saat penyajian grafik
-
-                print ("selesai")
-                
+                print ("masuk ke halaman {}".format(self.getSel))
+                'Proses hitung dimulai ketika halaman 3 , atau pada saat penyajian grafik'
             elif self.getSel == 4 :
                 self.parent.m_button3.Disable()  #         print(self.text_entry.get_input_versi24())
             else :
                 self.parent.m_button3.Enable()
-            print ("tes 3")
-
 #         except :
 #             self.parent.m_button3.Disable()  #         print(self.text_entry.get_input_versi24())
 #         print(self.text_entry.get_input_versi60())
@@ -85,13 +79,13 @@ class AmbilData():
     
     def __init__(self,parent):
         self.parent = parent
-        from coreapps.views.grafikmatplotlib import GrafikDimensi
+#         from coreapps.views.grafikmatplotlib import GrafikDimensi
+        from coreapps.controllers.grafik_matplotlib import GrafikDimensi
         
         self.hasil_subdimensi,self.hasil_dimensi = self.data_induk()
-        print ("cek")
-        print (self.hasil_dimensi)
-        print (self.hasil_dimensi["Honesty & Humility"])
-        
+#         print ("cek")
+#         print (self.hasil_dimensi)
+#         print (self.hasil_dimensi["Honesty & Humility"])
 #         print (self.hasil_subdimensi["Honesty & Humility"])
         self.parent.grafik_matplotlib=GrafikDimensi(self.parent)
         self.parent.grafik_matplotlib.draw(self.hasil_dimensi,self.hasil_subdimensi,self.parent.versi_soal)
@@ -99,17 +93,14 @@ class AmbilData():
         self.parent.GrafikMatplotlib.Update()
         self.parent.GrafikMatplotlib.Refresh()
         self.parent.GrafikMatplotlib.Layout()
-        
     
     def data_induk(self):
         self.a = HitungData(self.parent)
         hasil_dimensi,hasil_subdimensi = self.a.hitung()
         return hasil_dimensi,hasil_subdimensi
-
         pass
     
     def get_data_from_input(self):
-        
         return self.data_induk()
 
 class KamusControl():
@@ -117,15 +108,12 @@ class KamusControl():
     
     def __init__(self,parent):
         self.parent = parent
-        
         self.parent.m_listbox_kamus_hexaco.Bind( wx.EVT_LISTBOX, self.m_listbox_kamus_hexacoOnListBox )
 
     def m_listbox_kamus_hexacoOnListBox(self,event):
         print ("hello")
         print (event.GetString())
         string_value= self.__definision(event.GetString())
-        
-        
         self.parent.m_textCtrl_kamus_hexaco.SetValue("")
         self.parent.m_textCtrl_kamus_hexaco.write(string_value)
         pass
@@ -162,7 +150,7 @@ class KamusControl():
         elif stringtxtctrl == "Emotionality":
             stringtxtctrl_1 = ""
         
-        elif stringtxtctrl == "Social Self-Esteem":
+        elif stringtxtctrl == "Social Self Esteem":
             stringtxtctrl_1 = ""
 
         elif stringtxtctrl == "Social Boldness":
@@ -222,7 +210,7 @@ class KamusControl():
         elif stringtxtctrl == "Openess To Experience":
             stringtxtctrl_1 = ""
         
-        elif stringtxtctrl == "(Interstitial Facet Scale) Altruism":
+        elif stringtxtctrl == "(Interstitial Facet Scale) Interstitial":
             stringtxtctrl_1 = ""
 
         elif stringtxtctrl == "Interestial Scale":

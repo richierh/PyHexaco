@@ -2213,7 +2213,7 @@ class FrameDepan ( wx.Frame ):
 
 		fgSizer26.Add( self.m_staticText46, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_staticText40 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"(Interstitial Facet Scale) Altruism", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText40 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"(Interstitial Facet Scale) Interstitial", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText40.Wrap( -1 )
 
 		self.m_staticText40.Hide()
@@ -2245,7 +2245,7 @@ class FrameDepan ( wx.Frame ):
 		self.m_button_h = wx.Button( self.m_panel15, wx.ID_ANY, u"Honesty – Humility", wx.DefaultPosition, wx.Size( 150,80 ), 0 )
 		fgSizer26.Add( self.m_button_h, 0, wx.ALL, 5 )
 
-		self.m_button141 = wx.Button( self.m_panel15, wx.ID_ANY, u"Interstitial Facet Scale\nAltruism", wx.DefaultPosition, wx.Size( 150,80 ), 0 )
+		self.m_button141 = wx.Button( self.m_panel15, wx.ID_ANY, u"Interstitial Facet Scale\nInterstitial", wx.DefaultPosition, wx.Size( 150,80 ), 0 )
 		fgSizer26.Add( self.m_button141, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.m_button_simpan_data = wx.Button( self.m_panel15, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -2291,7 +2291,7 @@ class FrameDepan ( wx.Frame ):
 
 		bSizer26.Add( self.m_staticText215, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		m_listbox_kamus_hexacoChoices = [ u"Sincerity", u"Fearness", u"Greed Avoidance", u"Modesty", u"Honesty - Humility", u"Fearness", u"Fairness", u"Dependence", u"Sentimentality", u"Emotionality", u"Social Self Esteem", u"Social Boldness", u"Sociability", u"Liveliness", u"Extraversion", u"Forgiveness", u"Gentleness", u"Flexibility", u"Patience", u"Agreeableness", u"Organization", u"Diligence", u"Perfectionism", u"Prudence", u"Conscientiouseness", u"Aesthetic Appreciation", u"Inquitiveness\\", u"Creativity", u"Unconventionality", u"Openess To Experience", u"(Interstitial Facet Scale) Altruism", u"Interestial Scale", u"(Interstitial Facet Scale) Altruism", u"Openess To Experience", u"Openess To Experience", u"Inquitiveness", u"Social Boldnes", u"Fearfulness", u"Anxiety" ]
+		m_listbox_kamus_hexacoChoices = [ u"Sincerity", u"Fearness", u"Greed Avoidance", u"Modesty", u"Honesty - Humility", u"Fearness", u"Fairness", u"Dependence", u"Sentimentality", u"Emotionality", u"Social Self Esteem", u"Social Boldness", u"Sociability", u"Liveliness", u"Extraversion", u"Forgiveness", u"Gentleness", u"Flexibility", u"Patience", u"Agreeableness", u"Organization", u"Diligence", u"Perfectionism", u"Prudence", u"Conscientiouseness", u"Aesthetic Appreciation", u"Inquitiveness\\", u"Creativity", u"Unconventionality", u"Openess To Experience", u"(Interstitial Facet Scale) Interstitial", u"Interestial Scale", u"(Interstitial Facet Scale) Interstitial", u"Openess To Experience", u"Openess To Experience", u"Inquitiveness", u"Social Boldnes", u"Fearfullness", u"Anxiety" ]
 		self.m_listbox_kamus_hexaco = wx.ListBox( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_listbox_kamus_hexacoChoices, wx.LB_ALWAYS_SB|wx.LB_SORT )
 		self.m_listbox_kamus_hexaco.SetBackgroundColour( wx.Colour( 255, 200, 55 ) )
 

@@ -162,7 +162,7 @@ class KamusControl():
         elif stringtxtctrl == "Emotionality":
             stringtxtctrl_1 = ""
         
-        elif stringtxtctrl == "Social Self-Esteem":
+        elif stringtxtctrl == "Social Self Esteem":
             stringtxtctrl_1 = ""
 
         elif stringtxtctrl == "Social Boldness":
@@ -222,7 +222,7 @@ class KamusControl():
         elif stringtxtctrl == "Openess To Experience":
             stringtxtctrl_1 = ""
         
-        elif stringtxtctrl == "(Interstitial Facet Scale) Altruism":
+        elif stringtxtctrl == "(Interstitial Facet Scale) Interstitial":
             stringtxtctrl_1 = ""
 
         elif stringtxtctrl == "Interestial Scale":
