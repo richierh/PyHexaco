@@ -20,7 +20,7 @@ class FrameFilterDatabase ( wx.Frame ):
 
         self.m_staticText206.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Sans" ) )
 
-        bSizer51.Add( self.m_staticText206, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+        bSizer51.Add( self.m_staticText206, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
         self.m_staticline2 = wx.StaticLine( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
         bSizer51.Add( self.m_staticline2, 0, wx.EXPAND |wx.ALL, 5 )
@@ -86,18 +86,19 @@ class FrameFilterDatabase ( wx.Frame ):
 
         self.m_buttonKlikFilterNoTes = wx.Button( self.m_panel20, wx.ID_ANY, u"Klik Filter", wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer51.Add( self.m_buttonKlikFilterNoTes, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+        
+        self.m_staticline4 = wx.StaticLine( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+        bSizer51.Add( self.m_staticline4, 0, wx.EXPAND |wx.ALL, 5 )
 
         fgSizer40 = wx.FlexGridSizer( 0, 1, 0, 0 )
-        fgSizer40.AddGrowableCol( 0 )
-        fgSizer40.AddGrowableRow( 0 )
+        fgSizer40.AddGrowableCol( 0,1 )
+        fgSizer40.AddGrowableRow( 0,1 )
         fgSizer40.SetFlexibleDirection( wx.BOTH )
         fgSizer40.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-        self.m_staticline4 = wx.StaticLine( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-        fgSizer40.Add( self.m_staticline4, 1, wx.EXPAND |wx.ALL, 5 )
-
+  
         self.m_buttonFilterBatal = wx.Button( self.m_panel20, wx.ID_ANY, u"Tutup", wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer40.Add( self.m_buttonFilterBatal, 0, wx.ALL|wx.ALIGN_BOTTOM|wx.ALIGN_RIGHT, 5 )
+        fgSizer40.Add( self.m_buttonFilterBatal, 1, wx.ALL|wx.ALIGN_BOTTOM|wx.ALIGN_RIGHT, 5 )
 
 
         bSizer51.Add( fgSizer40, 1, wx.ALIGN_RIGHT|wx.EXPAND, 5 )

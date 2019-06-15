@@ -32,12 +32,12 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
 #         info.SetWidth(50)
         info._image = []
         info._format = 0
-        info._kind = 0
+#         info._kind = 0
         info._text = "Dimensi"
         self.ultimateList.InsertColumnInfo(0, info)
  
         info = ULC.UltimateListItem()
-        info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT | ULC.ULC_MASK_FONT
+        info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT #| ULC.ULC_MASK_FONT
         info._format = wx.LIST_FORMAT_LEFT
         info._image = []
 #         info._width = 300
@@ -47,13 +47,14 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
         self.ultimateList.InsertColumnInfo(1, info)
  
         info = ULC.UltimateListItem()
-        info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT|ULC.ULC_MASK_FONT
-        info._format = 0
+        info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT 
 #         info._width = 500
+        info._format = wx.LIST_FORMAT_LEFT
         
         info._text = "Ciri - Ciri"
-        info._font = font
+#         info._font = font
         info._image = []
+        
         self.ultimateList.InsertColumnInfo(2, info)
         self.ultimateList.SetColumnWidth(0, 200)
         self.ultimateList.SetColumnWidth(1, 400)

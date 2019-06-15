@@ -104,7 +104,7 @@ class GrafikDimensi(UIGrafikInherit):
                                 nilai_dimensi["Interstitial"]]
 #         self.value = 3 + 10 * self.np.random.rand(len(self.data_y_6_dimensi))
 #         self.#error = self.np.random.rand(len(self.data_y_6_dimensi))
-        self.axes_6_dimensi.barh(self.y_pos,
+        self.ax = self.axes_6_dimensi.barh(self.y_pos,
                        self.value,
                        height=0.7,
                        align='center',
@@ -121,16 +121,35 @@ class GrafikDimensi(UIGrafikInherit):
                                             fontname="Tw Cen MT",
                                             fontsize=10)
         self.axes_6_dimensi.invert_yaxis()
-        for iterate, value_y_dimension in enumerate(self.value):
-            if value_y_dimension == 0 :
-                K = 0
-            else :
-                K = 0.5
-            self.axes_6_dimensi.text(value_y_dimension - K,
-                                     iterate + 0.1,
-                                     str(round(value_y_dimension, 2)),
-                                     color='black')
-#                                      fontweight='bold')
+ 
+        def autolabel(rects):
+            """
+            Attach a text label above each bar displaying its height
+            """
+            
+            for rect in rects:
+                width = rect.get_width()
+                frac_height = width/5
+                if frac_height > 0.95 :
+                    label_position = width - (0.05 * width)
+                else :
+                    label_position = width + (0.01 * width)
+                self.axes_6_dimensi.text(label_position,rect.get_y() + rect.get_height()/2.,
+                        '{}' .format(round(width,2)),
+                        ha='left', va='center')
+        autolabel(self.ax)
+
+#         for iterate, value_y_dimension in enumerate(self.value):
+#             
+#             if value_y_dimension == 0 :
+#                 K = 0
+#             else :
+#                 K = 0.5
+#             self.axes_6_dimensi.text(value_y_dimension - K,
+#                                      iterate + 0.1,
+#                                      str(round(value_y_dimension, 2)),
+#                                      color='black')
+# #                                      fontweight='bold')
 
         'Gambar grafik yang sisi kanan paling atas' 
         self.data_y1 = ["Sincerity",
@@ -267,7 +286,7 @@ class Colour(object):
         self.colors_agreeableness = ["m","m","m","m","m"]
         self.colors_conscientiousness = ["purple","purple","purple","purple","purple"]
         self.colors_openness_to_experience = ["y","y","y","y","y"]
-        print ("okaykkkkl")
+        self.colors_interstitial = ["grey","grey","grey","grey","grey"]
         pass
 
  
@@ -312,9 +331,15 @@ class GrafikO(GrafikFrame,Colour):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
         autolabel(self.ax)
@@ -397,15 +422,21 @@ class GrafikC(GrafikFrame):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
         autolabel(self.ax)
         self.axes_grafik_o.set_xticks(self.y_pos)
         self.axes_grafik_o.set_xticklabels(self.value)
-        self.axes_grafik_o.set_xlabel('Sub Dimensi')
+#         self.axes_grafik_o.set_xlabel('Sub Dimensi')
         self.axes_grafik_o.set_ylim(bottom=0,top=5 )
         self.axes_grafik_o.set_title('Dimensi Conscientiousness Domain',
                                         fontname="Tw Cen MT",
@@ -505,9 +536,15 @@ class GrafikA(GrafikFrame):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
         
@@ -515,7 +552,7 @@ class GrafikA(GrafikFrame):
 
         self.axes_grafik_o.set_xticks(self.y_pos)
         self.axes_grafik_o.set_xticklabels(self.value)
-        self.axes_grafik_o.set_xlabel('Sub Dimensi')
+#         self.axes_grafik_o.set_xlabel('Sub Dimensi')
         self.axes_grafik_o.set_ylim(bottom=0,top=5 )
         self.axes_grafik_o.set_title('Dimensi Agreeableness Domain',
                                         fontname="Tw Cen MT",
@@ -609,9 +646,15 @@ class GrafikEx(GrafikFrame):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
         autolabel(self.ax)
@@ -659,12 +702,13 @@ class GrafikEm(GrafikFrame):
         
     def __init__(self, parent):
         super(GrafikEm,self).__init__(parent)
-#         buat konstruktor
+        'buat konstruktor parent'
         self.parent = parent
+        
+        'Buat konstruktor grafik terpisah'
         self.matplotlib = matplotlib
         self.np = np
         self.plt = plt
-
         self.figure = Figure(figsize=(2,2))
         self.figure.subplots_adjust(bottom=None,
                                     left=None,
@@ -672,123 +716,91 @@ class GrafikEm(GrafikFrame):
                                     right=0.975,
                                     wspace = 0.3,
                                     hspace = None)     
-        self.figure.tight_layout()           
-        
+#         self.figure.tight_layout()           
         self.axes_grafik_o = self.figure.add_subplot(111)
-        
-#         Menambah jumlah grafik di sisi sebelah kanan
-#         self.axes_Interestial_Scale = self.figure.add_subplot(7, 2, 14)
-
         self.canvas = FigureCanvas(self.m_Grafik_Terpisah,-1,self.figure)
-        
         self.sizer32 = wx.BoxSizer(wx.VERTICAL)
         self.sizer32.Add(self.canvas, 1, wx.ALL | wx.EXPAND)
         self.m_Grafik_Terpisah.SetSizer(self.sizer32)
   
-        
-        # Example data
-        
-#         self.value = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
-
-       # Example data
+        'Data diambil dari parent'
         nilai_dimensi = self.parent.hasil_dimensi
         nilai_sub_dimensi = self.parent.hasil_subdimensi
-#       
         self.value = ["Fearfullness",
-                        "Anxiety",
-                        "Dependence",
-                        "Sentimentality"]
-           
+                      "Anxiety",
+                      "Dependence",
+                      "Sentimentality"]
         self.y_pos = self.np.arange(len(self.value))
-#         self.performance = 3 + 10 * self.np.random.rand(len(self.value))
         self.performance =(nilai_sub_dimensi["Fearfullness"],
                      nilai_sub_dimensi["Anxiety"],
                      nilai_sub_dimensi["Dependence"],
                      nilai_sub_dimensi["Sentimentality"])
- 
-        #error = self.np.random.rand(len(self.value))
         self.color = Colour()
-
         self.ax = self.axes_grafik_o.bar(self.y_pos, self.performance,  width = 0.4,align='center',
                 color=self.color.colors_emotionality)
 
-#           Fungsi untuk menampilkan label di dalam Bar
+        'Fungsi untuk menampilkan label di dalam Bar'
         def autolabel(rects):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
-        
         autolabel(self.ax)
-
         self.axes_grafik_o.set_xticks(self.y_pos)
         self.axes_grafik_o.set_xticklabels(self.value)
-
         self.axes_grafik_o.set_ylim(bottom=0,top=5 )
-
         self.axes_grafik_o.set_title('Dimensi Emotionality Domain')
-       
         self.Update()
         self.Refresh()
         self.Layout()
  
- #         Penyajian definisi ke dalam grafik
-
+        'Penyajian definisi ke dalam grafik'
         select = self.parent.m_choice1.GetSelection()
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
         print (self.jenis_kelamin)
-        nilai_dimensi
-        nilai_sub_dimensi
-        
         for k,v in nilai_dimensi.items():
             nilai_sub_dimensi[k]=int(v)
-        
-        print (nilai_sub_dimensi)
-            
-        print (type(self.jenis_kelamin))
-        
+#         print (nilai_sub_dimensi)
+#         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
-        
-        
-#         print (self.definisi["Openness to Experience"])
-#         for k,val1 in self.definisi["Openness to Experience"].items():
-#             print (val1)
-#             print (k)
-#         
         dimensi = ["Fearfullness",
-                        "Anxiety",
-                        "Dependence",
-                        "Sentimentality"]
-        
+                   "Anxiety",
+                   "Dependence",
+                   "Sentimentality"]
         self.data = []
-        print (self.definisi)
+#         print (self.definisi)
         for k in self.definisi:
             for dim in dimensi:
-     
                 if k[0] == dim:
-                    print ("lolos")
-                    print (k)
-                    print(k[0])
-                    print(dimensi[0])
+#                     print ("lolos")
+#                     print (k)
+#                     print(k[0])
+#                     print(dimensi[0])
                     self.data.append([k[0],k[1],k[2]])
-            
         self.insert_value_list(self)
        
    
 class GrafikH(GrafikFrame):
         
-     def __init__(self, parent):
+    def __init__(self, parent):
         super(GrafikH,self).__init__(parent)
-#         buat konstruktor
+        'buat konstruktor untuk parent'
         self.parent = parent
+        
+        'buat konstruktor untuk grafik terpisah'
         self.matplotlib = matplotlib
         self.np = np
         self.plt = plt
-
         self.figure = Figure(figsize=(2,2))
         self.figure.subplots_adjust(bottom=None,
                                     left=None,
@@ -796,123 +808,94 @@ class GrafikH(GrafikFrame):
                                     right=0.975,
                                     wspace = 0.3,
                                     hspace = None)     
-        self.figure.tight_layout()           
-        
+#         self.figure.tight_layout()           
         self.axes_grafik_o = self.figure.add_subplot(111)
-        
-#         Menambah jumlah grafik di sisi sebelah kanan
-#         self.axes_Interestial_Scale = self.figure.add_subplot(7, 2, 14)
-
         self.canvas = FigureCanvas(self.m_Grafik_Terpisah,-1,self.figure)
-        
         self.sizer32 = wx.BoxSizer(wx.VERTICAL)
         self.sizer32.Add(self.canvas, 1, wx.ALL | wx.EXPAND)
         self.m_Grafik_Terpisah.SetSizer(self.sizer32)
   
-        
-        # Example data
-        
-#         self.value = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
-
+        'Data diambil dari parent'
         nilai_dimensi = self.parent.hasil_dimensi
         nilai_sub_dimensi = self.parent.hasil_subdimensi
-#       
         self.value = ["Sincerity",
-                        "Fairness",
-                        "Greed Avoidance",
-                        "Modesty"]
-           
+                      "Fairness",
+                      "Greed Avoidance",
+                      "Modesty"]
         self.y_pos = self.np.arange(len(self.value))
-        
-#         self.performance = 3 + 10 * self.np.random.rand(len(self.value))
         self.performance =(nilai_sub_dimensi["Sincerity"],
                      nilai_sub_dimensi["Fairness"],
                      nilai_sub_dimensi["Greed Avoidance"],
                      nilai_sub_dimensi["Modesty"])
- 
-        #error = self.np.random.rand(len(self.value))
         self.color = Colour()
-        
         self.ax  = self.axes_grafik_o.bar(self.y_pos, self.performance, width = 0.4,align='center',
                 color=self.color.colors_honesty_humility)
-#           Fungsi untuk menampilkan label di dalam Bar
+
+        'Fungsi untuk menampilkan label di dalam Bar'
         def autolabel(rects):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
-        
         autolabel(self.ax)
-
         self.axes_grafik_o.set_xticks(self.y_pos)
         self.axes_grafik_o.set_xticklabels(self.value)
 #         self.axes_grafik_o.set_ylabel('Performance')
         self.axes_grafik_o.set_ylim(bottom=0,top=5 )
         self.axes_grafik_o.set_title('Dimensi Honesty and Humility Domain')
-       
         self.Update()
         self.Refresh()
         self.Layout()        
 
-#         Penyajian definisi ke dalam grafik
-
+        'Penyajian definisi ke dalam grafik'
         select = self.parent.m_choice1.GetSelection()
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
-        print (self.jenis_kelamin)
-        nilai_dimensi
-        nilai_sub_dimensi
-        
+#         print (self.jenis_kelamin)
         for k,v in nilai_dimensi.items():
             nilai_sub_dimensi[k]=int(v)
-        
-        print (nilai_sub_dimensi)
-            
-        print (type(self.jenis_kelamin))
-        
+#         print (nilai_sub_dimensi)
+#         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
-        
-        
-#         print (self.definisi["Openness to Experience"])
-#         for k,val1 in self.definisi["Openness to Experience"].items():
-#             print (val1)
-#             print (k)
-#         
         dimensi = ["Honesty & Humility",
-            "Sincerity",
-                        "Fairness",
-                        "Greed Avoidance",
-                        "Modesty"]
-           
-        
+                   "Sincerity",
+                   "Fairness",
+                   "Greed Avoidance",
+                   "Modesty"]
         self.data = []
-        print (self.definisi)
+#         print (self.definisi)
         for k in self.definisi:
             for dim in dimensi:
-     
                 if k[0] == dim:
-                    print ("lolos")
-                    print (k)
-                    print(k[0])
-                    print(dimensi[0])
+#                     print ("lolos")
+#                     print (k)
+#                     print(k[0])
+#                     print(dimensi[0])
                     self.data.append([k[0],k[1],k[2]])
-            
         self.insert_value_list(self)
  
 
 class GrafikIA(GrafikFrame):
-        
-     def __init__(self, parent):
+    
+    
+    def __init__(self, parent):
         super(GrafikIA,self).__init__(parent)
-#         buat konstruktor
+        'buat konstruktor parent'
         self.parent = parent
+        
+        'buat konstruktor grafik terpisah'
         self.matplotlib = matplotlib
         self.np = np
         self.plt = plt
-
         self.figure = Figure(figsize=(2,2))
         self.figure.subplots_adjust(bottom=None,
                                     left=None,
@@ -920,93 +903,69 @@ class GrafikIA(GrafikFrame):
                                     right=0.975,
                                     wspace = 0.3,
                                     hspace = None)     
-        self.figure.tight_layout()           
-        
+#         self.figure.tight_layout()           
         self.axes_grafik_o = self.figure.add_subplot(111)
-        
-#         Menambah jumlah grafik di sisi sebelah kanan
-#         self.axes_Interestial_Scale = self.figure.add_subplot(7, 2, 14)
-
         self.canvas = FigureCanvas(self.m_Grafik_Terpisah,-1,self.figure)
-
         self.sizer32 = wx.BoxSizer(wx.VERTICAL)
         self.sizer32.Add(self.canvas, 1, wx.ALL | wx.EXPAND)
         self.m_Grafik_Terpisah.SetSizer(self.sizer32)
-  
-        
-        # Example data
-        
-#         self.value = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
-       # Example data
+
+        'Data diambil dari parent'
         nilai_dimensi = self.parent.hasil_dimensi
         nilai_sub_dimensi = self.parent.hasil_subdimensi
-#       
         self.value = ["Interstitial"]
-   
         self.y_pos = self.np.arange(len(self.value))
-#         self.performance = 3 + 10 * self.np.random.rand(len(self.value))
         self.performance =(nilai_sub_dimensi["Interstitial"]) 
-        #error = self.np.random.rand(len(self.value))
         
+        self.color = Colour()
         self.ax = self.axes_grafik_o.bar(self.y_pos, self.performance, width = 0.4,align='center',
-                color='yellow')
+                color=self.color.colors_interstitial)
         
-#           Fungsi untuk menampilkan label di dalam Bar
+        'Fungsi untuk menampilkan label di dalam Bar'
         def autolabel(rects):
             """
             Attach a text label above each bar displaying its height
             """
+            
             for rect in rects:
                 height = rect.get_height()
-                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                frac_height = height/5
+                if frac_height > 0.95 :
+                    label_position = height - (0.1 * height)
+                else :
+                    label_position = height + (0.1 * height)
+                self.axes_grafik_o.text(rect.get_x() + rect.get_width()/2.,label_position,
                         '{}' .format(round(height,2)),
                         ha='center', va='bottom')
-        
         autolabel(self.ax)
-
         self.axes_grafik_o.set_xticks(self.y_pos)
         self.axes_grafik_o.set_xticklabels(self.value)
 #         self.axes_grafik_o.set_ylabel('Performance')
         self.axes_grafik_o.set_ylim(bottom=0,top=5 )
-
         self.axes_grafik_o.set_title('Dimensi Interstitial Domain')
-       
         self.Update()
         self.Refresh()
         self.Layout()
         
-#         Penyajian definisi ke dalam grafik
-
+        'Penyajian definisi ke dalam grafik'
         select = self.parent.m_choice1.GetSelection()
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
-        print (self.jenis_kelamin)
-        nilai_dimensi
-        nilai_sub_dimensi
-        
         for k,v in nilai_dimensi.items():
             nilai_sub_dimensi[k]=int(v)
-        
-        print (nilai_sub_dimensi)
-            
-        print (type(self.jenis_kelamin))
-        
+#         print (nilai_sub_dimensi)
+#         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
-        
-
         dimensi = ["Interstitial"]
-        
         self.data = []
-        print (self.definisi)
+#         print (self.definisi)
         for k in self.definisi:
             for dim in dimensi:
-     
                 if k[0] == dim:
-                    print ("lolos")
-                    print (k)
-                    print(k[0])
-                    print(dimensi[0])
+#                     print ("lolos")
+#                     print (k)
+#                     print(k[0])
+#                     print(dimensi[0])
                     self.data.append([k[0],k[1],k[2]])
-            
         self.insert_value_list(self)
 
 if __name__ == "__main__":

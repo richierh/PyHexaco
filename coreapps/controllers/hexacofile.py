@@ -6,16 +6,21 @@ from coreapps.views.control_text import ControlEntry
 from coreapps.controllers.grafik_matplotlib import GrafikEm, GrafikEx,\
         GrafikIA,GrafikA,GrafikC,GrafikO,GrafikH
 from coreapps.views.maingui import FrameDepan
+from coreapps.views.biodata import Biodata
 from coreapps.views.menubar_tentang import TentangAplikasi
 from coreapps.views.DataPeserta import DataPesertaHexaco
-from coreapps.controllers.ev_halaman import HalamanEventControl
+from coreapps.controllers.ev_halaman import HalamanEventControl, AmbilData,\
+    DataTarik
 from coreapps.controllers.ev_database import DatabaseEventControl
 from coreapps.controllers.ev_filter_db import BukaFilter
 from coreapps.views.huruf_besar import HurufBesar
 from coreapps.controllers.ev_halaman import KamusControl
 from coreapps.views.dialog_simpan import TurunanDialogSimpan
 from coreapps.controllers.hitung_data import HitungData
-
+from coreapps.controllers.tarik_data import TarikData
+from coreapps.controllers.hexaco_calculation import DimensiHexaco
+from coreapps.models.query import insert_data_peserta, query_input_peserta,\
+    query_tabel_data_peserta
 
 
 'Implementing MyFrame1'
@@ -27,6 +32,7 @@ class Hexacofile(FrameDepan):
         self.huruf_besar = HurufBesar(self)
         
         'Properties Windows Utama'
+    
         self.SetTitle("Aplikasi Binakarir - Hexaco")
         self.m_button1.Disable()
         pathimage = pathlib.Path.cwd() / "resources/images/binadata.png"
@@ -36,13 +42,17 @@ class Hexacofile(FrameDepan):
         self.text_entry = ControlEntry(self)
         self.Maximize(maximize=True)
         self.m_simplebook1.SetSelection(0)
-                                                                                        
+
+        
         '''separate event into another file for simplicity
         memindahkan event di file yang lain agar lebih sederhana'''
         self.control_halaman = HalamanEventControl(self)
         self.database_peserta = DataPesertaHexaco(self.m_listCtrl_tabel_database)
         self.control_database = DatabaseEventControl(self)
         self.listbox_control = KamusControl(self)
+        self.control_t = ControlEntry(self)
+        
+
 
         '''Base Frame get Updated Frame Utama di Update'''
         self.Update()
@@ -83,8 +93,9 @@ class Hexacofile(FrameDepan):
 
    
     def m_button6OnButtonClick100(self, event):
-#         aplikasi akan diarahkan ke halaman sesuai dengan jenis soal/versi
-#         print ("radio button 100")
+        '''
+        aplikasi akan diarahkan ke halaman sesuai dengan jenis soal/versi
+        '''
         self.m_panel7.Hide()
         self.m_panel8.Hide()
         self.m_panel9.Show()
@@ -189,17 +200,77 @@ class Hexacofile(FrameDepan):
         self.buka = TentangAplikasi(self)
         self.buka.Show()
     
+    def m_button_lihat_biodata(self, event):
+        if self.m_button1.IsEnabled()==False:
+            
+            self.item = self.m_listCtrl_tabel_database.GetFocusedItem()
+            self.get_item_id_name = self.m_listCtrl_tabel_database.GetItemText(self.item,col=1)
+            self.get_item_no_tes = self.m_listCtrl_tabel_database.GetItemText(self.item,col=5)
+           
+            print ("akhi")
+            self.rinci_list = ["idpeserta",self.get_item_id_name.upper()]
+            self.rincian_input_data_peserta = query_input_peserta(self.rinci_list)
+            self.rincian_data_peserta = query_tabel_data_peserta([self.get_item_id_name.upper(),"","","","idpeserta"])
+            
+            print (self.rincian_input_data_peserta)
+            print (self.rincian_data_peserta)
+            print ("dimana ini")
+            self.titik = 1
+        else :
+            self.titik = 0    
+        self.buka_lihat_biodata = Biodata(self)
+        self.buka_lihat_biodata.set_biodata(self.titik)
+        self.buka_lihat_biodata.Show()
+        
+    
     
     def m_button_lihatOnButtonClick(self, event):
         print ("You have click 'Lihat'")
-        pass
+        self.no_database = 1
+        self.item = self.m_listCtrl_tabel_database.GetFocusedItem()
+        self.get_item_id_name = self.m_listCtrl_tabel_database.GetItemText(self.item,col=1)
+        self.query = TarikData(["idpeserta",self.get_item_id_name])
 
+        print (self.query.lihat_keseluruhan())
+        print (self.query.data_versi())
+        print ("Jumlah soal = {}".format(self.query.tipe_soal()))
+        print (type(self.query.asdict()))
+        print (self.query.asdict())
+        self.tipe_soal= self.query.tipe_soal()
+        self.hexaco_calculations = DimensiHexaco(self.query.tipe_soal(),self.query.asdict())
+        self.x,self.y = self.hexaco_calculations.hitung()
+        
+        self.ambil = AmbilData(self)
+        print (self.x)
+        print (self.y)
+        
+        
+        
+        self.m_button1.Disable()
+        self.m_button2.Disable()
+        self.m_button3.Disable()
+        self.m_button_simpan_data.Disable()
+        
+        self.m_simplebook1.SetSelection(3)
+        self.no_database = 0
+        pass
+    
+    def m_button21_bersihkan(self, event):
+        
+        self.control_t.clear_biodata()
+        self.no_database = 0
+        self.data_induk = AmbilData(self)
+#       self.data_induk.data_induk()
+  
+        print ("bersihkan is here")
+    
+    
     def m_button_simpan_dataOnButtonClick(self, event):
-        from coreapps.models.query import insert_input_peserta,\
-        insert_data_peserta
+        from coreapps.models.query import insert_input_peserta
         
         self.control_entry = ControlEntry(self)
         print (self.control_entry.get_input_biodata())
+        
         if self.tipe == 1 :
                 self.control_entry.panjang_data = len(self.control_entry.get_input_versi24())
                 self.control_entry.get_input = self.control_entry.get_input_versi24()
@@ -225,7 +296,7 @@ class Hexacofile(FrameDepan):
         self.kota = self.control_entry.get_input_biodata()[7]
         self.perusahaan_instansi = self.control_entry.get_input_biodata()[8]
         self.posisi_jabatan = self.control_entry.get_input_biodata()[9]
-        print (self.posisi_jabatan)
+        print (self.tanggal_tes)
         
         values_id_peserta = [self.tipe, 
                             self.no_tes,
@@ -242,22 +313,24 @@ class Hexacofile(FrameDepan):
         """
         Instruksi untuk memasukkan ke dalam database (rincian data peserta)
         Id Peserta harus di generasi terlebih dahulu oleh instruksi di bawah ini
-        self.input_data_peserta = insert_data_peserta(values_id_peserta)
         """
+        self.input_data_peserta = insert_data_peserta(values_id_peserta)
         values = []
         print (self.control_entry.get_input)
         print (len(self.control_entry.get_input))
         for key in self.control_entry.get_input:
                 values.append((key[0],key[1],self.tipe,1))
                 print (key[0])
-                
-
         print (values)
-#                 Instruksi untuk memasukkan ke dalam database
+        
+        '''
+        Instruksi untuk memasukkan ke dalam database
+        '''
         self.input_jawaban_peserta = insert_input_peserta(values)
         
-#               wx.Message Box return OK
-        
+        '''
+        wx.Message Box return OK
+        '''
         self.dialog_simpan = TurunanDialogSimpan(self)
         self.dialog_simpan.Show()
         pass

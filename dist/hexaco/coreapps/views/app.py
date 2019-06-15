@@ -14,6 +14,7 @@ from coreapps.controllers.hexacofile import Hexacofile
 
 class MyApp(wx.App):
 
+
     def OnInit(self):
         self.frame = Hexacofile(None)
         self.SetTopWindow(self.frame)
@@ -22,7 +23,6 @@ class MyApp(wx.App):
 
 
 if __name__ == "__main__":
-
     import gettext
     import os
     import pathlib

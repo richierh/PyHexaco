@@ -82,7 +82,6 @@ class DatabaseEventControl():
          
         self.windows_lihat_nilai = TurunanLihatData(self.parent)
         self.windows_lihat_nilai.Maximize()
- 
         self.windows_lihat_nilai.Show()
 
         pass

@@ -18,14 +18,14 @@ class TempelFile():
             if platform.system() == "Windows":
                 print("te")
                 print(platform.system())
-                self.write = pathlib.Path("C:\\ProgramData\\tes.txt")
+                self.write = pathlib.Path("C:\\ProgramData\\3351.txt")
                 f = open(self.write, "w+")
                 f.close()
             
             elif platform.system() == "Linux":
                 print ("tess ini adalah linux")
                 print(platform.system())
-                self.write = pathlib.Path.home() / ".tes"
+                self.write = pathlib.Path.home() / ".3351"
                 f = open(self.write, "w+")
                 f.close()
 

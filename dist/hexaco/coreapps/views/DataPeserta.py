@@ -8,18 +8,18 @@ class DataPesertaHexaco():
 	def __init__(self, parent):
 		self.parent = parent
 		self.listcolumn = [(0, "No", 50, wx.LIST_FORMAT_CENTER),
-						(1, "Id Peserta", 50, wx.LIST_FORMAT_CENTER),
-						(2, "Id Tipe Soal", 50, wx.LIST_FORMAT_CENTER),
+						(1, "Id Peserta", 0, wx.LIST_FORMAT_CENTER),
+						(2, "Id Tipe Soal", 0, wx.LIST_FORMAT_CENTER),
 						(3, "No Tes", 150, wx.LIST_FORMAT_CENTER),
 						(4, "Tanggal Tes", 100, wx.LIST_FORMAT_CENTER),
 						(5, "Nama Kandidat", 350, wx.LIST_FORMAT_LEFT),
 						(6, "Jenis Kelamin", 100, wx.LIST_FORMAT_CENTER),
  						(7,"Tanggal Lahir",100,wx.LIST_FORMAT_CENTER),
 	 					(8,"Pendidikan Terakhir",200,wx.LIST_FORMAT_CENTER),
-	 					(9,"Jurusan",100,wx.LIST_FORMAT_CENTER),
-	 					(10,"Kota",100,wx.LIST_FORMAT_CENTER),
-	 					(11, "Perusahaan / Instansi", 100, wx.LIST_FORMAT_CENTER),
-	 					(12, "Posisi / Jabatan", 100, wx.LIST_FORMAT_CENTER)]
+	 					(9,"Jurusan",150,wx.LIST_FORMAT_CENTER),
+	 					(10,"Kota",150,wx.LIST_FORMAT_CENTER),
+	 					(11, "Perusahaan / Instansi", 175, wx.LIST_FORMAT_CENTER),
+	 					(12, "Posisi / Jabatan", 175, wx.LIST_FORMAT_CENTER)]
 				
 		for lista in self.listcolumn:
 			self.parent.\

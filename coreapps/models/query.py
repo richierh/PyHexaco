@@ -133,6 +133,53 @@ def query_referensi_dimensi():
     conne.close
     return getdatas
 
+def query_kamus(nilai):
+    conne = connect_db()
+    cursorexe = conne.cursor()
+    sqlcmd = """
+    SELECT [No], Dimensi, Referensi
+    FROM Kamus
+    WHERE Dimensi = ? ; 
+    """
+    cursorexe.execute(sqlcmd,(nilai,))
+    getdatas = cursorexe.fetchone()
+#     for data in getdatas:
+#         print (data)
+    
+    conne.close
+    return getdatas
+
+def query_data_jawaban(values):
+#     Menampilkan data dari Input Peserta
+    conne = connect_db()
+    cursorexe = conne.cursor()
+#     values = ["select","select by"]
+    print (values[0])
+    print (values[1])
+    
+    if values[0]=="idpeserta":
+        sqlcmd = """SELECT I.idinputpeserta,I.idpeserta,I.NoSoal,I.JawabanPeserta,
+            T.NamaSoal,
+            RDP."No Tes",RDP."Tanggal Tes",RDP."Nama Kandidat",RDP."Jenis Kelamin",
+            RDP."Tanggal Lahir",RDP."Pendidikan Terakhir",RDP."Jurusan Pendidikan",
+            RDP."Kota",RDP."Perusahaan / Instansi",RDP."Posisi / Jabatan"
+            
+            FROM Input_Data_Jawaban_Peserta AS I
+            LEFT JOIN TipeSoal as T ON I.idTipeSoal = T.idTipeSoal
+            LEFT JOIN "Rincian Data Peserta" as RDP ON RDP.idpeserta = I.idpeserta
+            WHERE I.idpeserta = ?
+            """
+    
+        cursorexe.execute(sqlcmd,(values[1],))
+    getdatas = cursorexe.fetchall()
+    datas = []
+    for data in getdatas:
+        datas.append(data)
+    
+    conne.close
+    return datas    
+    
+
 
 def query_tabel_data_peserta(value):
     conne = connect_db()

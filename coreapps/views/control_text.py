@@ -6,6 +6,7 @@ Created on May 5, 2019
 '''
 
 import wx
+from dateutil.utils import today
 
 
 class TestPanel(wx.Panel):
@@ -29,9 +30,6 @@ class ControlEntry(wx.Frame):
     def __init__(self, parent):
         super(ControlEntry, self).__init__(parent)
         self.parent = parent
-
-    def get_input_biodata(self):
-#         ambil data biodata
         self.text_biodata = [self.parent.m_textCtrl1,
                            self.parent.m_datePicker1,
                            self.parent.m_textCtrl3,
@@ -42,28 +40,7 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl8,
                            self.parent.m_textCtrl9,
                            self.parent.m_textCtrl10]
-        
-        self.data_biodata = []
-        for self.data in self.text_biodata:
-            if self.text_biodata.index(self.data) == 3 \
-                or self.text_biodata.index(self.data) == 5:
-                
-                self.data_in = self.data.GetString(self.data.GetSelection())
-                self.data_biodata.append(self.data_in)
 
-            elif self.text_biodata.index(self.data) == 1 \
-                or self.text_biodata.index(self.data) == 4:
-                
-                self.data_in = self.data.GetValue().Format("%Y/%m/%d")
-                self.data_biodata.append(self.data_in)
-           
-            else :
-                self.data_in = self.data.GetValue()
-                self.data_biodata.append(self.data_in)
-                
-        return self.data_biodata
-    
-    def get_input_versi24(self):
         self.text_versi24 = [self.parent.m_textCtrl11,
                            self.parent.m_textCtrl12,
                            self.parent.m_textCtrl13,
@@ -92,16 +69,6 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl33,
                            self.parent.m_textCtrl34] 
                            
-        self.data_versi24 = {}
-        self.number = 1
-        for self.data in self.text_versi24:
-            self.data_in = self.data.GetValue()
-            self.data_versi24[str(self.number)] = self.data_in
-            self.number += 1           
-        
-        return self.data_versi24.items()
-
-    def get_input_versi60(self):
         self.text_versi60 = [self.parent.m_textCtrl42,
                            self.parent.m_textCtrl43,
                            self.parent.m_textCtrl44,
@@ -167,17 +134,6 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl99,
                            self.parent.m_textCtrl100,
                            self.parent.m_textCtrl101]
-        
-        self.data_versi60 = {}
-        self.number = 1
-        for self.data in self.text_versi60:
-            self.data_in = self.data.GetValue()
-            self.data_versi60[str(self.number)] = self.data_in
-            self.number += 1
-            
-        return self.data_versi60.items()
-        
-    def get_input_versi100(self):
         self.text_versi100 = [self.parent.m_textCtrl981,
                             self.parent.m_textCtrl991,
                             self.parent.m_textCtrl1001,
@@ -288,6 +244,103 @@ class ControlEntry(wx.Frame):
                             self.parent.m_textCtrl199,
                             self.parent.m_textCtrl200]
         
+
+    def get_input_biodata(self):
+#         ambil data biodata
+
+        
+        self.data_biodata = []
+        for self.data in self.text_biodata:
+            if self.text_biodata.index(self.data) == 3 \
+                or self.text_biodata.index(self.data) == 5:
+                
+                self.data_in = self.data.GetString(self.data.GetSelection())
+                self.data_biodata.append(self.data_in)
+
+            elif self.text_biodata.index(self.data) == 1 \
+                or self.text_biodata.index(self.data) == 4:
+                
+                self.data_in = self.data.GetValue().Format("%Y/%m/%d")
+                self.data_biodata.append(self.data_in)
+           
+            else :
+                self.data_in = self.data.GetValue()
+                self.data_biodata.append(self.data_in)
+                
+        return self.data_biodata
+
+    def clear_biodata(self):
+        for self.data in self.text_biodata:
+            if self.text_biodata.index(self.data) == 3 \
+                or self.text_biodata.index(self.data) == 5:
+                self.data_in = self.data.SetSelection(0)
+
+            elif self.text_biodata.index(self.data) == 1 \
+                or self.text_biodata.index(self.data) == 4:
+                
+                self.data_in = self.data.SetValue(wx.DateTime.Now())
+           
+            else :
+                self.data_in = self.data.SetValue("")
+        
+        for self.clear in self.text_versi24 :
+            
+            self.clear.SetValue("")
+        
+        for self.clear in self.text_versi60 :
+            
+            self.clear.SetValue("")
+
+
+        for self.clear in self.text_versi100 :
+            
+            self.clear.SetValue("")
+            
+        if self.parent.m_button1.Enable() == True:
+            self.parent.m_simplebook1.SetSelection(4)   
+            
+            
+        for self.clear in self.text_versi24 :
+            self.clear.SetValue("")
+         
+        for self.clear in self.text_versi60 :
+            self.clear.SetValue("")
+
+        for self.clear in self.text_versi100 :
+            self.clear.SetValue("")
+            
+        self.parent.m_button1.Enable()
+        self.parent.m_button2.Enable()
+        self.parent.m_button3.Enable()
+        self.parent.m_button_simpan_data.Enable()
+        
+
+        
+    def get_input_versi24(self):
+
+        self.data_versi24 = {}
+        self.number = 1
+        for self.data in self.text_versi24:
+            self.data_in = self.data.GetValue()
+            self.data_versi24[str(self.number)] = self.data_in
+            self.number += 1           
+        
+        return self.data_versi24.items()
+
+    def get_input_versi60(self):
+
+        
+        self.data_versi60 = {}
+        self.number = 1
+        for self.data in self.text_versi60:
+            self.data_in = self.data.GetValue()
+            self.data_versi60[str(self.number)] = self.data_in
+            self.number += 1
+            
+        return self.data_versi60.items()
+        
+    def get_input_versi100(self):
+
         self.data_versi100 = {}
         self.number = 1
         for self.data in self.text_versi100:

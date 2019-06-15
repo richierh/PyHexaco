@@ -21,7 +21,6 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
         super(TurunanLihatData,self).__init__(parent,*args)
         self.parent = parent
         self.parent2 = args
-        
         print (self.parent)
 
         sizer44 = wx.BoxSizer(wx.VERTICAL)
@@ -50,17 +49,42 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
         self.jenis_kelamin = str(self.parent.rincian_data_peserta[0][5])
         if self.jenis_kelamin == "Laki - Laki":
             self.jenis_kelamin_item = 0
-        if self.jenis_kelamin == "Perempuan":
+        elif self.jenis_kelamin == "Perempuan":
             self.jenis_kelamin_item = 1
         self.m_choice_edit_jenis_kelamin.SetSelection(self.jenis_kelamin_item)
 
-        self.tanggal_lahir = datetime.strptime(self.parent.rincian_data_peserta[0][3],"%Y/%m/%d")
+        self.tanggal_lahir = datetime.strptime(self.parent.rincian_data_peserta[0][6],"%Y/%m/%d")
         self.m_datePicker_edit_tanggal_lahir.SetValue(self.tanggal_lahir)
-#         self.m_choice_edit_pendidikan_terakhir.GetString(self.m_choice_edit_pendidikan_terakhir.GetSelection()),
-#         self.m_text_edit_jurusan_pendidikan.GetValue().upper(),
-#         self.m_text_edit_kota.GetValue().upper(),
-#         self.m_text_edit_perusahaan_instansi.GetValue().upper(),
-#         self.m_text_edit_posisi_jabatan.GetValue().upper(),        
+
+        self.pendidikan_terakhir = str(self.parent.rincian_data_peserta[0][7])
+        if self.pendidikan_terakhir == "SD":
+            self.pendidikan_terakhir_item = 0
+        elif self.pendidikan_terakhir == "SMP":
+            self.pendidikan_terakhir_item = 1
+        elif self.pendidikan_terakhir == "SMA":
+            self.pendidikan_terakhir_item = 2
+        elif self.pendidikan_terakhir == "D3":
+            self.pendidikan_terakhir_item = 3
+        elif self.pendidikan_terakhir == "S1":
+            self.pendidikan_terakhir_item = 4
+        elif self.pendidikan_terakhir == "S2":
+            self.pendidikan_terakhir_item = 5
+        elif self.pendidikan_terakhir == "S3":
+            self.pendidikan_terakhir_item = 6
+
+        self.m_choice_edit_pendidikan_terakhir.SetSelection(self.pendidikan_terakhir_item),
+
+        self.jurusan_pendidikan = str(self.parent.rincian_data_peserta[0][8])
+        self.m_text_edit_jurusan_pendidikan.SetValue(self.jurusan_pendidikan.upper())
+
+        self.kota = str(self.parent.rincian_data_peserta[0][9])
+        self.m_text_edit_kota.SetValue(self.kota.upper())
+        self.perusahaan_instansi = str(self.parent.rincian_data_peserta[0][10])
+
+        self.m_text_edit_perusahaan_instansi.SetValue(self.perusahaan_instansi.upper())
+        self.posisi_jabatan = str(self.parent.rincian_data_peserta[0][11])
+
+        self.m_text_edit_posisi_jabatan.SetValue(self.posisi_jabatan.upper())
         
         
         rows=[]

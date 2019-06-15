@@ -1,4 +1,4 @@
-#!python3
+#! /usr/bin/env python
 import wx
 # from ObjectListView import ObjectListView, ColumnDefn
 # 

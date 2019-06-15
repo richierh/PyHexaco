@@ -9,6 +9,7 @@ import pathlib
 
 class authenticationFrameWarningKey(FrameKey.FrameWarningKey):
 
+
 	def __init__(self, parent):
 		FrameKey.FrameWarningKey.__init__(self, parent)
 		self.SetSize((450,300))
@@ -84,5 +85,4 @@ root = wx.App()
 RunApp = authenticationFrameWarningKey(None)
 RunApp.Show()
 root.MainLoop()
-    
-    
+

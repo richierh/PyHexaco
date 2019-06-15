@@ -4,15 +4,15 @@ import platform
 
 import wx
 
-from AppsSDS.SDSHollandWindowUtama import SDSHollandWindowUtama as I
+# from AppsSDS.SDSHollandWindowUtama import SDSHollandWindowUtama as I
 
 
-class run(I):
-
-	def __init__(self, *args, **kwrgs):
-		super(run, self).__init__(*args, **kwrgs)
-
-	pass
+# class run(I):
+# 
+# 	def __init__(self, *args, **kwrgs):
+# 		super(run, self).__init__(*args, **kwrgs)
+# 
+# 	pass
 
 
 root = wx.App()
@@ -33,15 +33,15 @@ class VerifyKey():
 
 
 def openWindows():
-	start = run(None)
-	start.Show()
-	root.MainLoop()	
+# 	start = run(None)
+# 	start.Show()
+# 	root.MainLoop()	
 	# print ("lewat sini")
 	return None
 
 
 def close():
-	from AppsSDS.authenticationFrameWarningKey import authenticationFrameWarningKey
+	from coreapps.views.authenticationFrameWarningKey import authenticationFrameWarningKey
 	start = authenticationFrameWarningKey(None)
 	start.Show()
 	root.MainLoop()
@@ -53,7 +53,7 @@ def close():
 
 if platform.system() == "Windows":
 	print (platform.system())
-	my_file = Path("C:\\ProgramData\\tes.txt")
+	my_file = Path("C:\\ProgramData\\3351.txt")
 
 	# print (my_file)
 	if my_file.is_file():
@@ -75,7 +75,7 @@ if platform.system() == "Windows":
 
 elif platform.system() == "Linux" :
 	print (platform.system())
-	my_file = Path.home() / ".tes"
+	my_file = Path.home() / ".3351"
 	# print (my_file)
 	if my_file.is_file():
 		# print ("file ada")

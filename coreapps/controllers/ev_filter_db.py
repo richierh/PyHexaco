@@ -13,6 +13,16 @@ class BukaFilter(FrameFilterDatabase):
     def __init__(self,parent):
         super(BukaFilter,self).__init__(parent)
         self.parent = parent
+        self.SetSize((450,550))
+        self.m_panel20.SetBackgroundColour(wx.Colour(77, 204, 187))
+        self.m_staticText206.SetForegroundColour(wx.Colour(255, 255, 255))
+        self.m_staticText207.SetForegroundColour(wx.Colour(255, 255, 255))
+        self.m_staticText208.SetForegroundColour(wx.Colour(255, 255, 255))
+        self.m_staticText209.SetForegroundColour(wx.Colour(255, 255, 255))
+        self.m_staticText210.SetForegroundColour(wx.Colour(255, 255, 255))
+        self.m_staticText211.SetForegroundColour(wx.Colour(255, 255, 255))
+
+        
         print ("lewat sini nggak")
         
     def __del__( self ):
