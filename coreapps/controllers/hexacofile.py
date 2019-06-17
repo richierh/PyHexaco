@@ -9,8 +9,7 @@ from coreapps.views.maingui import FrameDepan
 from coreapps.views.biodata import Biodata
 from coreapps.views.menubar_tentang import TentangAplikasi
 from coreapps.views.DataPeserta import DataPesertaHexaco
-from coreapps.controllers.ev_halaman import HalamanEventControl, AmbilData,\
-    DataTarik
+from coreapps.controllers.ev_halaman import HalamanEventControl, AmbilData
 from coreapps.controllers.ev_database import DatabaseEventControl
 from coreapps.controllers.ev_filter_db import BukaFilter
 from coreapps.views.huruf_besar import HurufBesar
@@ -59,6 +58,32 @@ class Hexacofile(FrameDepan):
         self.Refresh()
         self.Layout()
   
+    def m_button_save_as_pdfOnButtonClick(self, event):
+        dlg = wx.FileDialog(self, "Save to file:", ".", "", "File Pdf (*.pdf)|*.pdf", wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
+        if dlg.ShowModal() == wx.ID_OK:
+            i = dlg.GetFilterIndex()
+            if i == 0: # Text format
+                try:
+                    f = open(dlg.GetPath(), "w")
+                    f.write("# Date, From, SerivceCenter, Message\n")
+                    for i in self.itemDataMap.keys():
+                        entry = self.itemDataMap[i]
+                        f.write('%s,%s,%s,%s\n' % (entry[1], entry[2], entry[4].smsc, entry[3]))
+                    f.close()
+#                     wx.pySIMmessage(self, "SMS export to file was successful\n\nFilename: %s" % dlg.GetPath(), "Export OK")
+                except:
+#                     pySIMmessage(self, "Unable to save your SMS messages to file: %s" % dlg.GetPath(), "Export error")
+                    #print_exc()
+                    pass
+
+            dlg.Destroy() 
+  
+#     def m_button_save_as_pdfOnButtonClick(self, event):
+#         self.a = AmbilData(self)
+#         self.a.save()
+#         print ("sucess")
+#         pass
+#   
     def m_button4OnButtonClick24(self, event):
         'aplikasi akan diarahkan ke halaman sesuai dengan jenis soal/versi'
         self.m_panel7.Show()

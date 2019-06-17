@@ -20,7 +20,10 @@ class GrafikDimensi(GrafikDimensi):
     
     def __init__(self,parent):
         super().__init__(parent)
-
+    
+    def save_file(self):
+        self.save = self.save_figure()        
+        return self.save
 
 class GrafikA(GrafikA):
     

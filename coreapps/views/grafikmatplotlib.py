@@ -63,7 +63,12 @@ class GrafikDimensi(UIGrafikInherit):
         self.toolbar.Update()        
 #         self.__draw()
 #         self.manage_window = self.figure.get_current_fig_manager()
-
+    
+    def save_figure(self):
+        
+        return self.figure.savefig("myname.png")
+        
+    
     def draw(self,nilai_dimensi,nilai_sub_dimensi,versi):
         self.a = nilai_sub_dimensi
         self.axes_honesty_humility.get_xaxis().set_ticks([])

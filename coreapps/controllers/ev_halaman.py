@@ -49,7 +49,6 @@ class HalamanEventControl():
 
 
     def m_button3OnButtonClick(self, event):
-            self.parent.m_notebook2.SetSelection(1)                                                                      
 
 #         try:
             self.getSel = self.parent.m_simplebook1.GetSelection()
@@ -71,6 +70,8 @@ class HalamanEventControl():
                 self.parent.m_button3.Disable()  #         print(self.text_entry.get_input_versi24())
             else :
                 self.parent.m_button3.Enable()
+            self.parent.m_notebook2.SetSelection(1)                                                                      
+
 #         except :
 #             self.parent.m_button3.Disable()  #         print(self.text_entry.get_input_versi24())
 #         print(self.text_entry.get_input_versi60())
@@ -105,6 +106,9 @@ class AmbilData():
         self.parent.GrafikMatplotlib.Refresh()
         self.parent.GrafikMatplotlib.Layout()
     
+    def save(self):
+        return self.parent.grafik_matplotlib.save_figure()
+    
     def data_induk(self):
         self.a = HitungData(self.parent)
         hasil_dimensi,hasil_subdimensi = self.a.hitung()
@@ -120,34 +124,34 @@ class AmbilData():
     def get_data_from_input(self):
         return self.data_induk()
 
-class DataTarik():
-    
-    
-    def __init__(self,parent):
-        self.parent = parent
-#         from coreapps.views.grafikmatplotlib import GrafikDimensi
-        from coreapps.controllers.grafik_matplotlib import GrafikDimensi
-        
-        self.hasil_subdimensi,self.hasil_dimensi = self.data_induk()
-#         print ("cek")
-#         print (self.hasil_dimensi)
-#         print (self.hasil_dimensi["Honesty & Humility"])
-#         print (self.hasil_subdimensi["Honesty & Humility"])
-        self.parent.grafik_matplotlib=GrafikDimensi(self.parent)
-        self.parent.grafik_matplotlib.draw(self.hasil_dimensi,self.hasil_subdimensi,self.parent.versi_soal)
-        self.parent.GrafikMatplotlib.SetSizer(self.parent.grafik_matplotlib.sizer90)
-        self.parent.GrafikMatplotlib.Update()
-        self.parent.GrafikMatplotlib.Refresh()
-        self.parent.GrafikMatplotlib.Layout()
-    
-    def data_induk(self):
-        self.a = HitungDataDatabase(self.parent)
-        hasil_dimensi,hasil_subdimensi = self.a.hitung()
-        return hasil_dimensi,hasil_subdimensi
-        pass
-    
-    def get_data_from_input(self):
-        return self.data_induk()
+# class DataTarik():
+#     
+#     
+#     def __init__(self,parent):
+#         self.parent = parent
+# #         from coreapps.views.grafikmatplotlib import GrafikDimensi
+#         from coreapps.controllers.grafik_matplotlib import GrafikDimensi
+#         
+#         self.hasil_subdimensi,self.hasil_dimensi = self.data_induk()
+# #         print ("cek")
+# #         print (self.hasil_dimensi)
+# #         print (self.hasil_dimensi["Honesty & Humility"])
+# #         print (self.hasil_subdimensi["Honesty & Humility"])
+#         self.parent.grafik_matplotlib=GrafikDimensi(self.parent)
+#         self.parent.grafik_matplotlib.draw(self.hasil_dimensi,self.hasil_subdimensi,self.parent.versi_soal)
+#         self.parent.GrafikMatplotlib.SetSizer(self.parent.grafik_matplotlib.sizer90)
+#         self.parent.GrafikMatplotlib.Update()
+#         self.parent.GrafikMatplotlib.Refresh()
+#         self.parent.GrafikMatplotlib.Layout()
+#     
+#     def data_induk(self):
+#         self.a = HitungDataDatabase(self.parent)
+#         hasil_dimensi,hasil_subdimensi = self.a.hitung()
+#         return hasil_dimensi,hasil_subdimensi
+#         pass
+#     
+#     def get_data_from_input(self):
+#         return self.data_induk()
 
 
 class KamusControl():

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Jun  1 2019)
+## Python code generated with wxFormBuilder (version Jun 15 2019)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO *NOT* EDIT THIS FILE!
@@ -2266,33 +2266,39 @@ class FrameDepan ( wx.Frame ):
 
 		fgSizer26.Add( self.m_button141, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		fgSizer29 = wx.FlexGridSizer( 0, 2, 0, 0 )
-		fgSizer29.AddGrowableCol( 0 )
-		fgSizer29.SetFlexibleDirection( wx.BOTH )
-		fgSizer29.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+		bSizer40 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.m_button22 = wx.Button( self.m_panel15, wx.ID_ANY, u"Lihat Biodata", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button22.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
 
-		fgSizer29.Add( self.m_button22, 1, wx.ALL|wx.EXPAND, 5 )
+		bSizer40.Add( self.m_button22, 1, wx.ALL|wx.EXPAND, 5 )
 
-		bSizer38 = wx.BoxSizer( wx.VERTICAL )
+		fgSizer29 = wx.FlexGridSizer( 2, 2, 0, 0 )
+		fgSizer29.AddGrowableCol( 0 )
+		fgSizer29.SetFlexibleDirection( wx.BOTH )
+		fgSizer29.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
 		self.m_button_simpan_data = wx.Button( self.m_panel15, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button_simpan_data.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
 
-		bSizer38.Add( self.m_button_simpan_data, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer29.Add( self.m_button_simpan_data, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_button_save_as_pdf = wx.Button( self.m_panel15, wx.ID_ANY, u"Save as PDF", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer29.Add( self.m_button_save_as_pdf, 0, wx.ALL, 5 )
+
+		self.m_button_print = wx.Button( self.m_panel15, wx.ID_ANY, u"Print", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer29.Add( self.m_button_print, 0, wx.ALL, 5 )
 
 		self.m_button21 = wx.Button( self.m_panel15, wx.ID_ANY, u"Reset", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button21.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Tw Cen MT" ) )
 
-		bSizer38.Add( self.m_button21, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer29.Add( self.m_button21, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
-		fgSizer29.Add( bSizer38, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
+		bSizer40.Add( fgSizer29, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
-		fgSizer26.Add( fgSizer29, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		fgSizer26.Add( bSizer40, 1, wx.EXPAND, 5 )
 
 
 		bSizer91.Add( fgSizer26, 0, wx.EXPAND, 5 )
@@ -2494,6 +2500,8 @@ class FrameDepan ( wx.Frame ):
 		self.m_button141.Bind( wx.EVT_BUTTON, self.m_button_iaOnButtonClick )
 		self.m_button22.Bind( wx.EVT_BUTTON, self.m_button_lihat_biodata )
 		self.m_button_simpan_data.Bind( wx.EVT_BUTTON, self.m_button_simpan_dataOnButtonClick )
+		self.m_button_save_as_pdf.Bind( wx.EVT_BUTTON, self.m_button_save_as_pdfOnButtonClick )
+		self.m_button_print.Bind( wx.EVT_BUTTON, self.m_button_printOnButtonClick )
 		self.m_button21.Bind( wx.EVT_BUTTON, self.m_button21_bersihkan )
 		self.m_listbox_kamus_hexaco.Bind( wx.EVT_LISTBOX, self.m_listbox_kamus_hexacoOnListBox )
 		self.m_button_hapus_data_listctrl.Bind( wx.EVT_BUTTON, self.m_button_hapus_data_listctrlOnButtonClick )
@@ -2575,6 +2583,12 @@ class FrameDepan ( wx.Frame ):
 		event.Skip()
 
 	def m_button_simpan_dataOnButtonClick( self, event ):
+		event.Skip()
+
+	def m_button_save_as_pdfOnButtonClick( self, event ):
+		event.Skip()
+
+	def m_button_printOnButtonClick( self, event ):
 		event.Skip()
 
 	def m_button21_bersihkan( self, event ):
