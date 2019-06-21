@@ -1,0 +1,41 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "datapeserta" (
+	"idpeserta"	INTEGER NOT NULL,
+	"idtipesoal"	INTEGER
+);
+CREATE TABLE IF NOT EXISTS "TipeSoal" (
+	"idTipeSoal"	INTEGER,
+	"NamaSoal"	TEXT,
+	PRIMARY KEY("idTipeSoal") ON CONFLICT ROLLBACK
+);
+CREATE TABLE IF NOT EXISTS "DimensiSoalHexaco" (
+	"idDimensi"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"Dimensi"	TEXT NOT NULL
+);
+INSERT INTO "datapeserta" VALUES (1,1);
+INSERT INTO "DimensiSoalHexaco" VALUES (1,'Sincerity');
+INSERT INTO "DimensiSoalHexaco" VALUES (2,'Fairnes');
+INSERT INTO "DimensiSoalHexaco" VALUES (3,'Greed Avoidance');
+INSERT INTO "DimensiSoalHexaco" VALUES (4,'Modesty');
+INSERT INTO "DimensiSoalHexaco" VALUES (5,'Fearfulness');
+INSERT INTO "DimensiSoalHexaco" VALUES (6,'Anxiety');
+INSERT INTO "DimensiSoalHexaco" VALUES (7,'Dependence');
+INSERT INTO "DimensiSoalHexaco" VALUES (8,'Sentimentality');
+INSERT INTO "DimensiSoalHexaco" VALUES (9,'Social Self-Estimate');
+INSERT INTO "DimensiSoalHexaco" VALUES (10,'Social Boldness');
+INSERT INTO "DimensiSoalHexaco" VALUES (11,'Socialbility');
+INSERT INTO "DimensiSoalHexaco" VALUES (12,'Liveliness');
+INSERT INTO "DimensiSoalHexaco" VALUES (13,'Forgiveness');
+INSERT INTO "DimensiSoalHexaco" VALUES (14,'Gentleness');
+INSERT INTO "DimensiSoalHexaco" VALUES (15,'Flexibility');
+INSERT INTO "DimensiSoalHexaco" VALUES (16,'Patience');
+INSERT INTO "DimensiSoalHexaco" VALUES (17,'Organizations');
+INSERT INTO "DimensiSoalHexaco" VALUES (18,'Dilligence');
+INSERT INTO "DimensiSoalHexaco" VALUES (19,'Perfectionism');
+INSERT INTO "DimensiSoalHexaco" VALUES (20,'Prudence');
+INSERT INTO "DimensiSoalHexaco" VALUES (21,'Aesthetic Appreciation');
+INSERT INTO "DimensiSoalHexaco" VALUES (22,'Inquitiviness');
+INSERT INTO "DimensiSoalHexaco" VALUES (23,'Creativity');
+INSERT INTO "DimensiSoalHexaco" VALUES (24,'Unconventionality');
+INSERT INTO "DimensiSoalHexaco" VALUES (25,'Alturism');
+COMMIT;

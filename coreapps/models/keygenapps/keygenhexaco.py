@@ -76,11 +76,18 @@ if __name__ == "__main__":
 # 	lisensi = 1853
 # 	lisensi_total = 223452987
 # 	lisensi = self.nilai*4 + 223445435
-	lisensi = (int(lisensi_total) - 223445435)/4
+# 	lisensi = (int(lisensi_total) -)/4
+
+	lastdigit = int(repr(int(lisensi_total))[0:4])
+	lisensi = int(lastdigit/4)
+	
+
 # 	lisensi = 1830
 # 	print (Key.verify(lisensi))
 	print ("Sukses")
 	print (Key())
+	input = input("\n")
+
 # 	print (lisensi)
 # 	print (Key.verify(lisensi))
 	pass
