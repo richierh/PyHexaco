@@ -59,36 +59,73 @@ class Hexacofile(FrameDepan):
         self.Layout()
   
     def m_button_save_as_pdfOnButtonClick(self, event):
+        from coreapps.controllers.definisi import rerata2
+        print ("tes over here 'em'")
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
-        elif self.no_database == 0 :
-        
+            print (self.rincian_data_peserta)
+            self.bio_data = []
+            for bio  in self.rincian_data_peserta[0]:
+                if self.rincian_data_peserta[0].index(bio) <= 1:
+                    pass
+                else :
+                    self.bio_data.append(bio)
+            print (self.bio_data)
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
+        elif self.no_database == 0 :     
+            self.bio_data = ControlEntry(self)
+            print (self.bio_data.get_input_biodata())
+            print ("tess ajaj")
+            self.bio_data=self.bio_data.get_input_biodata()
+
             self.hitung = HitungData(self)
             self.hasil_subdimensi,self.hasil_dimensi = self.hitung.hitung()
- 
-        print (self.hasil_subdimensi)
-  
-        self.jenis_kelamin = self.parent.m_choice1.GetString(select)
-        for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+        # print (self.hasil_dimensi)
+        # print (self.hasil_subdimensi)
+
+        select = self.m_choice1.GetSelection()
+        self.jenis_kelamin = self.m_choice1.GetString(select)
+
+        for k,v in self.hasil_dimensi.items():
+            self.hasil_subdimensi[k]=round(v,2)
 #         print ("Nilai Total dimensi + sub dimensi {} {}".format(nilai_dimensi,nilai_sub_dimensi))
 #         print (self.jenis_kelamin)
-        self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
-        dimensi = ["Aesthetic Appreciation",
-                   "Inquisitiveness",
-                   "Creativity",
-                   "Unconventionality",
-                   "Openness to Experience"]
+        self.definisi = rerata2(self.jenis_kelamin,self.hasil_subdimensi)
+        # print ([*self.hasil_subdimensi])
+        # print (self.definisi)
+        dimensi = [*self.hasil_subdimensi]
+        self.definisi.insert(20,self.definisi[30])
+        self.definisi.insert(16,self.definisi[30])
+        self.definisi.insert(12,self.definisi[30])
+        self.definisi.insert(8,self.definisi[30])
+        self.definisi.insert(4,self.definisi[30])
+        self.definisi.insert(0,self.definisi[30])
+
+        for i in range(0,6):
+            del self.definisi[-1]
         self.data = []
         for k in self.definisi:
             for dim in dimensi:
                 if k[0] == dim:
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],self.hasil_subdimensi[dim],k[1],k[2]])
 #         print ("data ini {}".format(self.data))
-            print("hell")
-        self.insert_value_list(self)
+
+
+       # print (self.data)
+        for i in self.data:
+            # print (i)
+            pass
+        print ("stop disini")
+
+        from coreapps.controllers.reporting.report import pdf_data
+
+        self.pdf = pdf_data(self.bio_data,self.data)
 
 
 
@@ -216,6 +253,7 @@ class Hexacofile(FrameDepan):
             self.hasil_dimensi = self.y
             print (self.rincian_data_peserta)
             print (self.rincian_data_peserta[0][5])
+
             if self.rincian_data_peserta[0][5] == "Laki - Laki":
                 print ("laki - laki ini")
                 self.m_choice1.SetSelection(0)
@@ -246,8 +284,7 @@ class Hexacofile(FrameDepan):
             else :
                 print ("perempuan ini")
                 self.m_choice1.SetSelection(1)        
-        elif self.no_database == 0 :
-        
+        elif self.no_database == 0 :     
             self.hitung = HitungData(self)
             self.hasil_subdimensi,self.hasil_dimensi = self.hitung.hitung()
         print (self.hasil_subdimensi)

@@ -26,6 +26,15 @@ def path():
     pathl = pathlib.Path.cwd() / "models/hexacodb"
     return pathl
 
+def encoding():
+    conne = connect_db()
+    cursorexe = conne.cursor()
+    sqlcmd = """pragma encoding"""
+    cursorexe.execute(sqlcmd)
+#     print (getid[0])
+    conne.close()
+
+
 def insert_input_peserta(values):
    
     conne = connect_db()

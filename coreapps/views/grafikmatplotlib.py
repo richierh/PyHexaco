@@ -374,7 +374,7 @@ class GrafikO(GrafikFrame,Colour):
         select = self.parent.m_choice1.GetSelection()
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print ("Nilai Total dimensi + sub dimensi {} {}".format(nilai_dimensi,nilai_sub_dimensi))
 #         print (self.jenis_kelamin)
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
@@ -468,7 +468,7 @@ class GrafikC(GrafikFrame):
         nilai_dimensi
         nilai_sub_dimensi
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print (nilai_sub_dimensi)
 #         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
@@ -580,7 +580,7 @@ class GrafikA(GrafikFrame):
         nilai_sub_dimensi
         
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
         
         print (nilai_sub_dimensi)
             
@@ -684,7 +684,7 @@ class GrafikEx(GrafikFrame):
 #         nilai_dimensi
 #         nilai_sub_dimensi
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print (nilai_sub_dimensi)
 #         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
@@ -779,7 +779,7 @@ class GrafikEm(GrafikFrame):
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
         print (self.jenis_kelamin)
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print (nilai_sub_dimensi)
 #         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
@@ -873,7 +873,7 @@ class GrafikH(GrafikFrame):
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
 #         print (self.jenis_kelamin)
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print (nilai_sub_dimensi)
 #         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
@@ -962,7 +962,7 @@ class GrafikIA(GrafikFrame):
         select = self.parent.m_choice1.GetSelection()
         self.jenis_kelamin = self.parent.m_choice1.GetString(select)
         for k,v in nilai_dimensi.items():
-            nilai_sub_dimensi[k]=int(v)
+            nilai_sub_dimensi[k]=round(v,2)
 #         print (nilai_sub_dimensi)
 #         print (type(self.jenis_kelamin))
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
