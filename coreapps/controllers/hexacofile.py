@@ -59,23 +59,63 @@ class Hexacofile(FrameDepan):
         self.Layout()
   
     def m_button_save_as_pdfOnButtonClick(self, event):
-        dlg = wx.FileDialog(self, "Save to file:", ".", "", "File Pdf (*.pdf)|*.pdf", wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
-        if dlg.ShowModal() == wx.ID_OK:
-            i = dlg.GetFilterIndex()
-            if i == 0: # Text format
-                try:
-                    f = open(dlg.GetPath(), "w")
-                    f.write("# Date, From, SerivceCenter, Message\n")
-                    for i in self.itemDataMap.keys():
-                        entry = self.itemDataMap[i]
-                        f.write('%s,%s,%s,%s\n' % (entry[1], entry[2], entry[4].smsc, entry[3]))
-                    f.close()
-#                     wx.pySIMmessage(self, "SMS export to file was successful\n\nFilename: %s" % dlg.GetPath(), "Export OK")
-                except:
-#                     pySIMmessage(self, "Unable to save your SMS messages to file: %s" % dlg.GetPath(), "Export error")
-                    #print_exc()
-                    pass
-            dlg.Destroy() 
+        if self.no_database == 1 :
+            self.hasil_subdimensi = self.x
+            self.hasil_dimensi = self.y
+        
+        elif self.no_database == 0 :
+        
+            self.hitung = HitungData(self)
+            self.hasil_subdimensi,self.hasil_dimensi = self.hitung.hitung()
+ 
+        print (self.hasil_subdimensi)
+  
+        self.jenis_kelamin = self.parent.m_choice1.GetString(select)
+        for k,v in nilai_dimensi.items():
+            nilai_sub_dimensi[k]=int(v)
+#         print ("Nilai Total dimensi + sub dimensi {} {}".format(nilai_dimensi,nilai_sub_dimensi))
+#         print (self.jenis_kelamin)
+        self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
+        dimensi = ["Aesthetic Appreciation",
+                   "Inquisitiveness",
+                   "Creativity",
+                   "Unconventionality",
+                   "Openness to Experience"]
+        self.data = []
+        for k in self.definisi:
+            for dim in dimensi:
+                if k[0] == dim:
+                    self.data.append([k[0],k[1],k[2]])
+#         print ("data ini {}".format(self.data))
+            print("hell")
+        self.insert_value_list(self)
+
+
+
+
+
+
+
+
+
+
+#         dlg = wx.FileDialog(self, "Save to file:", ".", "", "File Pdf (*.pdf)|*.pdf", wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
+#         if dlg.ShowModal() == wx.ID_OK:
+#             i = dlg.GetFilterIndex()
+#             if i == 0: # Text format
+#                 try:
+#                     f = open(dlg.GetPath(), "w")
+#                     f.write("# Date, From, SerivceCenter, Message\n")
+#                     for i in self.itemDataMap.keys():
+#                         entry = self.itemDataMap[i]
+#                         f.write('%s,%s,%s,%s\n' % (entry[1], entry[2], entry[4].smsc, entry[3]))
+#                     f.close()
+# #                     wx.pySIMmessage(self, "SMS export to file was successful\n\nFilename: %s" % dlg.GetPath(), "Export OK")
+#                 except:
+# #                     pySIMmessage(self, "Unable to save your SMS messages to file: %s" % dlg.GetPath(), "Export error")
+#                     #print_exc()
+#                     pass
+#             dlg.Destroy() 
   
 #     def m_button_save_as_pdfOnButtonClick(self, event):
 #         self.a = AmbilData(self)
@@ -144,15 +184,26 @@ class Hexacofile(FrameDepan):
             
     def m_button_cOnButtonClick(self, event):
         print ("tes over here 'c' grafik Conscientouseness " )
+        
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)
+
+            pass
+
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
             self.hasil_subdimensi,self.hasil_dimensi = self.hitung.hitung()
-        print (self.hasil_subdimensi)
+        # print (self.hasil_subdimensi)
   
         self.grafik = GrafikC(self)
         self.grafik.Show()
@@ -163,7 +214,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -180,7 +238,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -197,7 +262,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -214,7 +286,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -231,7 +310,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -248,7 +334,14 @@ class Hexacofile(FrameDepan):
         if self.no_database == 1 :
             self.hasil_subdimensi = self.x
             self.hasil_dimensi = self.y
-        
+            print (self.rincian_data_peserta)
+            print (self.rincian_data_peserta[0][5])
+            if self.rincian_data_peserta[0][5] == "Laki - Laki":
+                print ("laki - laki ini")
+                self.m_choice1.SetSelection(0)
+            else :
+                print ("perempuan ini")
+                self.m_choice1.SetSelection(1)        
         elif self.no_database == 0 :
         
             self.hitung = HitungData(self)
@@ -294,6 +387,9 @@ class Hexacofile(FrameDepan):
         self.get_item_id_name = self.m_listCtrl_tabel_database.GetItemText(self.item,col=1)
         self.query = TarikData(["idpeserta",self.get_item_id_name])
 
+        self.rinci_list = ["idpeserta",self.get_item_id_name.upper()]
+        self.rincian_data_peserta = query_tabel_data_peserta([self.get_item_id_name.upper(),"","","","idpeserta"])
+
         print (self.query.lihat_keseluruhan())
         print (self.query.data_versi())
         print ("Jumlah soal = {}".format(self.query.tipe_soal()))
@@ -304,6 +400,8 @@ class Hexacofile(FrameDepan):
         self.x,self.y = self.hexaco_calculations.hitung()
         
         self.ambil = AmbilData(self)
+        self.ambil.save()
+
         print (self.x)
         print (self.y)
         

@@ -41,7 +41,7 @@ class GrafikDimensi(UIGrafikInherit):
                                     right=0.975,
                                     wspace = 0.3,
                                     hspace = None)     
-        self.figure.tight_layout()   
+        # self.figure.tight_layout()   
         self.axes_6_dimensi = self.figure.add_subplot(121)
         self.axes_honesty_humility = self.figure.add_subplot(6,2,2)
         self.axes_Emotionality = self.figure.add_subplot(6, 2, 4)
@@ -56,6 +56,7 @@ class GrafikDimensi(UIGrafikInherit):
         self.sizer90 = wx.BoxSizer(wx.VERTICAL)
         self.sizer90.Add(self.canvas, 1, wx.ALL | wx.EXPAND)
         
+ 
     def add_toolbar(self):
         self.toolbar = NavigationToolbar2WxAgg(self.canvas)        
         self.toolbar.Realize()
@@ -65,8 +66,11 @@ class GrafikDimensi(UIGrafikInherit):
 #         self.manage_window = self.figure.get_current_fig_manager()
     
     def save_figure(self):
-        
-        return self.figure.savefig("myname.png")
+        import pathlib
+        self.path = pathlib.Path().cwd()/"controllers/reporting/image1.png"
+        print(self.path)
+        print ("lewat sini nggak")
+        return self.figure.savefig(self.path,dpi='figure')
         
     
     def draw(self,nilai_dimensi,nilai_sub_dimensi,versi):
@@ -275,6 +279,7 @@ class GrafikDimensi(UIGrafikInherit):
         self.axes_Openess_To_Experience.set_xlim(left=0, right=5)
         self.axes_Openess_To_Experience.set_yticks(self.y_pos6)
         self.axes_Openess_To_Experience.set_yticklabels(self.data_y6, fontsize=8, fontname="Tw Cen MT")
+
 #         self.parent.Fit()
 #         self.parent.GrafikMatplotlib.Fit()
         pass

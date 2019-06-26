@@ -11,3 +11,4 @@ os.getcwd()
 cd = "{}{}".format(os.getcwd(), "/Aplc")
 os.chdir(cd)
 
+import wx

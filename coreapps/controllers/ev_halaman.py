@@ -63,6 +63,7 @@ class HalamanEventControl():
             elif self.getSel == 3 :
                 self.parent.no_database = 0
                 self.data_induk = AmbilData(self.parent)
+                self.data_induk.save()
 #                 self.data_induk.data_induk()
                 print ("masuk ke halaman {}".format(self.getSel))
                 'Proses hitung dimulai ketika halaman 3 , atau pada saat penyajian grafik'

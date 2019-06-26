@@ -41,7 +41,7 @@ class GrafikDimensi(UIGrafikInherit):
                                     right=0.975,
                                     wspace = 0.3,
                                     hspace = None)     
-        self.figure.tight_layout()   
+        # self.figure.tight_layout()   
         self.axes_6_dimensi = self.figure.add_subplot(121)
         self.axes_honesty_humility = self.figure.add_subplot(6,2,2)
         self.axes_Emotionality = self.figure.add_subplot(6, 2, 4)
@@ -65,6 +65,9 @@ class GrafikDimensi(UIGrafikInherit):
 #         self.manage_window = self.figure.get_current_fig_manager()
     
     def save_figure(self):
+        import pathlib
+
+        
         
         return self.figure.savefig("myname.png")
         
