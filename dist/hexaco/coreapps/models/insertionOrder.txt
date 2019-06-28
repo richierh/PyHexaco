@@ -1,0 +1,8 @@
+DimensiSoalHexaco
+TipeSoal
+Rincian Data Peserta
+Input_Data_Jawaban_Peserta
+SoaldanDimensi
+Kamus
+Referensi Dimensi
+tipe24

@@ -127,9 +127,14 @@ class Hexacofile(FrameDepan):
 
         self.pdf = pdf_data(self.bio_data,self.data)
 
+        from coreapps.controllers.turunan_dialog_save_pdf import TurunanDialogSavePDF
+        self.buka_dialog_savePDF = TurunanDialogSavePDF(self)
+        self.buka_dialog_savePDF.Show()
 
 
 
+
+        
 
 
 
@@ -175,6 +180,14 @@ class Hexacofile(FrameDepan):
         self.tipe = 1
         self.versi_soal = 24
 #         print ("tes soal item {} dan tipe".format(self.versi_soal,self.tipe))
+
+    def m_button_printOnButtonClick(self,event):
+        from coreapps.controllers.reporting.print import printcurrent
+
+        thefile = str(pathlib.Path.cwd()/"controllers/reporting/tuto1d.pdf")
+
+        self.print = printcurrent(thefile)
+        pass
 
     def m_button5OnButtonClick60(self, event):
         'aplikasi akan diarahkan ke halaman sesuai dengan jenis soal/versi'

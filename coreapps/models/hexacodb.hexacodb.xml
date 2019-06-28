@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="/home/cireng/Projects/pyhexaco/coreapps/models/hexacodb" schema="hexacodb" type="SQLite - 3.27.2">
+   <tables>
+      <table name="DimensiSoalHexaco" numRows="25" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="10" id="0" name="idDimensi" nullable="true" remarks="" size="2000000000" type="INTEGER">
+            <child column="idDimensi" foreignKey="" implied="false" onDeleteCascade="false" table="Input_Data_Jawaban_Peserta"/>
+            <child column="idDimensi" foreignKey="" implied="false" onDeleteCascade="false" table="SoaldanDimensi"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="1" name="Dimensi" nullable="false" remarks="" size="2000000000" type="TEXT"/>
+      </table>
+      <table name="Input_Data_Jawaban_Peserta" numRows="1128" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="10" id="0" name="idinputpeserta" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+         <column autoUpdated="false" digits="10" id="1" name="NoSoal" nullable="true" remarks="" size="2000000000" type="INT"/>
+         <column autoUpdated="false" digits="10" id="2" name="JawabanPeserta" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="3" name="idTipeSoal" nullable="true" remarks="" size="2000000000" type="INT"/>
+         <column autoUpdated="false" digits="10" id="4" name="idpeserta" nullable="true" remarks="" size="2000000000" type="INT">
+            <parent column="idpeserta" foreignKey="" implied="false" onDeleteCascade="false" table="Rincian Data Peserta"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="5" name="idDimensi" nullable="true" remarks="" size="2000000000" type="INT">
+            <parent column="idDimensi" foreignKey="" implied="false" onDeleteCascade="false" table="DimensiSoalHexaco"/>
+         </column>
+         <index name="sqlite_autoindex_Input_Data_Jawaban_Peserta_1" unique="true">
+            <column ascending="true" name="idinputpeserta"/>
+         </index>
+      </table>
+      <table name="Kamus" numRows="32" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="10" id="0" name="No" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="1" name="Dimensi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="2" name="Referensi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+      </table>
+      <table name="Referensi Dimensi" numRows="31" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="10" id="0" name="No" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+         <column autoUpdated="false" digits="10" id="1" name="Dimensi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="2" name="MedianLakiLaki" nullable="true" remarks="" size="2000000000" type="REAL"/>
+         <column autoUpdated="false" digits="10" id="3" name="MedianPerempuan" nullable="true" remarks="" size="2000000000" type="REAL"/>
+         <column autoUpdated="false" digits="10" id="4" name="NilaiTinggi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="5" name="NilaiRendah" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="6" name="PrilakuTinggi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="7" name="PrilakuRendah" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+      </table>
+      <table name="Rincian Data Peserta" numRows="15" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="10" id="0" name="idpeserta" nullable="true" remarks="" size="2000000000" type="INTEGER">
+            <child column="idpeserta" foreignKey="" implied="false" onDeleteCascade="false" table="Input_Data_Jawaban_Peserta"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="1" name="idtipesoal" nullable="true" remarks="" size="2000000000" type="INT">
+            <parent column="idTipeSoal" foreignKey="" implied="false" onDeleteCascade="false" table="TipeSoal"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="2" name="No Tes" nullable="true" remarks="" size="2000000000" type="INT"/>
+         <column autoUpdated="false" digits="10" id="3" name="Tanggal Tes" nullable="true" remarks="" size="2000000000" type="DATE"/>
+         <column autoUpdated="false" digits="10" id="4" name="Nama Kandidat" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="5" name="Jenis Kelamin" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="6" name="Tanggal Lahir" nullable="true" remarks="" size="2000000000" type="DATE"/>
+         <column autoUpdated="false" digits="10" id="7" name="Pendidikan Terakhir" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="8" name="Jurusan Pendidikan" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="9" name="Kota" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="10" name="Perusahaan / Instansi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="11" name="Posisi / Jabatan" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <index name="sqlite_autoindex_Rincian Data Peserta_1" unique="true">
+            <column ascending="true" name="idpeserta"/>
+         </index>
+      </table>
+      <table name="SoaldanDimensi" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="10" id="0" name="idsoaldimensi" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+         <column autoUpdated="false" digits="10" id="1" name="jwbnpeserta" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+         <column autoUpdated="false" digits="10" id="2" name="NoSoal" nullable="true" remarks="" size="2000000000" type=""/>
+         <column autoUpdated="false" digits="10" id="3" name="idDimensi" nullable="true" remarks="" size="2000000000" type="INT">
+            <parent column="idDimensi" foreignKey="" implied="false" onDeleteCascade="false" table="DimensiSoalHexaco"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="4" name="idTipeSoal" nullable="true" remarks="" size="2000000000" type="INT">
+            <parent column="idTipeSoal" foreignKey="" implied="false" onDeleteCascade="false" table="TipeSoal"/>
+         </column>
+      </table>
+      <table name="tipe24" numRows="3" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="10" id="0" name="idsoal24" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+         <column autoUpdated="false" digits="10" id="1" name="tipedimensi" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="2" name="refer" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="3" name="nojawaban" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+         <column autoUpdated="false" digits="10" id="4" name="id_input_data" nullable="true" remarks="" size="2000000000" type="INTEGER"/>
+      </table>
+      <table name="TipeSoal" numRows="3" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="10" id="0" name="idTipeSoal" nullable="true" remarks="" size="2000000000" type="INTEGER">
+            <child column="idtipesoal" foreignKey="" implied="false" onDeleteCascade="false" table="Rincian Data Peserta"/>
+            <child column="idTipeSoal" foreignKey="" implied="false" onDeleteCascade="false" table="SoaldanDimensi"/>
+         </column>
+         <column autoUpdated="false" digits="10" id="1" name="NamaSoal" nullable="true" remarks="" size="2000000000" type="TEXT"/>
+      </table>
+   </tables>
+</database>

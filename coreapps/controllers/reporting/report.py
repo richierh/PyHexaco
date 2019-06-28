@@ -276,4 +276,4 @@ def pdf_data(biodata,nilai):
         # pdf.ln(th)
 
     pdf.output(str(name_loc)+"/"+str(pdf1), 'F')
-    webbrowser.open_new(name_loc+"/"+pdf1)
+    # webbrowser.open_new(name_loc+"/"+pdf1)

@@ -3172,3 +3172,69 @@ class Biodata ( wx.Frame ):
 		event.Skip()
 
 
+###########################################################################
+## Class DialogSavePDF
+###########################################################################
+
+class DialogSavePDF ( wx.Dialog ):
+
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 396,173 ), style = wx.DEFAULT_DIALOG_STYLE )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer40 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel1 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		fgSizer31 = wx.FlexGridSizer( 0, 2, 0, 0 )
+		fgSizer31.SetFlexibleDirection( wx.BOTH )
+		fgSizer31.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+		self.m_staticText1 = wx.StaticText( self.m_panel1, wx.ID_ANY, u"Direktori", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText1.Wrap( -1 )
+
+		fgSizer31.Add( self.m_staticText1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.m_direktori_pdf = wx.DirPickerCtrl( self.m_panel1, wx.ID_ANY, u",90,90,-1,70,0", u"Select a folder", wx.DefaultPosition, wx.DefaultSize, wx.DIRP_DEFAULT_STYLE )
+		fgSizer31.Add( self.m_direktori_pdf, 0, wx.ALL, 5 )
+
+		self.m_staticText2 = wx.StaticText( self.m_panel1, wx.ID_ANY, u"Nama File", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2.Wrap( -1 )
+
+		fgSizer31.Add( self.m_staticText2, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.m_filepdf = wx.TextCtrl( self.m_panel1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_filepdf.SetMaxLength( 0 )
+		fgSizer31.Add( self.m_filepdf, 0, wx.ALL, 5 )
+
+
+		self.m_panel1.SetSizer( fgSizer31 )
+		self.m_panel1.Layout()
+		fgSizer31.Fit( self.m_panel1 )
+		bSizer40.Add( self.m_panel1, 1, wx.EXPAND|wx.ALL, 5 )
+
+		self.m_panel2 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.m_button_simpanPDFFile = wx.Button( self.m_panel2, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button_simpanPDFFile, 0, wx.ALL|wx.ALIGN_BOTTOM, 5 )
+
+		self.m_button_batal_simpanPDF = wx.Button( self.m_panel2, wx.ID_ANY, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button_batal_simpanPDF, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+
+		self.m_panel2.SetSizer( bSizer41 )
+		self.m_panel2.Layout()
+		bSizer41.Fit( self.m_panel2 )
+		bSizer40.Add( self.m_panel2, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+
+
+		self.SetSizer( bSizer40 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+	def __del__( self ):
+		pass
+
+

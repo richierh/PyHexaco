@@ -1,0 +1,38 @@
+// dot 2.40 on Linux 4.19.49-1-MANJARO
+// SchemaSpy rev Unknown
+digraph "Referensi Dimensi" {
+  graph [
+    rankdir="RL"
+    bgcolor="#ffffff"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+    ration="compress"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "Referensi Dimensi" [
+   label=<
+    <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="4"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT"><B>Referensi Dimensi</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
+      <TR><TD PORT="No" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">No</TD></TR></TABLE></TD><TD PORT="No.type" ALIGN="LEFT">integer[2000000000,10]</TD></TR>
+      <TR><TD PORT="Dimensi" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">Dimensi</TD></TR></TABLE></TD><TD PORT="Dimensi.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="MedianLakiLaki" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">MedianLakiLaki</TD></TR></TABLE></TD><TD PORT="MedianLakiLaki.type" ALIGN="LEFT">real[2000000000,10]</TD></TR>
+      <TR><TD PORT="MedianPerempuan" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">MedianPerempuan</TD></TR></TABLE></TD><TD PORT="MedianPerempuan.type" ALIGN="LEFT">real[2000000000,10]</TD></TR>
+      <TR><TD PORT="NilaiTinggi" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">NilaiTinggi</TD></TR></TABLE></TD><TD PORT="NilaiTinggi.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="NilaiRendah" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">NilaiRendah</TD></TR></TABLE></TD><TD PORT="NilaiRendah.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="PrilakuTinggi" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">PrilakuTinggi</TD></TR></TABLE></TD><TD PORT="PrilakuTinggi.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="PrilakuRendah" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="114" HEIGHT="16">PrilakuRendah</TD></TR></TABLE></TD><TD PORT="PrilakuRendah.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#ffffff">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">31 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">0 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/Referensi%20Dimensi.html"
+    tooltip="Referensi Dimensi"
+  ];
+}
