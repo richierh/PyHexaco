@@ -2,6 +2,7 @@
 
 import wx
 import matplotlib
+matplotlib.use('WXAgg')   
 from matplotlib.backends.backend_wxagg import NavigationToolbar2WxAgg,FigureCanvasWxAgg as FigureCanvas
 from matplotlib.figure import Figure
 from matplotlib.pyplot import plot as plt
@@ -121,7 +122,7 @@ class GrafikDimensi(UIGrafikInherit):
         self.axes_6_dimensi.set_xlim(left=0, right=5)
         self.axes_6_dimensi.set_ylim(bottom=-1, top=7)
 #         self.axes_6_dimensi.annotate('Nilai Rata-Rata', xy=(1, -1), xytext=(1, -1.65), arrowprops=dict(facecolor='black', shrink=2, headwidth=5, width=1))
-        self.axes_6_dimensi.set_xlabel("Dimensi Kepribadian",
+        self.axes_6_dimensi.set_xlabel("Aspek Kepribadian",
                                        fontname="Tw Cen MT",
                                        fontsize=12)
         self.axes_6_dimensi.xaxis.set_label_position("top")
@@ -179,7 +180,7 @@ class GrafikDimensi(UIGrafikInherit):
         self.axes_honesty_humility.set_xlim(left=0, right=5)
         self.axes_honesty_humility.set_yticks(self.y_pos1)
         self.axes_honesty_humility.set_yticklabels(self.data_y1, fontsize=9, fontname="Tw Cen MT")
-        self.axes_honesty_humility.set_xlabel("Sub-Dimensi Kepribadian",fontname="Tw Cen MT",
+        self.axes_honesty_humility.set_xlabel("Sub-Aspek Kepribadian",fontname="Tw Cen MT",
                                        fontsize=12)
         self.axes_honesty_humility.xaxis.set_label_position("top")
 
@@ -378,6 +379,8 @@ class GrafikO(GrafikFrame,Colour):
 #         print ("Nilai Total dimensi + sub dimensi {} {}".format(nilai_dimensi,nilai_sub_dimensi))
 #         print (self.jenis_kelamin)
         self.definisi = rerata2(self.jenis_kelamin,nilai_sub_dimensi)
+        print ("ini mulai dari sini")
+        print (self.definisi)
         dimensi = ["Aesthetic Appreciation",
                    "Inquisitiveness",
                    "Creativity",
@@ -387,7 +390,7 @@ class GrafikO(GrafikFrame,Colour):
         for k in self.definisi:
             for dim in dimensi:
                 if k[0] == dim:
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
 #         print ("data ini {}".format(self.data))
         self.insert_value_list(self)
 
@@ -486,7 +489,7 @@ class GrafikC(GrafikFrame):
 #                     print (k)
 #                     print(k[0])
 #                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
         self.insert_value_list(self)           
 
 class GrafikA(GrafikFrame):
@@ -605,7 +608,7 @@ class GrafikA(GrafikFrame):
                     print (k)
                     print(k[0])
                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
         print (self.data)
         self.insert_value_list(self)
 
@@ -704,7 +707,7 @@ class GrafikEx(GrafikFrame):
 #                     print (k)
 #                     print(k[0])
 #                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
             
         self.insert_value_list(self)
 
@@ -797,7 +800,7 @@ class GrafikEm(GrafikFrame):
 #                     print (k)
 #                     print(k[0])
 #                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
         self.insert_value_list(self)
        
    
@@ -891,7 +894,7 @@ class GrafikH(GrafikFrame):
 #                     print (k)
 #                     print(k[0])
 #                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
         self.insert_value_list(self)
  
 
@@ -976,7 +979,7 @@ class GrafikIA(GrafikFrame):
 #                     print (k)
 #                     print(k[0])
 #                     print(dimensi[0])
-                    self.data.append([k[0],k[1],k[2]])
+                    self.data.append([k[0],k[3],k[1],k[2]])
         self.insert_value_list(self)
 
 if __name__ == "__main__":

@@ -6,10 +6,10 @@ def rerata2(jenis_kelamin,Nilai_Dimensi):
     ambil_data = query_referensi_dimensi()
 #     print (ambil_data)
     
-    list_dimensi = []
+#     list_dimensi = []
     
-    for k,v in Nilai_Dimensi.items():
-        list_dimensi.append([k,v])
+#     for k,v in Nilai_Dimensi.items():
+#         list_dimensi.append([k,v])
     
 #     print (list_dimensi)
     
@@ -24,10 +24,12 @@ def rerata2(jenis_kelamin,Nilai_Dimensi):
                     if v > data[2]:
 #                         print (data[4])
 #                         print (data[6])
-                        hasil_data.append([data[1],data[4],data[6]])
+                        nilai = "Tinggi"
+                        hasil_data.append([data[1],data[4],data[6],nilai])
                     
                     else :
-                        hasil_data.append([data[1],data[5],data[7]])
+                        nilai = "Rendah"
+                        hasil_data.append([data[1],data[5],data[7],nilai])
     elif jenis_kelamin=="Perempuan":
         for k,v in Nilai_Dimensi.items():
 #             print (k)
@@ -37,10 +39,12 @@ def rerata2(jenis_kelamin,Nilai_Dimensi):
                     if v > data[3]:
 #                         print (data[4])
 #                         print (data[6])
-                        hasil_data.append([data[1],data[4],data[6]])
+                        nilai = "Tinggi"
+                        hasil_data.append([data[1],data[4],data[6],nilai])
                     
                     else :
-                        hasil_data.append([data[1],data[5],data[7]])
+                        nilai = "Rendah"
+                        hasil_data.append([data[1],data[5],data[7],nilai])
 
 
 
@@ -52,24 +56,29 @@ def rerata2(jenis_kelamin,Nilai_Dimensi):
 
             
 if __name__=="__main__":
+        import sys
+        import pathlib
+        print (sys.path.append(str(pathlib.Path.cwd()/"coreapps/models")))
+        from query import query_referensi_dimensi
+
 #     jenis_kelamin = "Laki - Laki"
-    Nilai_Dimensi = {'Sincerity': 4.0, 'Fairness': 2.0, 'Greed Avoidance': 2.5, 'Modesty': 3.5, 'Fearfullness': 4.67, 'Anxiety': 3.0, 'Dependence': 2.0, 'Sentimentality': 2.0, 'Social Self Esteem': 3.33, 'Social Boldness': 4.0, 'Sociability': 2.0, 'Liveliness': 1.0, 'Forgiveness': 3.0, 'Gentleness': 3.67, 'Flexibility': 2.33, 'Patience': 2.5, 'Organization': 1.5, 'Diligence': 1.0, 'Perfectionism': 2.67, 'Prudence': 4.67, 'Aesthetic Appreciation': 3.5, 'Inquisitiveness': 3.0, 'Creativity': 3.0, 'Unconventionality': 1.67, 'Interstitial': 0.0}
-    Nilai_Dimensi2 = {'Honesty & Humility': 3.0, 'Emotionality': 2.9175, 'Extraversion': 2.5825, 'Agreeableness': 2.875, 'Conscientiousness': 2.46, 'Openness to Experience': 2.7925, 'Interstitial': 0.0}
-    for key,value in Nilai_Dimensi2.items():
-        Nilai_Dimensi[key]=value
-     
-#     print (rerata("Laki - Laki", Nilai_Dimensi) )
-#     hasils = rerata("Laki - Laki", Nilai_Dimensi)
-#     
-#     for k,v in hasils.items():
-#         print (k,v)
-#     
-    # print (Sincerity["Laki - Laki"]["Nilai Median"])
-    # print (Sincerity["Nilai Tinggi"])
-#     print (Sincerity["Laki - Laki"][1]["Nilai Tinggi"])
+        Nilai_Dimensi = {'Sincerity': 4.0, 'Fairness': 2.0, 'Greed Avoidance': 2.5, 'Modesty': 3.5, 'Fearfullness': 4.67, 'Anxiety': 3.0, 'Dependence': 2.0, 'Sentimentality': 2.0, 'Social Self Esteem': 3.33, 'Social Boldness': 4.0, 'Sociability': 2.0, 'Liveliness': 1.0, 'Forgiveness': 3.0, 'Gentleness': 3.67, 'Flexibility': 2.33, 'Patience': 2.5, 'Organization': 1.5, 'Diligence': 1.0, 'Perfectionism': 2.67, 'Prudence': 4.67, 'Aesthetic Appreciation': 3.5, 'Inquisitiveness': 3.0, 'Creativity': 3.0, 'Unconventionality': 1.67, 'Interstitial': 0.0}
+        Nilai_Dimensi2 = {'Honesty & Humility': 3.0, 'Emotionality': 2.9175, 'Extraversion': 2.5825, 'Agreeableness': 2.875, 'Conscientiousness': 2.46, 'Openness to Experience': 2.7925, 'Interstitial': 0.0}
+        for key,value in Nilai_Dimensi2.items():
+                Nilai_Dimensi[key]=value
+        
+        #     print (rerata("Laki - Laki", Nilai_Dimensi) )
+        #     hasils = rerata("Laki - Laki", Nilai_Dimensi)
+        #     
+        #     for k,v in hasils.items():
+        #         print (k,v)
+        #     
+        # print (Sincerity["Laki - Laki"]["Nilai Median"])
+        # print (Sincerity["Nilai Tinggi"])
+        #     print (Sincerity["Laki - Laki"][1]["Nilai Tinggi"])
 
 
-    rerata2("Perempuan",Nilai_Dimensi)
+        rerata2("Perempuan",Nilai_Dimensi)
 
 
 # 

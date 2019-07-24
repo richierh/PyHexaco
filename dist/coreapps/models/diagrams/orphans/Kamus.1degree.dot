@@ -1,0 +1,33 @@
+// dot 2.40 on Linux 4.19.49-1-MANJARO
+// SchemaSpy rev Unknown
+digraph "Kamus" {
+  graph [
+    rankdir="RL"
+    bgcolor="#ffffff"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+    ration="compress"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "Kamus" [
+   label=<
+    <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="4"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT"><B>Kamus</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
+      <TR><TD PORT="No" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="56" HEIGHT="16">No</TD></TR></TABLE></TD><TD PORT="No.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="Dimensi" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="56" HEIGHT="16">Dimensi</TD></TR></TABLE></TD><TD PORT="Dimensi.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD PORT="Referensi" COLSPAN="2" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="56" HEIGHT="16">Referensi</TD></TR></TABLE></TD><TD PORT="Referensi.type" ALIGN="LEFT">text[2000000000,10]</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#ffffff">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">32 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">0 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/Kamus.html"
+    tooltip="Kamus"
+  ];
+}

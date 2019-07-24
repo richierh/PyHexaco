@@ -113,7 +113,7 @@ class Hexacofile(FrameDepan):
         for k in self.definisi:
             for dim in dimensi:
                 if k[0] == dim:
-                    self.data.append([k[0],self.hasil_subdimensi[dim],k[1],k[2]])
+                    self.data.append([k[0],self.hasil_subdimensi[dim],k[1],k[2],k[3]])
 #         print ("data ini {}".format(self.data))
 
 

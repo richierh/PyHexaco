@@ -1,0 +1,6 @@
+schemaspy.t=sqlite
+schemaspy.db=../my_db_name.sqlite3
+schemaspy.sso=true
+schemaspy.o=./output
+schemaspy.cat=my_db_name
+schemaspy.s=my_db_name

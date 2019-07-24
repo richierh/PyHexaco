@@ -4,6 +4,8 @@ import wx
 import coreapps.views.FrameKey as FrameKey
 import random
 import pathlib
+from coreapps.models.keygenapps.keygen import Key
+from coreapps.views.tempelfile import TempelFile
 # Implementing FrameWarningKey
 
 
@@ -13,26 +15,18 @@ class authenticationFrameWarningKey(FrameKey.FrameWarningKey):
 	def __init__(self, parent):
 		FrameKey.FrameWarningKey.__init__(self, parent)
 		self.SetSize((450,300))
-		self.nilai = random.randint(1700, 1900)
-		print (self.nilai)
 		self.m_staticText6.SetLabel("")
 		
 		self.nilai = random.randint(1700, 1900)
 		self.acak = random.randint(10000,99999)
-		print (self.nilai)
+
 		self.lisennombor =  str(self.nilai * 4) + str(self.acak)
 		n = int(self.lisennombor)
-		
-		# n = 3434556782
-		
+	
 		self.lastdigit = int(repr(n)[0:4])
+		print (self.lastdigit)
 		
-# 		self.lisennombor = self.nilai * 4 + 223445435
 		self.m_staticText144.SetLabel(str(self.lisennombor))
-
-		# https://www.flaticon.com/authors/pixel-buddha
-		# Icon made by [author link] from www.flaticon.com Icon made by [author link] from www.flaticon.com Icon made by [author link] from www.flaticon.com 
-		# Icon made by [author link] from www.flaticon.com 
 
 		# Handlers for FrameWarningKey events
 		self.pathimage = pathlib.Path.cwd() / "resources/images/symbol/checked.png"
@@ -57,41 +51,39 @@ class authenticationFrameWarningKey(FrameKey.FrameWarningKey):
 	def m_button39OnButtonClick(self, event):
 		# TODO: Implement m_button39OnButtonClick
 
-		global lisensi
+		self.keynumber = self.m_textCtrl49.GetValue()
+		print (self.keynumber)
+		lisensi = round(self.lastdigit/4)
+		print (lisensi)
+		self.gen = Key(self.keynumber)
+		print ("aneh")
+		print (self.gen.verify(lisensi))
 		
-		#import file dari folder keygenapps dan tempelfile.py
-		from coreapps.models.keygenapps.keygen import Key
-		from coreapps.views.tempelfile import TempelFile
-		try:
-
-			self.keynumber = self.m_textCtrl49.GetValue()
-			print (self.keynumber)
-# 			lisensi = (self.lisennombor - 223445435) / 4
-# 			self.lastdigit = int(repr(n)[0:4])
-			lisensi = round(self.lastdigit/4)
-			print (lisensi)
-			self.gen = Key(self.keynumber)
-	
-			print (self.gen.verify(lisensi))
-	
-			self.verify = self.gen.verify(lisensi)
-			# print (self.verify)
-			self.yes = TempelFile(self.verify)
-			self.yes.compilefile()
+		self.verify = self.gen.verify(lisensi)
+		print (self.verify)
+		self.yes = TempelFile(self.verify)
+		self.yes.compilefile()
+		if self.verify == True :
 			self.m_staticText6.SetLabel("tervalidasi")
-			
-		except:
+		elif self.verify == False :
 			self.m_staticText6.SetLabel("Tidak Valid")
-			pass
+		else : 
+			print ("gagal")
+
+			
+		# self.m_staticText6.SetLabel("Tidak Valid")
+		pass
 		
 		if self.m_staticText6.GetLabel()== "tervalidasi":
-# 			self.Close()
+			self.Close()
 			print ("Berhasil")
 			
 		pass
 
 	def m_button40OnButtonClick(self, event):
+		print ("tutup")
 		self.Close()
+
 		
 		pass
 

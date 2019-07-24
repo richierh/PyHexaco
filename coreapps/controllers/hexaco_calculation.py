@@ -256,23 +256,23 @@ def hitung_versi_60(data_versi):
 
         i_list_sub_dimensi +=1
     
-    sum_honesty_humility =  (data_hasil["Sincerity"]+data_hasil["Fairness"]\
-                            +data_hasil["Greed Avoidance"]+data_hasil["Modesty"])/4
+    sum_honesty_humility =  (data_hasil2["Sincerity"]+data_hasil2["Fairness"]\
+                            +data_hasil2["Greed Avoidance"]+data_hasil2["Modesty"])/10
     
-    sum_emotionality = (data_hasil["Fearfullness"] + data_hasil["Anxiety"]\
-                        +data_hasil["Dependence"] + data_hasil["Sentimentality"])/4
+    sum_emotionality = (data_hasil2["Fearfullness"] + data_hasil2["Anxiety"]\
+                        +data_hasil2["Dependence"] + data_hasil2["Sentimentality"])/10
     
-    sum_extraversion = (data_hasil["Social Self Esteem"] + data_hasil["Social Boldness"]\
-                        +data_hasil["Sociability"] + data_hasil["Liveliness"])/4
+    sum_extraversion = (data_hasil2["Social Self Esteem"] + data_hasil2["Social Boldness"]\
+                        +data_hasil2["Sociability"] + data_hasil2["Liveliness"])/10
                         
-    sum_agreeableness = (data_hasil["Forgiveness"] + data_hasil["Gentleness"]\
-                                +data_hasil["Flexibility"]+data_hasil["Patience"])/4
+    sum_agreeableness = (data_hasil2["Forgiveness"] + data_hasil2["Gentleness"]\
+                                +data_hasil2["Flexibility"]+data_hasil2["Patience"])/10
     
-    sum_conscientiousness = (data_hasil["Organization"] + data_hasil["Diligence"]\
-                            +data_hasil["Perfectionism"] + data_hasil["Prudence"])/4
+    sum_conscientiousness = (data_hasil2["Organization"] + data_hasil2["Diligence"]\
+                            +data_hasil2["Perfectionism"] + data_hasil2["Prudence"])/10
 
-    sum_openness_to_experience = (data_hasil["Aesthetic Appreciation"]+data_hasil["Inquisitiveness"]\
-                                +data_hasil["Creativity"]+data_hasil["Unconventionality"])/4
+    sum_openness_to_experience = (data_hasil2["Aesthetic Appreciation"]+data_hasil2["Inquisitiveness"]\
+                                +data_hasil2["Creativity"]+data_hasil2["Unconventionality"])/10
                                 
     sum_interstitial = data_hasil["Interstitial"]
     sum_6_dimensi_kepribadian = {
@@ -300,7 +300,7 @@ def hitung_versi_60(data_versi):
 
 def hitung_versi_100(data_versi):
     Sincerity = ["6R", "30", "54R","78"]
-    Fairness = ["12R", "36R", "60","84"]
+    Fairness = ["12R", "36R", "60","84R"]
     Greed_Avoidance = ["18", "42R","66R","90R"]
     Modesty = ["24", "48","72R","96R"]
 
@@ -311,7 +311,7 @@ def hitung_versi_100(data_versi):
     
     Social_Self_Esteem = ['4', "28", "52R","76R"]
     Social_Boldness = ["10R", "34", "58","82R"]
-    Sociability = ["16", "40","64","88"]    
+    Sociability = ["16R", "40","64","88"]    
     Liveliness = ["22", "46","70R","94R"]    
                 
     Forgiveness = ["3", "27","51R","75R"]    

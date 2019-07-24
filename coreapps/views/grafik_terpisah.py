@@ -1,4 +1,4 @@
-#! usr/bin/env pyt((hon
+#! usr/bin/env python
 '''
 Created on May 18, 2019
 
@@ -44,7 +44,7 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
 
         info._text = "Definisi"
 #         info._font = boldfont
-        self.ultimateList.InsertColumnInfo(1, info)
+        self.ultimateList.InsertColumnInfo(2, info)
  
         info = ULC.UltimateListItem()
         info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT 
@@ -54,11 +54,24 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
         info._text = "Ciri - Ciri"
 #         info._font = font
         info._image = []
-        
-        self.ultimateList.InsertColumnInfo(2, info)
+        self.ultimateList.InsertColumnInfo(3, info)
+
+
+        info = ULC.UltimateListItem()
+        info._mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT #| ULC.ULC_MASK_FONT
+        info._format = wx.LIST_FORMAT_LEFT
+        info._image = []
+#         info._width = 300
+
+        info._text = "Nilai"
+#         info._font = boldfont
+        self.ultimateList.InsertColumnInfo(1, info)
+
+
         self.ultimateList.SetColumnWidth(0, 200)
-        self.ultimateList.SetColumnWidth(1, 400)
+        self.ultimateList.SetColumnWidth(1, 150)
         self.ultimateList.SetColumnWidth(2, 400)
+        self.ultimateList.SetColumnWidth(3, 400)
         
         self.ultimateList.DeleteAllItems()
 
@@ -66,7 +79,7 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
         self.Update()
         self.Refresh()
         self.Layout()
-        self.ultimateList.Bind(wx.EVT_LIST_COL_BEGIN_DRAG ,self.runnow   )
+        self.ultimateList.Bind(wx.EVT_LIST_COL_BEGIN_DRAG ,self.runnow  )
 
 
     def insert_value_list(self,parent):
@@ -84,10 +97,12 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
         for item in items :
             print (item)
             item1 = wordwrap(item[0],self.ultimateList.GetColumnWidth(0),wx.ClientDC(self),breakLongWords=True, margin=0)
-            item2 = wordwrap(item[1],self.ultimateList.GetColumnWidth(1)-75,wx.ClientDC(self),breakLongWords=True, margin=0)
+            item2 = wordwrap(item[1],self.ultimateList.GetColumnWidth(1)-10,wx.ClientDC(self),breakLongWords=True, margin=0)
             item3 = wordwrap(item[2],self.ultimateList.GetColumnWidth(2)-75,wx.ClientDC(self),breakLongWords=True, margin=0)
- 
-            item_wordwrap.append((item1,item2,item3))
+#   Adding one more column
+            item4 = wordwrap(item[3],self.ultimateList.GetColumnWidth(3)-75,wx.ClientDC(self),breakLongWords=True, margin=0)
+
+            item_wordwrap.append((item1, item2,item3,item4))
             index+=1
         print (item_wordwrap)        
 
@@ -96,6 +111,8 @@ class PropertiesGrafikTerpisah(FrameGrafikTerpisah):
             self.ultimateList.InsertStringItem(indexitem, item[0])
             self.ultimateList.SetStringItem(indexitem,1,item[1])
             self.ultimateList.SetStringItem(indexitem,2,item[2])
+            self.ultimateList.SetStringItem(indexitem,3,item[3])
+
             indexitem += 1
             
        

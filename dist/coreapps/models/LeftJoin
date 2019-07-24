@@ -1,0 +1,8 @@
+/*SELECT I.idinputpeserta,I.NoSoal,I.JawabanPeserta,I.idTipeSoal,T.NamaSoal
+FROM InputPeserta as I, TipeSoal as T
+WHERE I.idTipeSoal = T.idTipeSoal AND I.idpeserta = 6 */
+/* This is the Alternatif way to achieve same result*/
+
+SELECT I.idinputpeserta ,T.NamaSoal 
+FROM InputPeserta AS I
+LEFT JOIN TipeSoal as T ON I.idTipeSoal = T.idTipeSoal

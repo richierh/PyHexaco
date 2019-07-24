@@ -46,7 +46,7 @@ def pdf_data(biodata,nilai):
     height = 2*pdf.b_margin
     width  = 2*pdf.l_margin
 
-    pdf.cell(0,ah,"HASIL BINADATA",border = "B",ln=2,align = "C")
+    pdf.cell(0,ah,"GAMBARAN KEPRIBADIAN",border = "B",ln=2,align = "C")
     # pdf.line(75,13,135,13)
 
     image1="binadata.png"
@@ -106,7 +106,7 @@ def pdf_data(biodata,nilai):
 
     pdf.ln(5)
 
-    pdf.cell(0,th,"Grafik",0,1,"C")
+    pdf.cell(0,th,"Grafik HEXACO",0,1,"C")
 
     pdf.image(name_loc+"/"+image2,x=10,y=68,w=180,h=90,type="PNG")
 
@@ -117,7 +117,7 @@ def pdf_data(biodata,nilai):
     # pdf.cell(80 , 0,"disini data dari binakarir akan di sajikan",1,ln = 2,align = "L")
 
     # print (data_hasil_perhitungan)
-    data_header = [["Dimensi","Nilai","Definisi","Ciri-ciri"]]
+    data_header = [["Aspek","Nilai","Kategori","Definisi","Ciri-ciri"]]
   
     # data_dimensi = []
     # for data in data_hasil_perhitungan:
@@ -144,7 +144,7 @@ def pdf_data(biodata,nilai):
     i = 0
     pdf.set_font('Arial', 'B', 11)
 
-    pdf.cell(0,th,"Tabel",0,1,"C")
+    pdf.cell(0,th,"Tabel Interpretasi",0,1,"C")
 
     pdf.set_font('Arial', 'B', 8)
     pdf.ln(4)
@@ -158,13 +158,20 @@ def pdf_data(biodata,nilai):
         # Save top coordinate
         top = pdf.y
         # Calculate x position of next cell
-        offset = pdf.x + 50
-        pdf.multi_cell(50,10,str(datum[0]),1,0)
+        offset = pdf.x + 35
+        pdf.multi_cell(35,10,str(datum[0]),1,"C")
         # Reset y coordinate
         pdf.y = top
         # Move to computed offset
         pdf.x = offset 
-        pdf.multi_cell(15,10,str(datum[1]),1,0)
+        pdf.multi_cell(15,10,str(datum[1]),1,"C")
+        # pdf.ln(th)
+        # Calculate x position of next cell
+        pdf.y = top
+        offset = pdf.x  + 50
+
+        pdf.x = offset 
+        pdf.multi_cell(15,10,str(datum[2]),1,"C")
         # pdf.ln(th)
         # Calculate x position of next cell
         pdf.y = top
@@ -172,14 +179,14 @@ def pdf_data(biodata,nilai):
 
         # Move to computed offset
         pdf.x = offset 
-        pdf.multi_cell(60,10,str(datum[2]),1,0)
+        pdf.multi_cell(60,10,str(datum[3]),1,"C")
 
         pdf.y = top
         offset = pdf.x  + 125
 
         # Move to computed offset
         pdf.x = offset 
-        pdf.multi_cell(50,10,str(datum[3]),1,0)
+        pdf.multi_cell(50,10,str(datum[4]),1,"C")
 
 
 
@@ -223,7 +230,7 @@ def pdf_data(biodata,nilai):
         # Save top coordinate
         top = pdf.y
         # Calculate x position of next cell
-        offset = pdf.x + 50
+        offset = pdf.x + 35
         if data_dimensi.index(datum) % 5 == 0:
             # pdf.ln(th)
             pdf.set_font('Arial', 'B', 8)
@@ -248,6 +255,16 @@ def pdf_data(biodata,nilai):
         pdf.x = offset 
         pdf.multi_cell(15,tinggi_kolom,str(datum[1]),"T,L,R","C")
 
+       # Calculate x position of next cell
+        pdf.y = top
+        offset = pdf.x  + 50
+
+        # Move to computed offset
+        pdf.x = offset 
+
+        pdf.multi_cell(15,tinggi_kolom,str(datum[4]),"T,L,R","C")
+
+ 
         # pdf.ln(th)
         # Calculate x position of next cell
         pdf.y = top
