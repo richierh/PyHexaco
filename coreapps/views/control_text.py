@@ -88,7 +88,7 @@ class ControlEntry(wx.Frame):
                            self.parent.m_textCtrl57,
                            self.parent.m_textCtrl58,
                            self.parent.m_textCtrl59,
-                           self.parent.m_textCtrl50,
+                           self.parent.m_textCtrl60,
                            self.parent.m_textCtrl61,
         
                            self.parent.m_textCtrl62,

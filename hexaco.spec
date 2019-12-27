@@ -1,4 +1,4 @@
-# -*- mode: python -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
@@ -17,13 +17,9 @@ a = Analysis(['hexaco.py'],
              noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
-
-
-
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
-	  Tree('Z:\\home\\cireng\\Projects\\pyhexaco\\coreapps'),
           a.zipfiles,
           a.datas,
           [],
@@ -32,5 +28,6 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
+          upx_exclude=[],
           runtime_tmpdir=None,
           console=False )

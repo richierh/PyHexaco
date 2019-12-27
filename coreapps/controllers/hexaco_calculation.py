@@ -212,7 +212,7 @@ def hitung_versi_60(data_versi):
     Creativity = ["13", "37", "49R"]
     Unconventionality = ["19R", "43", "55R"]
                 
-    Attristium = ["97", "98"]          
+    Attristium = ["", ""]          
 
     list_sub_dimensi = [[Sincerity,Fairness,Greed_Avoidance,Modesty],
                         [Fearfullness,Anxiety,Dependence,Sentimentality],

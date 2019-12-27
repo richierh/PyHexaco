@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Jun 15 2019)
+## Python code generated with wxFormBuilder (version Nov  2 2019)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO *NOT* EDIT THIS FILE!
@@ -199,7 +199,7 @@ class FrameDepan ( wx.Frame ):
 		fgSizer11.Add( self.m_textCtrl10, 0, wx.ALL, 5 )
 
 
-		fgSizer15.Add( fgSizer11, 3, wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
+		fgSizer15.Add( fgSizer11, 1, wx.EXPAND, 5 )
 
 
 		fgSizer15.Add( ( 60, 0), 0, wx.RIGHT, 5 )
@@ -596,7 +596,6 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_panel8 = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		self.m_panel8.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
-		self.m_panel8.Hide()
 
 		bSizer21 = wx.BoxSizer( wx.VERTICAL )
 
@@ -1176,6 +1175,7 @@ class FrameDepan ( wx.Frame ):
 
 		self.m_panel9 = wx.Panel( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		self.m_panel9.SetBackgroundColour( wx.Colour( 77, 204, 187 ) )
+		self.m_panel9.Hide()
 
 		bSizer24 = wx.BoxSizer( wx.VERTICAL )
 

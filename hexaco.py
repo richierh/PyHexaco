@@ -15,6 +15,8 @@ import platform
 from coreapps.views.app import MyApp
 from pathlib import Path
 
+
+
 pathwd = pathlib.Path.cwd() / "coreapps"
 sys.path.append(str(pathwd))
 # print (sys.path)
