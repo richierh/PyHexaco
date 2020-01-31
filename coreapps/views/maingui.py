@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Nov  2 2019)
+## Python code generated with wxFormBuilder (version 3.9.0 Jan 12 2020)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO *NOT* EDIT THIS FILE!
@@ -2670,6 +2670,11 @@ class TentangAplikasi ( wx.Frame ):
 		self.m_panel25.Layout()
 		bSizer32.Fit( self.m_panel25 )
 		bSizer34.Add( self.m_panel25, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_staticText238 = wx.StaticText( self.m_panel26, wx.ID_ANY, u"versi : 23/01/2020", wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		self.m_staticText238.Wrap( -1 )
+
+		bSizer34.Add( self.m_staticText238, 0, wx.ALL, 5 )
 
 
 		self.m_panel26.SetSizer( bSizer34 )

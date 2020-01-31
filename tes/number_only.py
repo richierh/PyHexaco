@@ -14,7 +14,7 @@ class MyFrame(wx.Frame):
         self.edit = wx.TextCtrl(self, -1, pos=(10, 30))
         # respond to enter key when focus is on edit
         self.edit.Bind(wx.EVT_TEXT, self.onAction)
-        print("j")
+        # print("j")
 
     def onAction(self, event):
         """

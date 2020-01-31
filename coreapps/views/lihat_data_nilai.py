@@ -103,7 +103,7 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
             index+=1
        
         self.m_panel23.SetSizer(sizer44)
-        print("hei")
+        # print("hei")
         
 #         Event Handler
         self.m_button19.Bind( wx.EVT_BUTTON, self.m_button_tutup_lihat_data )
@@ -136,7 +136,7 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
             print (self.get_item)
         print (self.parent.get_item_id_name.upper())
 
-        print(self.m_text_edit_no_tes)
+        # print(self.m_text_edit_no_tes)
 #       Updating Rincian Data Peserta 
         rinc_data= [self.m_text_edit_no_tes.GetValue().upper(), 
         self.m_datePicker_edit_tanggal_tes.GetValue().Format("%Y/%m/%d"),
@@ -151,7 +151,7 @@ class TurunanLihatData(maingui.LihatNilaiPeserta,listmix.TextEditMixin):
         ]
         # self.m_text_edit_
 
-        print(rinc_data)
+        # print(rinc_data)
 
         # ]
         self.update_data = update_rincian_data_peserta(rinc_data,self.id_peserta)

@@ -69,8 +69,8 @@ class GrafikDimensi(UIGrafikInherit):
     def save_figure(self):
         import pathlib
         self.path = pathlib.Path().cwd()/"controllers/reporting/image1.png"
-        print(self.path)
-        print ("lewat sini nggak")
+        # print(self.path)
+        # print ("lewat sini nggak")
         return self.figure.savefig(self.path,dpi='figure')
         
     
@@ -98,7 +98,7 @@ class GrafikDimensi(UIGrafikInherit):
         if versi == "24" :
             del self.data_y_6_dimensi[6]
             print (self.data_y_6_dimensi)
-            print("cek")
+            # print("cek")
             self.y_pos = self.np.arange(len(self.data_y_6_dimensi))
             self.value = [nilai_dimensi["Honesty & Humility"],nilai_dimensi["Emotionality"],
                                 nilai_dimensi["Extraversion"],
@@ -599,15 +599,15 @@ class GrafikA(GrafikFrame):
                     "Patience"]
         
         self.data = []
-        print (self.definisi)
+        # print (self.definisi)
         for k in self.definisi:
             for dim in dimensi:
      
                 if k[0] == dim:
-                    print ("lolos")
-                    print (k)
-                    print(k[0])
-                    print(dimensi[0])
+                    # print ("lolos")
+                    # print (k)
+                    # print(k[0])
+                    # print(dimensi[0])
                     self.data.append([k[0],k[3],k[1],k[2]])
         print (self.data)
         self.insert_value_list(self)

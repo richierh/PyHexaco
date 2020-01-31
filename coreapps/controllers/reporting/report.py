@@ -25,8 +25,8 @@ data_hasil_perhitungan = (
 
 
 
-print(type(data_hasil_perhitungan))
-print(data_hasil_perhitungan[1].keys())
+# print(type(data_hasil_perhitungan))
+# print(data_hasil_perhitungan[1].keys())
 
 
 def pdf_data(biodata,nilai):

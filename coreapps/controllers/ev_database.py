@@ -16,7 +16,7 @@ class DataListCtrl():
         line = 1
         self.index =0
         self.parent2.m_listCtrl_tabel_database.DeleteAllItems()
-        print(self.parent.query_tabel)
+        # print(self.parent.query_tabel)
         self.jml_nomor = len(self.parent.query_tabel)
         for data in self.parent.query_tabel:
             self.parent2.m_listCtrl_tabel_database.InsertItem(self.index,line)

@@ -20,8 +20,8 @@ data_hasil_perhitungan = (
     {"Honesty & Humility" : "3.22","Modesty":"2.14","Greed Avoidance":"4.33","Fairness":"3.22","Sincerity":"2.66"},
     {"Interstitial":"3.2"}
 )
-print(type(data_hasil_perhitungan))
-print(data_hasil_perhitungan[1].keys())
+# print(type(data_hasil_perhitungan))
+# print(data_hasil_perhitungan[1].keys())
 
 
 

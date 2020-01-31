@@ -15,10 +15,10 @@ def connect_db():
     
     path = pathlib.Path.cwd() / "models/hexacodb"
 #     path = pathlib.Path.cwd() / "hexacodb"
-    print (path)
+    # print (path)
 
-    print ("Connecting to {}".format(path))
-    print("...Processing....")
+    # print ("Connecting to {}".format(path))
+    # print("...Processing....")
     conne = sqlite3.connect(str(path))
     return conne
 
@@ -285,9 +285,9 @@ def update_rincian_data_peserta(values,id_pes):
     conne = connect_db()
     cursorexe = conne.cursor()
 #     values = ["select","select by"]
-    print(values[0])
-    print(values[1])
-    print(values[2])
+    # print(values[0])
+    # print(values[1])
+    # print(values[2])
 
     sql_cmd = """
     UPDATE [Rincian Data Peserta]
